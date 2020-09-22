@@ -23,7 +23,6 @@ MGCM (Magicami) Skill Data
 * 技能倍率 - 見此 repo 中的其它檔案。
 * 升技Bonus - 有些技能升級後會增加傷害，10% 就 x1.1，10% + 5% 就 x1.15。
 * 被動技能 - 有些被動技能會增加傷害，例︰惡魔彩花爆擊時傷害 1.5 倍。
-<! -- * 暴擊/強打/失誤 - 暴擊不會和強打同時發生，但暴擊會和失誤同時發生？-->
 * 傷害浮動 - 隨機乘上 0.985, 0.995, 1.005, 1.015 其中一個值。
 
 傷害浮動
@@ -39,7 +38,7 @@ MGCM (Magicami) Skill Data
 利用降防或無視防禦的技能，可以得出敵人的防禦力。公式為
 
 ```
--750 * (降防前傷害 - 降防後傷害) / (降防前傷害 - K * 降防後傷害)
+敵防禦 = 750 * (降防後傷害 - 降防前傷害) / (降防前傷害 - K * 降防後傷害)
 ```
 
 降防的情況下 K 為 0.3，無視防禦的情況下 K 為 0。
@@ -52,7 +51,7 @@ D2 = A * 750 / (K*B + 750)
 
 => D1 / D2 = (K*B + 750) / (B + 750)
 
-=> B = -750 (D1 - D2) / (D1 - D2 * K)
+=> B = 750 * (D2 - D1) / (D1 - D2 * K)
 ```
 
 測出技能倍率
@@ -120,3 +119,5 @@ Reference
 
   - 傷害公式: https://twitter.com/Br51XxvpgRwyDjk/status/1183932508922171393
   - 技能Bonus: https://twitter.com/Br51XxvpgRwyDjk/status/1185455902377181184
+
+* [計算用試算表](https://docs.google.com/spreadsheets/d/14Hp_SpN5iVYI3hPgo01_UWr8geUb5Ymx7ME2KLLKkZ8/edit?usp=sharing)
