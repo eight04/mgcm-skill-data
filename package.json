@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/eight04/mgcm-skill-data#readme",
   "devDependencies": {
+    "@babel/core": "^7.12.7",
     "@babel/eslint-parser": "^7.12.1",
     "@eight04/read-write-lock": "^0.1.0",
     "cheerio": "^1.0.0-rc.3",
