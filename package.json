@@ -1,0 +1,32 @@
+{
+  "name": "mgcm-skill-data",
+  "version": "0.0.0",
+  "description": "Skill data for Magicami online game",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint *.mjs",
+    "build-db": "node build-db.mjs > dress-db.yml"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eight04/mgcm-skill-data.git"
+  },
+  "keywords": [
+    "mgcm"
+  ],
+  "author": "eight04",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/eight04/mgcm-skill-data/issues"
+  },
+  "homepage": "https://github.com/eight04/mgcm-skill-data#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.7",
+    "@babel/eslint-parser": "^7.12.1",
+    "@eight04/read-write-lock": "^0.1.0",
+    "cheerio": "^1.0.0-rc.3",
+    "eslint": "^7.14.0",
+    "make-fetch-happen": "^8.0.10",
+    "yaml": "^1.10.0"
+  }
+}
