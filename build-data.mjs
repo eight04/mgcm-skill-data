@@ -49,30 +49,31 @@ for (let i = y; i < sheet.rowCount; i++) {
   const charName = NAME_TABLE[name.value.split(" ").pop()];
   const list = chars.get(charName);
   
-  if (list.get(name)) continue;
+  if (list.get(name.value)) continue;
   
   const skill = [];
   let invalid = false;
-  for (let j = 0; j < 3; j += 3) {
-    const hits = sheet.getCell(i, x + 1 + j);
+  for (let j = 0; j < 3; j++) {
+    const hits = sheet.getCell(i, x + 1 + j * 3);
     if (!hits.value) {
       skill.push(0);
       continue;
     }
-    const mod = sheet.getCell(i, x + 1 + j + 1);
+    const mod = sheet.getCell(i, x + 1 + j * 3 + 1);
     if (mod.userEnteredFormat.textFormat.underline) {
       invalid = true;
       break;
     }
-    skill.push({
-      mod: mod.value,
-      hits: hits.value
-    });
+    skill.push(
+      hits.value > 1 ?
+        `${mod.value} *${hits.value}` :
+      mod.value
+    );
   }
-  if (invalid) continue;
-  list.set(name, skill);
+  if (invalid || skill.every(s => s === 0)) continue;
+  list.set(name.value, skill);
 }
 
 for (const [name, list] of chars.entries()) {
-  await writeFile(`data/${name}.yml`, YAML.stringify(list.toObject()));
+  await writeFile(`data/${name}.yml`, YAML.stringify(Object.fromEntries(list)));
 }
