@@ -1,6 +1,5 @@
-import {readFile, writeFile} from "fs/promise";
+import {readFile, writeFile} from "fs/promises";
 import YAML from "yaml";
-import SortedMap from "collections/sorted-map";
 import gs from "google-spreadsheet";
 
 const NAME_TABLE = {
@@ -19,11 +18,11 @@ const NAME_TABLE = {
 };
 
 const allDresses = YAML.parse(await readFile("dress-db.yml", "utf8"));
-const chars = new SortedMap([], null, null, () => new SortedMap);
+const chars = new Map;
 
 for (const dress of allDresses) {
   const name = NAME_TABLE[dress.name.split(" ").pop()];
-  const list = chars.get(name);
+  const list = chars.get(name) || chars.set(name, new Map).get(name);
   list.set(dress.name, null);
 }
 
@@ -74,6 +73,6 @@ for (let i = y; i < sheet.rowCount; i++) {
   list.set(name, skill);
 }
 
-for (const [name, list] of chars) {
+for (const [name, list] of chars.entries()) {
   await writeFile(`data/${name}.yml`, YAML.stringify(list.toObject()));
 }

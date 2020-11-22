@@ -25,7 +25,6 @@
     "@babel/eslint-parser": "^7.12.1",
     "@eight04/read-write-lock": "^0.1.0",
     "cheerio": "^1.0.0-rc.3",
-    "collections": "^5.1.12",
     "eslint": "^7.14.0",
     "google-spreadsheet": "^3.0.13",
     "make-fetch-happen": "^8.0.10",
