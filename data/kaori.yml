@@ -12,10 +12,8 @@
   - 0
 ホリデーカジュアル 花織:
   - 3.887047666
-  - value: 2.09546055
-    extraAtkFromDef:
-      - - 1064.2
-        - 1467.614502
+  - 2.09546055 +def*1.3790777128359330952828415711332
+  - 0
 Magica2019 花織:
   - 3.982844376
   - 0
@@ -62,25 +60,9 @@ Magica2019 Evo 花織:
   - 0
   - 0
 鬼魔愚零卍神特攻服 花織:
-  - - mod: 1.900061268
-      hit: 1
-      extraAtk:
-        from: hp
-        hp: 15623
-        atk: 1230.270732
-  - - hit: 2
-      ignoreAtk: true
-      extraAtk:
-        from: hp
-        hp: 15623
-        dmg: 2496.742297
-  - - hit: 1
-      aoe: true
-      ignoreAtk: true
-      extraAtk:
-        from: hp
-        hp: 15623
-        dmg: 4682.279275
+  - 1.9 +hp*0.15
+  - 0   +hp*0.16 *2
+  - 0   +hp*0.30
 ワイン娘 花織: null
 ライオットポリス 花織: null
 マジカルウェディング 花織: null
