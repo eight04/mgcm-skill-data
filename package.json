@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "eslint *.mjs",
-    "build-db": "node build-db.mjs > dress-db.yml"
+    "build-db": "node build-db.mjs > dress-db.yml",
+    "build-data": "node build-data.mjs"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "@eight04/read-write-lock": "^0.1.0",
     "cheerio": "^1.0.0-rc.3",
     "eslint": "^7.14.0",
+    "google-spreadsheet": "^3.0.13",
     "make-fetch-happen": "^8.0.10",
     "yaml": "^1.10.0"
   }
