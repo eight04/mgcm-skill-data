@@ -3951,7 +3951,7 @@
         - 4
         - 3
 - id: 3790492
-  name: 姫会ドレス#リムパ りり
+  name: "姫会ドレス #リムパ りり"
   rarity: UR
   pool: gacha
   hp:
@@ -3983,7 +3983,7 @@
         - 4
         - 4
 - id: 3790495
-  name: 姫会ドレス#リムパ エリザ
+  name: "姫会ドレス #リムパ エリザ"
   rarity: SR
   pool: gacha
   hp:
@@ -4015,7 +4015,7 @@
         - 6
         - 4
 - id: 3790498
-  name: 姫会ドレス#リムパ セイラ
+  name: "姫会ドレス #リムパ セイラ"
   rarity: SR
   pool: gacha
   hp:
@@ -4605,7 +4605,7 @@
         - 5
         - 3
 - id: 3940282
-  name: ハロウィッチ 花織
+  name: †ハロウィッチ† 花織
   rarity: UR
   pool: gacha
   hp:
@@ -4637,7 +4637,7 @@
         - 6
         - 4
 - id: 3940306
-  name: ハロウィッチ ここあ
+  name: †ハロウィッチ† ここあ
   rarity: UR
   pool: gacha
   hp:
@@ -4669,7 +4669,7 @@
         - 7
         - 5
 - id: 3940318
-  name: ハロウィッチ いろは
+  name: †ハロウィッチ† いろは
   rarity: SR
   pool: gacha
   hp:
@@ -4698,7 +4698,7 @@
         - 3
     - bonus: 0
 - id: 3940327
-  name: ハロウィッチ エリザ
+  name: †ハロウィッチ† エリザ
   rarity: SR
   pool: gacha
   hp:
@@ -4730,7 +4730,7 @@
         - 6
         - 4
 - id: 3940336
-  name: ハロウィッチ 陽彩
+  name: †ハロウィッチ† 陽彩
   rarity: SR
   pool: gacha
   hp:
@@ -4759,7 +4759,7 @@
         - 3
     - bonus: 0
 - id: 3940342
-  name: シブハロナイトコス 陽彩
+  name: シブハロ↑ナイトコス 陽彩
   rarity: UR
   pool: event
   hp:
@@ -4791,7 +4791,7 @@
         - 5
         - 4
 - id: 3940354
-  name: シブハロナイトコス 蒼
+  name: シブハロ↑ナイトコス 蒼
   rarity: SR
   pool: event
   hp:
@@ -4823,7 +4823,7 @@
         - 5
         - 4
 - id: 3940366
-  name: シブハロナイトコス エリザ
+  name: シブハロ↑ナイトコス エリザ
   rarity: SR
   pool: event
   hp:
@@ -6768,7 +6768,7 @@
         - 5
         - 4
 - id: 4557487
-  name: キラキラアイドル 依子
+  name: キラキラ☆アイドル 依子
   rarity: UR
   pool: gacha
   hp:
@@ -8775,7 +8775,7 @@
         - 4
     - bonus: 0
 - id: 5447971
-  name: ハロウィッチ2020 依子
+  name: †ハロウィッチ2020† 依子
   rarity: UR
   pool: event
   hp:
@@ -8807,7 +8807,7 @@
         - 4
         - 3
 - id: 5447905
-  name: ハロウィッチ2020 マリアンヌ
+  name: †ハロウィッチ2020† マリアンヌ
   rarity: UR
   pool: gacha
   hp:
@@ -8840,7 +8840,7 @@
         - 4
     - bonus: 0
 - id: 5447986
-  name: ハロウィッチ2020 蒼
+  name: †ハロウィッチ2020† 蒼
   rarity: SR
   pool: gacha
   hp:

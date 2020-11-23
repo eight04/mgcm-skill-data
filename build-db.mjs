@@ -57,7 +57,7 @@ async function getDressInfo(url) {
   
   const result = {
     id: Number(url.match(/\d+$/)),
-    name: $("title").text().match(/【マジカミ】([^<]+)の評価とスキル/)[1]
+    name: $(".dress_img_wrapper img").attr("alt").split("_").pop()
   };
   
   // info
