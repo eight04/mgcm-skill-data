@@ -4,7 +4,7 @@
   "description": "Skill data for Magicami online game",
   "main": "index.js",
   "scripts": {
-    "test": "eslint *.mjs",
+    "test": "eslint **/*.mjs",
     "build-db": "node build-db.mjs > dress-db.yml",
     "build-data": "node build-data.mjs"
   },

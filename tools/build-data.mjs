@@ -2,26 +2,13 @@ import {readFile, writeFile} from "fs/promises";
 import YAML from "yaml";
 import gs from "google-spreadsheet";
 
-const NAME_TABLE = {
-  "丹": "aka",
-  "陽彩": "akisa",
-  "蒼": "ao",
-  "エリザ": "eliza",
-  "はなび": "hanabi",
-  "依子": "iko",
-  "いろは": "iroha",
-  "花織": "kaori",
-  "ここあ": "kokoa",
-  "りり": "lilly",
-  "マリアンヌ": "marianne",
-  "セイラ": "seira"
-};
+import {NAME_JP2EN} from "./lib/chars.mjs";
 
 const allDresses = YAML.parse(await readFile("dress-db.yml", "utf8"));
 const chars = new Map;
 
 for (const dress of allDresses) {
-  const name = NAME_TABLE[dress.name.split(" ").pop()];
+  const name = NAME_JP2EN[dress.name.split(" ").pop()];
   const list = chars.get(name) || chars.set(name, new Map).get(name);
   list.set(dress.name, null);
 }
@@ -47,7 +34,7 @@ for (let i = y; i < sheet.rowCount; i++) {
   
   if (!name.value) continue;
   
-  const charName = NAME_TABLE[name.value.split(" ").pop()];
+  const charName = NAME_JP2EN[name.value.split(" ").pop()];
   const list = chars.get(charName);
   
   if (list.get(name.value)) continue;
