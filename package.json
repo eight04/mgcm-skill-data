@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "eslint **/*.mjs",
-    "build-db": "node build-db.mjs > dress-db.yml",
-    "build-data": "node build-data.mjs"
+    "build-db": "node tools/build-db.mjs > dress-db.yml",
+    "build-data": "node tools/build-data.mjs",
+    "build-rank": "node tools/simulate.mjs > rank.csv"
   },
   "repository": {
     "type": "git",

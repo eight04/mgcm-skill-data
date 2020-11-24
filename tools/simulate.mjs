@@ -21,7 +21,7 @@ const allSkills = await getAllSkills();
 
 // calculate final mod for 5 turns?
 for (const skill of allSkills) {
-  const skillInfo = nameIndex.get(skill.name).skills;
+  const skillInfo = nameIndex.get(skill.name).skill;
   
   const skills = skill.mods.map((mod, i) => ({
     mod,
@@ -52,7 +52,9 @@ for (const skill of allSkills) {
   
   for (const dress of allDresses) {
     if (dress.name === skill.name) continue;
-    subDresses.push(buildDress(dress, skill.finalMod));
+    // FIXME: use a correct ratio instead of 0.3
+    const ratio = dress.name.split(" ").pop() === skill.name.split(" ").pop() ? 0.3 : 0.2;
+    allSubDresses.push(buildDress(dress, skill.finalMod, ratio));
   }
   
   allSubDresses.sort((a, b) => a.score - b.score);
@@ -66,23 +68,34 @@ for (const skill of allSkills) {
   });
 }
 result.sort((a, b) => a.score - b.score);
+const header = [
+  "score", "mainDress", "mainPearl",
+  ...[1, 2, 3, 4, 5].map(n => [`subDress${n}`, `subPearl${n}`]).flat()
+];
+console.log(header.join(","));
 for (const r of result) {
-  console.log(`${r.mainDress.name}\t${r.score}`);
+  const row = [
+    r.score,
+    r.mainDress.dress.name,
+    r.mainDress.pearl,
+    ...r.subDresses.map(d => [d.dress.name, d.pearl]).flat()
+  ];
+  console.log(row.join(","));
 }
 
-function buildDress(dress, mod) {
+function buildDress(dress, mod, subRatio = 1) {
   const pearl = [...generatePearls(dress)]
-    .map(p => ({
+    .map(([name, p]) => ({
       score: calcScore(p, mod),
-      pearl: p
+      name
     }))
     .sort((a, b) => a.score - b.score)
     .pop();
     
   return {
-    score: calcScore(dress, mod) + pearl.score,
+    score: (calcScore(dress, mod) + pearl.score) * subRatio,
     dress,
-    pearl: pearl.pearl
+    pearl: pearl.name
   };
 }
 
@@ -107,22 +120,27 @@ function compareSkill(a, b) {
 function *generatePearls(dress) {
   // SR pearls
   for (const stat of ["hp", "atk", "def"]) {
-    yield {
+    yield [`${stat}%`, {
       [stat]: dress[stat] * 0.5
-    };
+    }];
   }
-  yield {hp: 4240};
-  yield {atk: 270};
-  yield {def: 270};
-  yield {spd: 45};
-  yield {fcs: 65};
-  yield {rst: 65};
+  const con = {
+    hp: 4240,
+    atk: 270,
+    def: 270,
+    spd: 45,
+    fcs: 65,
+    rst: 65
+  };
+  for (const [stat, value] of Object.entries(con)) {
+    yield [stat, {[stat]: value}];
+  }
 }
 
 function calcScore(dress, mod) {
   let score = 0;
   for (const stat in mod) {
-    score += dress[stat] * mod[stat];
+    score += (dress[stat] || 0) * mod[stat];
   }
   return score;
 }

@@ -8,33 +8,33 @@ export async function getAllDresses() {
 }
 
 export async function getAllSkills() {
-  const skills = [];
+  const allSkills = [];
   for (const name of NAMES) {
     const map = YAML.parse(await readFile(`data/${name}.yml`, "utf8"));
-    for (const [dressName, skills] of map) {
+    for (const [dressName, skills] of Object.entries(map)) {
       if (
         !Array.isArray(skills) ||
         skills.some(s => typeof s !== "string" && typeof s !== "number")
       ) {
         continue;
       }
-      skills.push({
+      allSkills.push({
         name: dressName,
         mods: skills.map(parseSkill)
       });
     }
   }
-  return skills;
+  // console.log(skills.length);
+  return allSkills;
 }
 
 function parseSkill(text) {
   if (typeof text === "number") {
     return {
-      mod: text,
-      hits: 1
+      atk: text
     };
   }
-  const match = text.match(/^([\d.]+)(?:\s+\+(\w+)\*([\d.]+))?(?:\s+\*(\d+))?$/);
+  const match = text.match(/^([\d.]+)(?:\s+\+(\w+)\*([\d.]+))?(?:\s+\*\s*(\d+))?$/);
   const hits = match[4] ? Number(match[4]) : 1;
   const mod = {
     atk: Number(match[1]) * hits
