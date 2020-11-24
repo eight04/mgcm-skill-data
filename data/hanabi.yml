@@ -46,25 +46,9 @@ Magica2019 Evo はなび:
   - 5.178915122
   - 0
 鬼魔愚零卍神特攻服 はなび:
-  - - mod: 1.899492144
-      hit: 1
-      extraAtk:
-        from: hp
-        hp: 13698
-        atk: 1079.262295
-  - - hit: 2
-      ignoreAtk: true
-      extraAtk:
-        from: hp
-        hp: 13698
-        dmg: 2190.270139
-  - - hit: 1
-      aoe: true
-      ignoreAtk: true
-      extraAtk:
-        from: hp
-        hp: 13698
-        dmg: 4105.425308
+  - 1.899492144 +hp*0.1496605527
+  - 0           +hp*0.1598970754 *2
+  - 0           +hp*0.2997098341
 ホーリーサンタ はなび: null
 ロイヤルナイトアーマー はなび: null
 フェニックス はなび: null
