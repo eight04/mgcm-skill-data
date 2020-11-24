@@ -7,7 +7,11 @@ https://www.reddit.com/r/magicami/comments/ju4yj7/research_help_collect_skill_mo
 技能倍率表︰
 
 * [r/magicami 製作的倍率表](https://docs.google.com/spreadsheets/d/1N80A2Uz0lQe8COz3e_xWOePh0_RIMq0hYxkgsMv0CWI/edit#gid=1428786078)
-* 也可以參考 data 資料夾底下的 yml 檔。
+* 也可以參考 data 資料夾底下的 yml 檔。格式為︰
+  ```
+  skill_modifier +status*ratio *hits
+  ```
+  其中 `+status*ratio` 不一定存在；`*hits` 為 1 時可能被省略。
 
 傷害公式
 --------
