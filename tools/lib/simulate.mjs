@@ -51,7 +51,7 @@ export function simulate({
     
     allSubDresses.sort((a, b) => a.score - b.score);
     
-    const subDresses = allSubDresses.slice(-5);
+    const subDresses = allSubDresses.slice(-4);
     const mainDress = buildDress({
       dress: nameIndex.get(skill.name),
       mod: finalMod,
