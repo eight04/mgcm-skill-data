@@ -9,6 +9,14 @@ const result = await simulate({
   allSkillMod: await getAllSkills(),
   exclude: allDresses.filter(d => d.id > 3902806).map(d => d.name), // until real maid series
   maxLvDresses: allDresses.filter(isCommon).map(d => d.name)
+  // maxLvDresses: allDresses.map(d => d.name),
+  // ignoreElement: true,
+  // orb: "ur",
+  // buff: {
+    // atk: 1.5,
+    // def: 1.7,
+    // spd: 1.3
+  // }
 });
 
 const header = [
