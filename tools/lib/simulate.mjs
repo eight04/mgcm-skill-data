@@ -83,7 +83,7 @@ function getFinalMod(skill, skillInfo, turn) {
   for (let i = 0; i < turn; i++) {
     const s = skills.filter(s => !s.sleep).pop();
     s.sleep = s.cd;
-    addMod(finalMod, s.mod);
+    addMod(finalMod, s.mod, s.bonus);
     
     for (const s of skills) {
       if (s.sleep) s.sleep--;
@@ -115,12 +115,12 @@ function buildDress({
   };
 }
 
-function addMod(a, b) {
+function addMod(a, b, bonus) {
   for (const key in b) {
     if (a[key]) {
-      a[key] += b[key];
+      a[key] += b[key] * (100 + bonus) / 100;
     } else {
-      a[key] = b[key];
+      a[key] = b[key] * (100 + bonus) / 100;
     }
   }
 }
