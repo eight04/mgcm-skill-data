@@ -14,6 +14,14 @@ const STATUS_TABLE = {
   "抵抗": "rst"
 };
 
+const ELEMENT_TABLE = {
+  "火": "fire",
+  "水": "water",
+  "雷": "lightning",
+  "光": "light",
+  "闇": "dark"
+};
+
 const base = "https://appmedia.jp/magicami/3788680";
 const r = await fetch(base);
 const text = await r.text();
@@ -22,7 +30,6 @@ const urls = [...findIter(table, /<a [^>]*href='(\d+)/g)]
   .map(id => new URL(id, base).toString());
 
 const data = await Promise.all(urls.map(getDressInfo));
-// console.log(JSON.stringify(data, null, 2));
 console.log(YAML.stringify(data));
 
 function *findIter(text, re) {
@@ -31,17 +38,6 @@ function *findIter(text, re) {
     yield match[1];
   }
 }
-
-// function pickRandom(array, n) {
-  // const result = [];
-  // while (result.length < n) {
-    // const i = Math.floor(Math.random() * array.length);
-    // result.push(array[i]);
-    // array[i] = array[array.length - 1];
-    // array.pop();
-  // }
-  // return result;
-// }
 
 function throttle(cb) {
   const lock = rwlock.createLock({maxActiveReader: 5});
@@ -53,8 +49,6 @@ async function getDressInfo(url) {
   const text = await r.text();
   const $ = cheerio.load(text);
   
-  // debugger;
-  
   const result = {
     id: Number(url.match(/\d+$/)),
     name: $(".dress_img_wrapper img").attr("alt").split("_").pop()
@@ -63,6 +57,7 @@ async function getDressInfo(url) {
   // info
   const info = $("#1 ~ table").eq(0).find("td");
   result.rarity = info.eq(0).text();
+  result.element = ELEMENT_TABLE[info.eq(2).text()];
   result.pool = getPool(info.eq(-1).text());
   
   // status
