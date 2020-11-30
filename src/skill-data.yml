@@ -1,0 +1,642 @@
+- name: 武良穂スポーツユニ 丹
+  mods:
+    - atk: 3.8
+    - atk: 3.9
+- name: クッキングエプロン 丹
+  mods:
+    - atk: 4.184737618
+    - atk: 0
+- name: ホリデーカジュアル 丹
+  mods:
+    - atk: 3.885
+    - atk: 6.174
+- name: Magica2019 丹
+  mods:
+    - atk: 3.2
+    - atk: 0
+    - atk: 0
+- name: Magica1984 丹
+  mods:
+    - atk: 3.589472173
+    - atk: 2.194280658
+      hp: 0.15947329368553337
+- name: Magica2061 丹
+  mods:
+    - atk: 4.086253584
+    - atk: 5.578609778
+    - atk: 0
+- name: Magica2019 Evo 丹
+  mods:
+    - atk: 3.986479005
+    - atk: 0
+    - atk: 0
+- name: 艶女医白衣 丹
+  mods:
+    - atk: 3.588798347
+    - atk: 0
+    - atk: 5.980379903
+- name: エモい出ビキニ 丹
+  mods:
+    - atk: 4
+    - atk: 6.1
+    - atk: 4.4
+- name: 武良穂スポーツユニ 陽彩
+  mods:
+    - atk: 3.8
+    - atk: 4.4
+- name: クッキングエプロン 陽彩
+  mods:
+    - atk: 4.2
+    - atk: 5.8
+- name: ホリデーカジュアル 陽彩
+  mods:
+    - atk: 3.9
+    - atk: 6.2
+- name: Magica2019 陽彩
+  mods:
+    - atk: 3.18723609
+    - atk: 2.290577212
+    - atk: 0
+- name: Magica1984 陽彩
+  mods:
+    - atk: 3.588103935
+    - atk: 5.978972017
+    - atk: 3.787135041
+- name: Magica2061 陽彩
+  mods:
+    - atk: 4.095855521
+    - atk: 1.298612719
+      hp: 0.09986921190945483
+    - atk: 1.798602627
+      hp: 0.12978436992641743
+- name: Magica2019 Evo 陽彩
+  mods:
+    - atk: 4
+    - atk: 0
+    - atk: 3.2
+- name: デモンズスタイルアラクネ 陽彩
+  mods:
+    - atk: 4.3
+    - atk: 4.9
+    - atk: 0
+- name: 炎節わっしょい神輿 陽彩
+  mods:
+    - atk: 3.79560449
+    - atk: 1.999172844
+      def: 3.193827446
+    - atk: 0
+- name: †ハロウィッチ† 陽彩
+  mods:
+    - atk: 1.5960648176
+      hp: 0.15931771623358518
+    - atk: 5.18313312
+    - atk: 0
+- name: シブハロ↑ナイトコス 陽彩
+  mods:
+    - atk: 3.885638219
+    - atk: 3.188537367
+    - atk: 7.272555254
+- name: ラウンジウェア 蒼
+  mods:
+    - atk: 3.4
+- name: 武良穂スポーツユニ 蒼
+  mods:
+    - atk: 3.785
+    - atk: 4.98
+- name: クッキングエプロン 蒼
+  mods:
+    - atk: 4.2
+    - atk: 4.9
+- name: ホリデーカジュアル 蒼
+  mods:
+    - atk: 3.886343823
+    - atk: 5.48174168
+    - atk: 0
+- name: Magica2019 蒼
+  mods:
+    - atk: 3.189135467
+    - atk: 5.779933081
+    - atk: 9.867016452
+- name: Magica1984 蒼
+  mods:
+    - atk: 3.587840502
+    - atk: 5.182350101
+    - atk: 6.078961199
+- name: Magica2061 蒼
+  mods:
+    - atk: 4.094891995
+    - atk: 0
+      def: 4.595714164
+- name: Magica2019 Evo 蒼
+  mods:
+    - atk: 4
+    - atk: 3.9000000000000004
+    - atk: 7.5
+- name: デモンズスタイルアラクネ 蒼
+  mods:
+    - atk: 4.3
+    - atk: 4.2
+- name: 艶女医白衣 蒼
+  mods:
+    - atk: 3.588090169
+    - atk: 0
+    - atk: 2.380639135
+      hp: 0.2314581188
+- name: バカンスビキニ2019 蒼
+  mods:
+    - atk: 4.086316855
+    - atk: 0
+    - atk: 6.577436232
+- name: 灼熱野球ユニ 蒼
+  mods:
+    - atk: 3.983655172
+    - atk: 7.589124884
+    - atk: 6.379034484
+- name: オーセンティックメイド 蒼
+  mods:
+    - atk: 4.082802853
+    - atk: 5.974943761
+    - atk: 0
+- name: 武良穂スポーツユニ エリザ
+  mods:
+    - atk: 3.8
+    - atk: 4.3
+- name: クッキングエプロン エリザ
+  mods:
+    - atk: 4.18659065
+    - atk: 4.083648477
+- name: ホリデーカジュアル エリザ
+  mods:
+    - atk: 3.884
+    - atk: 5.382
+- name: Magica2019 エリザ
+  mods:
+    - atk: 3.187880807
+    - atk: 3.385458378
+    - atk: 3.78346777
+- name: Magica1984 エリザ
+  mods:
+    - atk: 3.6
+    - atk: 5.699999999999999
+    - atk: 5
+- name: Magica2061 エリザ
+  mods:
+    - atk: 4.085675874
+    - atk: 4.584324716
+    - atk: 5.879638209
+- name: デモンズスタイルアラクネ エリザ
+  mods:
+    - atk: 3.5
+    - atk: 0
+    - atk: 4.2
+- name: Magica2019 Evo エリザ
+  mods:
+    - atk: 3.983848531
+    - atk: 3.786281632
+    - atk: 8.066515041
+- name: モテカワ美少女戦士 エリザ
+  mods:
+    - atk: 3.8
+    - atk: 6.4
+- name: 艶女医白衣 エリザ
+  mods:
+    - atk: 3.589802131
+    - atk: 0
+    - atk: 7.212948273
+- name: 幻想秘湯天女 エリザ
+  mods:
+    - atk: 3.982839942
+    - atk: 5.974083039
+    - atk: 0
+- name: 格闘女神ISHTAR エリザ
+  mods:
+    - atk: 1.795223838
+      hp: 0.1591594884
+    - atk: 0
+    - atk: 4.438335521
+- name: 聖チャールズスポーツユニ はなび
+  mods:
+    - atk: 3.8
+    - atk: 5.8
+- name: クッキングエプロン はなび
+  mods:
+    - atk: 4.186867782
+    - atk: 4.186867782
+- name: ホリデーカジュアル はなび
+  mods:
+    - atk: 3.883781303
+    - atk: 3.782922144
+- name: Magica2019 はなび
+  mods:
+    - atk: 3.6892134
+    - atk: 5.381116395
+- name: Magica1984 はなび
+  mods:
+    - atk: 3.589440042
+    - atk: 5.581398279
+    - atk: 8.37560634
+- name: Magica2061 はなび
+  mods:
+    - atk: 4.096145509
+    - atk: 3.797081578
+    - atk: 4.995299401
+- name: Magica2019 Evo はなび
+  mods:
+    - atk: 3.987662874
+    - atk: 0
+    - atk: 5.367026496
+- name: デモンズスタイルアラクネ はなび
+  mods:
+    - atk: 4.3
+    - atk: 0
+    - atk: 4.4
+- name: 熱血応援☆チアガール はなび
+  mods:
+    - atk: 3.486882016
+    - atk: 0
+    - atk: 0
+- name: ウェスタンカウガール はなび
+  mods:
+    - atk: 4.085284335
+    - atk: 5.178915122
+    - atk: 0
+- name: 鬼魔愚零卍神特攻服 はなび
+  mods:
+    - atk: 1.899492144
+      hp: 0.1496605527
+    - atk: 0
+      hp: 0.3197941508
+    - atk: 0
+      hp: 0.2997098341
+- name: 聖チャールズスポーツユニ 依子
+  mods:
+    - atk: 3.785
+    - atk: 4.781
+- name: クッキングエプロン 依子
+  mods:
+    - atk: 4.2
+    - atk: 5.7
+- name: ホリデーカジュアル 依子
+  mods:
+    - atk: 3.8
+    - atk: 4.8
+- name: Magica2019 依子
+  mods:
+    - atk: 3.688946549
+    - atk: 5.083890458
+    - atk: 6.778622268
+- name: Magica1984 依子
+  mods:
+    - atk: 3.6
+    - atk: 6
+    - atk: 4.1
+- name: Magica2061 依子
+  mods:
+    - atk: 4.084457812
+    - atk: 1.195416065
+      spd: 28.39677375
+    - atk: 2.9906927727
+      spd: 31.37412087
+- name: デモンズスタイルアラクネ 依子
+  mods:
+    - atk: 3.5
+    - atk: 0
+    - atk: 3.1
+- name: Magica2019 Evo 依子
+  mods:
+    - atk: 3.986788436
+    - atk: 1.5957861666
+      def: 2.590523698
+    - atk: 2.38863123
+      def: 4.790307426
+- name: ギャルアーミー 依子
+  mods:
+    - atk: 4
+    - atk: 5.1
+    - atk: 0
+- name: 灼熱野球ユニ 依子
+  mods:
+    - atk: 4
+    - atk: 6
+    - atk: 4.8
+- name: 幻想秘湯天女 依子
+  mods:
+    - atk: 3.983923567
+    - atk: 5.579648408
+    - atk: 0
+- name: 有羽スポーツユニ いろは
+  mods:
+    - atk: 3.805323955
+    - atk: 5.280379224
+- name: クッキングエプロン いろは
+  mods:
+    - atk: 4.184
+    - atk: 4.183
+- name: ホリデーカジュアル いろは
+  mods:
+    - atk: 3.883151946
+    - atk: 0
+- name: Magica2019 いろは
+  mods:
+    - atk: 3.984
+    - atk: 3.586
+    - atk: 6.275
+- name: Magica1984 いろは
+  mods:
+    - atk: 3.8862154230000003
+    - atk: 4.182719266
+    - atk: 3.486514076
+- name: Magica2061 いろは
+  mods:
+    - atk: 4.084978763
+    - atk: 5.678332137
+    - atk: 4.285253254
+- name: Magica2019 Evo いろは
+  mods:
+    - atk: 4
+    - atk: 4
+    - atk: 4.6
+- name: デモンズスタイルアラクネ いろは
+  mods:
+    - atk: 4.283
+    - atk: 3.287
+- name: モテカワ美少女戦士 いろは
+  mods:
+    - atk: 3.1
+    - atk: 6.1
+- name: セーラースクール水着 いろは
+  mods:
+    - atk: 4
+    - atk: 5.4
+    - atk: 6.7
+- name: エモい出ビキニ いろは
+  mods:
+    - atk: 4
+    - atk: 0
+    - atk: 0
+- name: フラッフィーラビット いろは
+  mods:
+    - atk: 1.789
+    - atk: 3.686
+    - atk: 0
+- name: 有羽スポーツユニ 花織
+  mods:
+    - atk: 3.8
+    - atk: 0
+- name: クッキングエプロン 花織
+  mods:
+    - atk: 4.184231506
+    - atk: 0
+- name: ホリデーカジュアル 花織
+  mods:
+    - atk: 3.887047666
+    - atk: 2.09546055
+      def: 1.379077712835933
+- name: Magica2019 花織
+  mods:
+    - atk: 3.982844376
+    - atk: 0
+    - atk: 3.783761058
+- name: Magica1984 花織
+  mods:
+    - atk: 3.8853681150000003
+    - atk: 2.788121711
+    - atk: 0
+- name: Magica2061 花織
+  mods:
+    - atk: 4.085709095
+    - atk: 2.89088263
+    - atk: 0
+- name: デモンズスタイルアラクネ 花織
+  mods:
+    - atk: 3.486149644
+    - atk: 0
+    - atk: 3.388019002
+- name: Magica2019 Evo 花織
+  mods:
+    - atk: 4
+    - atk: 4.8
+- name: モテカワ美少女戦士 花織
+  mods:
+    - atk: 3.8
+    - atk: 6.1
+    - atk: 4
+- name: セーラースクール水着 花織
+  mods:
+    - atk: 4
+    - atk: 0
+    - atk: 4.3
+- name: フラッフィーラビット 花織
+  mods:
+    - atk: 1.8
+    - atk: 7.4
+- name: 熱血応援☆チアガール 花織
+  mods:
+    - atk: 3.487466656
+    - atk: 0
+    - atk: 4.384048754
+- name: エンシェントウィズダム 花織
+  mods:
+    - atk: 3.984064715
+    - atk: 0
+    - atk: 0
+- name: 鬼魔愚零卍神特攻服 花織
+  mods:
+    - atk: 1.9
+      hp: 0.15
+    - atk: 0
+      hp: 0.32
+    - atk: 0
+      hp: 0.3
+- name: ラウンジウェア ここあ
+  mods:
+    - atk: 3.3
+- name: 有羽スポーツユニ ここあ
+  mods:
+    - atk: 3.8
+    - atk: 4.5
+- name: クッキングエプロン ここあ
+  mods:
+    - atk: 4.2
+    - atk: 0
+- name: ホリデーカジュアル ここあ
+  mods:
+    - atk: 3.9
+    - atk: 5.7
+- name: Magica2019 ここあ
+  mods:
+    - atk: 3.983355874
+    - atk: 4.580265873
+    - atk: 0
+- name: Magica1984 ここあ
+  mods:
+    - atk: 3.9000000000000004
+    - atk: 5.8
+- name: Magica2061 ここあ
+  mods:
+    - atk: 4.086331609
+    - atk: 4.18789939
+    - atk: 5.481510725
+- name: Magica2019 Evo ここあ
+  mods:
+    - atk: 3.985856127
+    - atk: 8.071775586
+    - atk: 4.284738111
+- name: セーラースクール水着 ここあ
+  mods:
+    - atk: 4
+    - atk: 5.4
+    - atk: 4.2
+- name: 灼熱野球ユニ ここあ
+  mods:
+    - atk: 4
+    - atk: 6
+    - atk: 7.6
+- name: 聖チャールズスポーツユニ りり
+  mods:
+    - atk: 3.786920663
+    - atk: 8.372708589
+- name: クッキングエプロン りり
+  mods:
+    - atk: 4.2
+    - atk: 5.6
+- name: ホリデーカジュアル りり
+  mods:
+    - atk: 3.885473757
+    - atk: 5.977651934
+- name: Magica2019 りり
+  mods:
+    - atk: 3.687664829
+    - atk: 7.175460701
+- name: Magica1984 りり
+  mods:
+    - atk: 3.587932649
+    - atk: 4.883291426
+    - atk: 3.886495857
+- name: Magica2061 りり
+  mods:
+    - atk: 4.085006562
+    - atk: 0
+    - atk: 1.0975619
+      hp: 0.1494330022
+- name: デモンズスタイルアラクネ りり
+  mods:
+    - atk: 3.489216508
+    - atk: 0
+    - atk: 1.295432511
+      spd: 9.972495022
+- name: Magica2019 Evo りり
+  mods:
+    - atk: 3.985
+    - atk: 7.47
+    - atk: 4.183
+- name: ギャルアーミー りり
+  mods:
+    - atk: 4
+    - atk: 5.1
+    - atk: 5.1
+- name: バカンスビキニ2019 りり
+  mods:
+    - atk: 4.085992965
+    - atk: 3.687324402
+    - atk: 5.0844274380000005
+- name: 鬼魔愚零卍神特攻服 りり
+  mods:
+    - atk: 1.898687474
+      hp: 0.1497319685
+    - atk: 0
+      hp: 0.2097638491
+    - atk: 0
+- name: 聖チャールズスポーツユニ マリアンヌ
+  mods:
+    - atk: 3.8
+    - atk: 0
+- name: クッキングエプロン マリアンヌ
+  mods:
+    - atk: 4.185391302
+    - atk: 0
+- name: ホリデーカジュアル マリアンヌ
+  mods:
+    - atk: 3.8
+    - atk: 0
+- name: Magica2019 マリアンヌ
+  mods:
+    - atk: 3.684968429
+    - atk: 0
+    - atk: 3.087784366
+- name: Magica1984 マリアンヌ
+  mods:
+    - atk: 3.6
+    - atk: 0
+    - atk: 0
+- name: Magica2061 マリアンヌ
+  mods:
+    - atk: 4.1
+    - atk: 0
+- name: デモンズスタイルアラクネ マリアンヌ
+  mods:
+    - atk: 3.488481364
+    - atk: 0
+- name: Magica2019 Evo マリアンヌ
+  mods:
+    - atk: 3.995472672
+    - atk: 0.9990502069
+      hp: 0.1198358825
+- name: モテカワ美少女戦士 マリアンヌ
+  mods:
+    - atk: 3.8
+    - atk: 6.4
+    - atk: 8
+- name: エモい出ビキニ マリアンヌ
+  mods:
+    - atk: 3.995453986
+    - atk: 6.092298092
+    - atk: 7.59015151
+- name: 有羽スポーツユニ セイラ
+  mods:
+    - atk: 3.787049348
+    - atk: 2.790642193
+- name: クッキングエプロン セイラ
+  mods:
+    - atk: 4.187097026
+    - atk: 4.584097345
+- name: ホリデーカジュアル セイラ
+  mods:
+    - atk: 3.9
+    - atk: 5.1
+- name: Magica2019 セイラ
+  mods:
+    - atk: 3.982596588
+    - atk: 6.47238784
+    - atk: 4.281546533
+- name: Magica1984 セイラ
+  mods:
+    - atk: 3.9000000000000004
+    - atk: 5.4
+    - atk: 4.1
+- name: Magica2061 セイラ
+  mods:
+    - atk: 4.084978763
+    - atk: 4.879310943
+    - atk: 5.479331206
+- name: Magica2019 Evo セイラ
+  mods:
+    - atk: 3.983
+    - atk: 5.279
+    - atk: 0
+- name: デモンズスタイルアラクネ セイラ
+  mods:
+    - atk: 4.284029215
+    - atk: 3.786140762
+    - atk: 4.186858896
+- name: バカンスビキニ2019 セイラ
+  mods:
+    - atk: 4.086572978
+    - atk: 3.68741573
+    - atk: 7.973875647
+- name: 熱血応援☆チアガール セイラ
+  mods:
+    - atk: 3.487350688
+    - atk: 0
+    - atk: 6.477174437
+

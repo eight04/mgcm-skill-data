@@ -1,4 +1,4 @@
-import {readFile} from "fs/promises";
+import {readFile, writeFile} from "fs/promises";
 import YAML from "yaml";
 
 import {getAllDresses} from "./lib/util.mjs";
