@@ -7,7 +7,7 @@ const allDresses = await getAllDresses();
 const result = await simulate({
   allDresses,
   allSkillMod: await getAllSkills(),
-  exclude: allDresses.filter(d => d.id > 3902806).map(d => d.name), // until real maid series
+  exclude: allDresses.filter(d => d.id > 4073257).map(d => d.name), // until real maid series
   maxLvDresses: allDresses.filter(isCommon).map(d => d.name)
   // maxLvDresses: allDresses.map(d => d.name),
   // ignoreElement: true,
