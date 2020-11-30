@@ -6,10 +6,16 @@ import SubdressSimulator from "./SubdressSimulator.svelte";
 <h1>MGCM Skill Data</h1>
 
 <details>
-  <summary>Dress Chooser</summary>
+  <summary>Wardrobe</summary>
   <DressChooser />
 </details>
 
-<h2>Subdress Simulator</h2>
+<details>
+  <summary>Subdress Simulator</summary>
+  <SubdressSimulator />
+</details>
 
-<SubdressSimulator />
+<details>
+  <summary>DPS Simulator</summary>
+  
+</details>

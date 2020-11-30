@@ -1,4 +1,6 @@
 <script>
+import DressTable from "./DressTable.svelte";
+
 import {NAMES as charNames} from "../tools/lib/chars.mjs";
 
 import {getStore} from "./store.mjs";
@@ -6,17 +8,27 @@ import {simulateSubDress} from "./simulate.mjs";
 
 const includedDresses = getStore("includedDresses", []);
 const maxLvDresses = getStore("maxLVDresses", []);
-let choosedDress;
-let focusOn;
+let choosedDress = $includedDresses[0];
+let focusOn = "dps";
+let ignoreElement = false;
+
 let result;
+let resultErr;
 
 async function simulate() {
-  result = await simulateSubDress({
-    includedDresses: $includedDresses,
-    maxLvDresses: $maxLvDresses,
-    mainDress: choosedDress,
-    focusOn
-  });
+  try {
+    result = await simulateSubDress({
+      includedDresses: $includedDresses,
+      maxLvDresses: $maxLvDresses,
+      mainDressName: choosedDress,
+      focusOn,
+      ignoreElement
+    });
+    resultErr = false;
+  } catch (err) {
+    result = err;
+    resultErr = true;
+  }
 }
 </script>
 
@@ -36,12 +48,27 @@ async function simulate() {
   <option value="fcs">FCS</option>
   <option value="rst">RST</option>
 </select>
+
+<input type="checkbox" bind:checked={ignoreElement} id="ignoreElement">
+<label for="ignoreElement">Ignore element</label>
+
 <button on:click={simulate}>Simulate</button>
 
 {#if result}
-  <div class="table">
-    <div class="header">
-      <div class="th"></div>
+  {#if resultErr}
+    <div class="result-err">
+      {String(result)}
     </div>
-  </div>
+  {:else}
+    <h3>Main</h3>
+    <DressTable dresses={[result.mainDress]}></DressTable>
+    <h3>Subs</h3>
+    <DressTable dresses={result.subDresses}></DressTable>
+  {/if}
 {/if}
+
+<style>
+.result-err {
+  color: red;
+}
+</style>
