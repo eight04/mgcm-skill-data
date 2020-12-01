@@ -3,7 +3,6 @@ import DressLink from "./DressLink.svelte";
 
 import {getStore} from "./store.mjs";
 import {simulateDps} from "./simulate.mjs";
-import {_d} from "./i18n.mjs";
 
 const includedDresses = getStore("includedDresses", []);
 const maxLvDresses = getStore("maxLVDresses", []);
