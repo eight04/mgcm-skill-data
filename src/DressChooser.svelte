@@ -24,7 +24,7 @@ function maxEvents() {
   maxLvDresses.set(
     allDressInfo
       .filter(d => included.has(d.name) &&
-        (current.has(d.jp) || d.pool === "event"))
+        (current.has(d.name) || d.pool === "event"))
       .map(d => d.name)
   );
 }
