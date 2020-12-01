@@ -22,7 +22,7 @@ export function simulateSubDress({
     buff
   });
   
-  const allSubs = [...getAllSubs(mainDress, allDresses, mod, orb, buff)]
+  const allSubs = [...getAllSubs(mainDress, allDresses, mod, orb, buff, true)]
     .sort(cmpScore)
     .reverse();
   
