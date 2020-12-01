@@ -4,7 +4,7 @@
   "description": "Skill data for Magicami online game",
   "main": "index.js",
   "scripts": {
-    "test": "eslint **/*.mjs",
+    "test": "eslint **/*.mjs **/*.svelte",
     "dev": "run-p start-dev build-dev",
     "build": "rollup -c",
     "build-dev": "rollup -cw",
@@ -37,6 +37,7 @@
     "@rollup/plugin-yaml": "^3.0.0",
     "cheerio": "^1.0.0-rc.3",
     "eslint": "^7.14.0",
+    "eslint-plugin-svelte3": "^2.7.3",
     "google-spreadsheet": "^3.0.13",
     "make-fetch-happen": "^8.0.10",
     "npm-run-all": "^4.1.5",

@@ -1,4 +1,6 @@
 <script>
+import {_d} from "./i18n.mjs";
+
 export let dresses;
 </script>
 
@@ -13,8 +15,8 @@ export let dresses;
   <tbody>
     {#each dresses as dress}
       <tr>
-        <td>{dress.dress.name}</td>
-        <td>{dress.orb.name}</td>
+        <td>{$_d(dress.dress.name)}</td>
+        <td>{dress.orb.name}{dress.ignoreElement ? "*" : ""}</td>
         <td class="align-right">{dress.score.toFixed(2)}</td>
       </tr>
     {/each}

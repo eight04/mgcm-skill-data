@@ -10,7 +10,6 @@ export function simulateSubDress({
   mainDressName,
   mainDress = allDresses.find(d => d.name === mainDressName),
   focusOn,
-  ignoreElement,
   orb,
   buff
 }) {
@@ -23,15 +22,7 @@ export function simulateSubDress({
     buff
   });
   
-  const allSubs = allDresses
-    .filter(d => d !== mainDress)
-    .map(dress => buildDress({
-      dress,
-      mod,
-      subRatio: getSubRatio(mainDress, dress, ignoreElement),
-      orb,
-      buff
-    }))
+  const allSubs = [...getAllSubs(mainDress, allDresses, mod, orb, buff)]
     .sort(cmpScore)
     .reverse();
   
@@ -40,6 +31,39 @@ export function simulateSubDress({
     mainDress: mainDressResult,
     subDresses: allSubs
   };
+}
+
+function *getAllSubs(mainDress, allDresses, mod, orb, buff, useSubEl) {
+  for (const dress of allDresses) {
+    if (dress === mainDress) continue;
+    
+    const build = ignoreElement => {
+      const r = buildDress({
+        dress,
+        mod,
+        subRatio: getSubRatio(mainDress, dress, ignoreElement),
+        orb,
+        buff
+      });
+      r.ignoreElement = ignoreElement;
+      return r;
+    };
+    
+    if (dress.rarity === "R") {
+      yield build(true);
+      continue;
+    }
+    
+    if (mainDress.element === dress.element) {
+      yield build(false);
+      continue;
+    }
+    
+    if (useSubEl) {
+      yield build(true);
+    }
+    yield build(false);
+  }
 }
 
 function simulateSkillMod(dress, turn = 5) {
@@ -51,7 +75,7 @@ function simulateSkillMod(dress, turn = 5) {
     cd: dress.skill[i].cd?.[1] || 1,
     bonus: dress.skill[i].bonus,
     sleep: 0
-  })).sort(compareSkill);
+  })).sort(cmpSkill);
   
   const finalMod = {};
   
@@ -78,7 +102,7 @@ function addMod(a, b, bonus) {
   }
 }
 
-function compareSkill(a, b) {
+function cmpSkill(a, b) {
   if (Object.keys(b).every(k => a[k] > b[k])) return 1;
   if (Object.keys(b).every(k => a[k] < b[k])) return -1;
   
@@ -100,22 +124,32 @@ export function simulateDps({
   for (const dress of allDresses) {
     if (!skillMap.has(dress.name)) continue;
     
-    const {mainDress, subDresses} = simulateSubDress({
-      allDresses,
-      mainDress: dress,
-      focusOn: "dps",
-      ignoreElement,
+    const mod = simulateSkillMod(dress);
+    const mainDress = buildDress({
+      dress,
+      mod,
       orb,
       buff
     });
-    
-    const subs = subDresses.slice(0, 4);
-    const subScore = subs.reduce((n, r) => n + r.score, 0);
+    const subs = [...getAllSubs(dress, allDresses, mod, orb, buff, ignoreElement)]
+      .sort(cmpScore)
+      .reverse();
+      
+    const subDresses = [];
+    const set = new Set;
+    for (const sub of subs) {
+      if (set.has(sub.dress.name)) continue;
+      set.add(sub.dress.name);
+      subDresses.push(sub);
+      if (subDresses.length >= 4) break;
+    }
+   
+    const subScore = subDresses.reduce((n, r) => n + r.score, 0);
     
     result.push({
       score: mainDress.score + subScore,
       mainDress,
-      subDresses: subs
+      subDresses
     });
   }
   

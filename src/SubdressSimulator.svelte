@@ -1,8 +1,6 @@
 <script>
 import DressTable from "./DressTable.svelte";
 
-import {NAMES as charNames} from "../tools/lib/chars.mjs";
-
 import {getStore} from "./store.mjs";
 import {simulateSubDress} from "./simulate.mjs";
 
@@ -10,7 +8,6 @@ const includedDresses = getStore("includedDresses", []);
 const maxLvDresses = getStore("maxLVDresses", []);
 let choosedDress = $includedDresses[0];
 let focusOn = "dps";
-let ignoreElement = false;
 
 let result;
 let resultErr;
@@ -21,11 +18,11 @@ async function simulate() {
       includedDresses: $includedDresses,
       maxLvDresses: $maxLvDresses,
       mainDressName: choosedDress,
-      focusOn,
-      ignoreElement
+      focusOn
     });
     resultErr = false;
   } catch (err) {
+    console.error(err);
     result = err;
     resultErr = true;
   }
@@ -49,9 +46,6 @@ async function simulate() {
   <option value="rst">RST</option>
 </select>
 
-<input type="checkbox" bind:checked={ignoreElement} id="ignoreElement">
-<label for="ignoreElement">Ignore element</label>
-
 <button on:click={simulate}>Simulate</button>
 
 {#if result}
@@ -63,6 +57,7 @@ async function simulate() {
     <h3>Main</h3>
     <DressTable dresses={[result.mainDress]}></DressTable>
     <h3>Subs</h3>
+    <div class="help">* = sub element orb</div>
     <DressTable dresses={result.subDresses}></DressTable>
   {/if}
 {/if}

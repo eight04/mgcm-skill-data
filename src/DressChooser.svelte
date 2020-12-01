@@ -1,41 +1,31 @@
 <script>
-import {derived} from "svelte/store";
-
-import allDresses from "./i18n-all-dresses.yml";
 import allDressInfo from "../dress-db.yml";
 
 import {getStore} from "./store.mjs";
 import {_d} from "./i18n.mjs";
 
-const dressMap = new Map(allDressInfo.map(d => [d.name, d]));
-
 const includedDresses = getStore("includedDresses", []);
-let includedDressObj;
-$: includedDressObj = derived(includedDresses, names => {
-  const set = new Set(names);
-  return allDresses.filter(d => set.has(d.jp));
-});
 const maxLvDresses = getStore("maxLVDresses", []);
-
-function isIncluded(dress) {
-  return includedDressSet.has(dress.jp);
-}
 
 function maxNR() {
   const current = new Set($maxLvDresses);
+  const included = new Set($includedDresses);
   maxLvDresses.set(
-    $includedDressObj
-      .filter(d => current.has(d.jp) || ["N", "R"].includes(dressMap.get(d.jp).rarity))
-      .map(d => d.jp)
+    allDressInfo
+      .filter(d => included.has(d.name) && 
+        (current.has(d.name) || ["N", "R"].includes(d.rarity)))
+      .map(d => d.name)
   );
 }
 
 function maxEvents() {
   const current = new Set($maxLvDresses);
+  const included = new Set($includedDresses);
   maxLvDresses.set(
-    $includedDressObj
-      .filter(d => current.has(d.jp) || dressMap.get(d.jp).pool === "event")
-      .map(d => d.jp)              
+    allDressInfo
+      .filter(d => included.has(d.name) &&
+        (current.has(d.jp) || d.pool === "event"))
+      .map(d => d.name)
   );
 }
 </script>
@@ -43,15 +33,15 @@ function maxEvents() {
 <div class="container">
   <label for="includedDresses" class="included-dress-label">Dresses you have</label>
   <select id="includedDresses" multiple bind:value={$includedDresses}>
-    {#each allDresses as dress (dress.jp)}
-      <option value={dress.jp}>{_d(dress)}</option>
+    {#each allDressInfo as dress}
+      <option value={dress.name}>{$_d(dress.name)}</option>
     {/each}
   </select>
   
   <label for="maxLvDresses">Dresses with max level</label>
   <select id="maxLvDresses" multiple bind:value={$maxLvDresses}>
-    {#each $includedDressObj as dress (dress.jp)}
-      <option value={dress.jp}>{_d(dress)}</option>
+    {#each $includedDresses as dressName}
+      <option value={dressName}>{$_d(dressName)}</option>
     {/each}
   </select>
   <div class="actions">
