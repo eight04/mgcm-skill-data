@@ -40,6 +40,10 @@ async function simulate() {
   }
   running = false;
 }
+
+function getOrbName(build) {
+  return `${build.orb.name}${build.ignoreElement ? "*" : ""}`;
+}
 </script>
 
 <label>
@@ -108,14 +112,16 @@ async function simulate() {
             <td>
               <DressLink dress={row.subDresses[0].dress}></DressLink>
             </td>
-            <td>{row.subDresses[0].orb.name}</td>
+            <td>
+              {getOrbName(row.subDresses[0])}
+            </td>
           </tr>
           {#each row.subDresses.slice(1) as sub}
             <tr>
               <td>
                 <DressLink dress={sub.dress}></DressLink>
               </td>
-              <td>{sub.orb.name}{sub.ignoreElement ? "*" : ""}</td>
+              <td>{getOrbName(sub)}</td>
             </tr>
           {/each}
         {/each}
