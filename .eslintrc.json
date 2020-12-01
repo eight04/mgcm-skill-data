@@ -22,5 +22,12 @@
       }
     }
   },
-  "parser": "@babel/eslint-parser"
+  "parser": "@babel/eslint-parser",
+  "plugins": ["svelte3"],
+  "overrides": [
+    {
+      "files": ["*.svelte"],
+      "processor": "svelte3/svelte3"
+    }
+  ]
 }

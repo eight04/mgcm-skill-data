@@ -1,0 +1,55 @@
+<script>
+import DressChooser from "./DressChooser.svelte";
+import SubdressSimulator from "./SubdressSimulator.svelte";
+import DPSSimulator from "./DPSSimulator.svelte";
+
+import {language} from "./i18n.mjs";
+</script>
+
+<h1>MGCM Skill Data</h1>
+
+<label>
+  Language
+  <select bind:value={$language}>
+    <option value="en">EN</option>
+    <option value="jp">JP</option>
+    <option value="tw">TW</option>
+  </select>
+</label>
+
+<details>
+  <summary>Wardrobe</summary>
+  <DressChooser />
+</details>
+
+<details>
+  <summary>Subdress Simulator</summary>
+  <SubdressSimulator />
+</details>
+
+<details>
+  <summary>DPS Simulator</summary>
+  <DPSSimulator />
+</details>
+
+<style>
+:global(body) {
+  font-size: 16px;
+  font-family: sans-serif;
+  margin: 2em;
+}
+:global(input), :global(button), :global(select) {
+  font-size: .95em;
+  font-family: inherit;
+  padding: .3em .6em;
+}
+details {
+  border: 2px solid silver;
+  padding: .6em;
+  margin: .2em 0;
+}
+summary {
+  padding: .6em;
+  cursor: pointer;
+}
+</style>
