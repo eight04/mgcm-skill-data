@@ -12,6 +12,10 @@ https://www.reddit.com/r/magicami/comments/ju4yj7/research_help_collect_skill_mo
   skill_modifier +status*ratio *hits
   ```
   其中 `+status*ratio` 不一定存在；`*hits` 為 1 時可能被省略。
+  
+這個 Repo 中也包括了一個副裝、DPS 的模擬器，可以用來尋找最合適的副裝，並且根據你所持有的角色排出 DPS Ranking︰
+
+https://eight04.github.io/mgcm-skill-data/
 
 傷害公式
 --------
