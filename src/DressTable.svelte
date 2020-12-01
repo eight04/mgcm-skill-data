@@ -1,5 +1,5 @@
 <script>
-import {_d} from "./i18n.mjs";
+import DressLink from "./DressLink.svelte";
 
 export let dresses;
 </script>
@@ -15,7 +15,9 @@ export let dresses;
   <tbody>
     {#each dresses as dress}
       <tr>
-        <td>{$_d(dress.dress.name)}</td>
+        <td>
+          <DressLink dress={dress.dress}></DressLink>
+        </td>
         <td>{dress.orb.name}{dress.ignoreElement ? "*" : ""}</td>
         <td class="align-right">{dress.score.toFixed(2)}</td>
       </tr>

@@ -1,4 +1,6 @@
 <script>
+import DressLink from "./DressLink.svelte";
+
 import {getStore} from "./store.mjs";
 import {simulateDps} from "./simulate.mjs";
 import {_d} from "./i18n.mjs";
@@ -100,14 +102,20 @@ async function simulate() {
           <tr>
             <td rowspan="4">{i + 1}</td>
             <td rowspan="4">{(row.score * 100 / maxScore).toFixed(2)}</td>
-            <td rowspan="4">{$_d(row.mainDress.dress.name)}</td>
+            <td rowspan="4">
+              <DressLink dress={row.mainDress.dress}></DressLink>
+            </td>
             <td rowspan="4">{row.mainDress.orb.name}</td>
-            <td>{$_d(row.subDresses[0].dress.name)}</td>
+            <td>
+              <DressLink dress={row.subDresses[0].dress}></DressLink>
+            </td>
             <td>{row.subDresses[0].orb.name}</td>
           </tr>
           {#each row.subDresses.slice(1) as sub}
             <tr>
-              <td>{$_d(sub.dress.name)}</td>
+              <td>
+                <DressLink dress={sub.dress}></DressLink>
+              </td>
               <td>{sub.orb.name}{sub.ignoreElement ? "*" : ""}</td>
             </tr>
           {/each}

@@ -3,6 +3,7 @@ import DressTable from "./DressTable.svelte";
 
 import {getStore} from "./store.mjs";
 import {simulateSubDress} from "./simulate.mjs";
+import {_d} from "./i18n.mjs";
 
 const includedDresses = getStore("includedDresses", []);
 const maxLvDresses = getStore("maxLVDresses", []);
@@ -31,7 +32,7 @@ async function simulate() {
 
 <select id="choosedDress" bind:value={choosedDress}>
   {#each $includedDresses as name}
-    <option value={name}>{name}</option>
+    <option value={name}>{$_d(name)}</option>
   {/each}
 </select>
 
