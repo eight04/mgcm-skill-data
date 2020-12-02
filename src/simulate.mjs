@@ -37,33 +37,21 @@ function *getAllSubs(mainDress, allDresses, mod, orb, buff, useSubEl) {
   for (const dress of allDresses) {
     if (dress === mainDress) continue;
     
-    const build = ignoreElement => {
-      const r = buildDress({
+    const build = subElement =>
+      buildDress({
         dress,
         mod,
-        subRatio: getSubRatio(mainDress, dress, ignoreElement),
-        subElement: ignoreElement,
+        subRatio: getSubRatio(mainDress, dress, subElement),
+        subElement,
         orbRarity: orb,
         buff
       });
-      r.ignoreElement = ignoreElement;
-      return r;
-    };
     
-    if (dress.rarity === "R") {
-      yield build(true);
-      continue;
-    }
-    
-    if (mainDress.element === dress.element) {
-      yield build(false);
-      continue;
-    }
-    
-    if (useSubEl) {
-      yield build(true);
-    }
     yield build(false);
+    
+    if (useSubEl && dress.rarity !== "R" && mainDress.element !== dress.element) {
+      yield build(true);
+    }
   }
 }
 
@@ -159,10 +147,10 @@ export function simulateDps({
     .reverse();
 }
 
-function getSubRatio(main, sub, ignoreElement = false) {
+function getSubRatio(main, sub, subElement) {
   return (20 +
     (getChar(main) === getChar(sub) ? 5 : 0) +
-    (main.element === sub.element || ignoreElement ? 5 : 0)) / 100;
+    (main.element === sub.element || subElement ? 5 : 0)) / 100;
 }
 
 function getChar(dress) {
@@ -289,20 +277,17 @@ function buildDress({
   orbRarity = "sr",
   buff = {}
 }) {
-  const subElementEffect = subElement || dress.rarity === "R";
   const orb = buildOrb({
     dress,
     rarity: orbRarity,
     mod,
     buff,
-    // there is no need to use sub element if it is R dress
-    subElement: dress.rarity === "R" ? false : subElement
+    subElement
   });
   return {
     score: (calcScore(dress, mod, buff) + orb.score) * subRatio,
     dress,
-    orb,
-    subElementEffect
+    orb
   };
 }
 
