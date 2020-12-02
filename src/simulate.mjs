@@ -153,7 +153,7 @@ export function simulateDps({
 function getSubRatio(main, sub, subElement) {
   return (20 +
     (getChar(main) === getChar(sub) ? 5 : 0) +
-    (main.element === sub.element || subElement ? 5 : 0)) / 100;
+    (main.element === sub.element || sub.rarity === "R" || subElement ? 5 : 0)) / 100;
 }
 
 function getChar(dress) {
