@@ -32,6 +32,10 @@ import {language} from "./i18n.mjs";
   <DPSSimulator />
 </details>
 
+<footer>
+  <a href="https://github.com/eight04/mgcm-skill-data">eight04/mgcm-skill-data</a>
+</footer>
+
 <style>
 :global(body) {
   font-size: 16px;
@@ -51,5 +55,9 @@ details {
 summary {
   padding: .6em;
   cursor: pointer;
+}
+footer {
+  text-align: right;
+  margin: 1.2em;
 }
 </style>
