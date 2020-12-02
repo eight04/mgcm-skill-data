@@ -93,6 +93,7 @@ function getOrbName(build) {
       <thead>
         <tr>
           <th>#</th>
+          <th>Score</th>
           <th>%</th>
           <th>Main</th>
           <th>Orb</th>
@@ -104,6 +105,7 @@ function getOrbName(build) {
         {#each result as row, i}
           <tr>
             <td rowspan="4">{i + 1}</td>
+            <td rowspan="4">{row.score.toFixed(2)}</td>
             <td rowspan="4">{(row.score * 100 / maxScore).toFixed(2)}</td>
             <td rowspan="4">
               <DressLink dress={row.mainDress.dress}></DressLink>
