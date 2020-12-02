@@ -25,12 +25,10 @@ doc.useApiKey("AIzaSyBmF9PBdznx-Dpxa2YOWWK6gcThwPFpLDM");
 await doc.loadInfo();
 const sheet = doc.sheetsByIndex[0];
 await sheet.loadCells("Q2:Z");
-await sheet.loadCells("AJ2:AL");
-const y = 1;
-const x = 16;
+await sheet.loadCells("AG2:AL");
 
-for (let i = y; i < sheet.rowCount; i++) {
-  const name = sheet.getCell(i, x);
+for (let i = 1; i < sheet.rowCount; i++) {
+  const name = sheet.getCell(i, aToIndex("Q"));
   
   if (!name.value) continue;
   
@@ -39,38 +37,36 @@ for (let i = y; i < sheet.rowCount; i++) {
   
   if (list.get(name.value)) continue;
   
-  // check if there are invalid data in [AJ,AL]
+  const skill = [];
   let invalid = false;
   for (let j = 0; j < 3; j++) {
-    const cell = sheet.getCell(i, 26 + 9 + j);
-    if (cell.value && cell.effectiveFormat.textFormat.underline) {
-      invalid = true;
-      break;
-    }
-  }
-  if (invalid) continue;
-  
-  const skill = [];
-  for (let j = 0; j < 3; j++) {
-    const hits = sheet.getCell(i, x + 1 + j * 3);
+    const hits = sheet.getCell(i, aToIndex("R") + j * 3);
     if (!hits.value) {
       skill.push(0);
       continue;
     }
-    const mod = sheet.getCell(i, x + 1 + j * 3 + 1);
-    // if (mod.effectiveFormat.textFormat.underline) {
-      // invalid = true;
-      // break;
-    // }
-    skill.push(
-      hits.value > 1 ?
-        `${mod.value} *${hits.value}` :
-      mod.value
-    );
+    
+    const mod = sheet.getCell(i, aToIndex("S") + j * 3);
+    const stat = sheet.getCell(i, aToIndex("AG") + j * 2);
+    const statName = getStatName(stat.value);
+    const statMod = sheet.getCell(i, aToIndex("AH") + j * 2);
+    
+    let result = mod.value;
+    if (statName) {
+      if (!statMod.value) {
+        invalid = true;
+        break;
+      }
+      result += ` +${statName}*${statMod.value}`;
+    }
+    if (hits.value > 1) {
+      result += ` *${hits.value}`;
+    }
+    skill.push(result);
   }
   
   if (
-    // invalid ||
+    invalid ||
     skill.every(s => s === 0) ||
     skill.some(s => s === null)
   ) continue;
@@ -80,4 +76,23 @@ for (let i = y; i < sheet.rowCount; i++) {
 
 for (const [name, list] of chars.entries()) {
   await writeFile(`data/${name}.yml`, YAML.stringify(Object.fromEntries(list)));
+}
+
+function getStatName(stat) {
+  if (!stat) return null;
+  const match = stat.toLowerCase().match(/^(self|target)\s+(\w+)$/i);
+  if (!match) return null;
+  if (match[1] === "self") {
+    return match[2];
+  }
+  return "target" + match[2][0].toUpperCase() + match[2].slice(1);
+}
+
+function aToIndex(s) {
+  s = s.toLowerCase();
+  let index = 0;
+  for (let i = 0; i < s.length; i++) {
+    index = index * 26 + s.charCodeAt(i) - 96;
+  }
+  return index - 1;
 }
