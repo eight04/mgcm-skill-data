@@ -70,7 +70,6 @@ async function simulate() {
     <h3>Main</h3>
     <DressTable dresses={[result.mainDress]}></DressTable>
     <h3>Subs</h3>
-    <div class="help">* = sub element orb</div>
     <DressTable dresses={result.subDresses}></DressTable>
   {/if}
 {/if}
