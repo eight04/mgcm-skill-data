@@ -18,7 +18,7 @@ export let dresses;
         <td>
           <DressLink dress={dress.dress}></DressLink>
         </td>
-        <td>{dress.orb.name}{dress.ignoreElement ? "*" : ""}</td>
+        <td>{dress.orb.name}</td>
         <td class="align-right">{dress.score.toFixed(2)}</td>
       </tr>
     {/each}

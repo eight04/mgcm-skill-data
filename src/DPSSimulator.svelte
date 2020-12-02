@@ -42,7 +42,7 @@ async function simulate() {
 }
 
 function getOrbName(build) {
-  return `${build.orb.name}${build.ignoreElement ? "*" : ""}`;
+  return build.orb.name;
 }
 </script>
 
