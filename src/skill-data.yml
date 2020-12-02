@@ -35,11 +35,21 @@
     - atk: 3.6
     - atk: 0
     - atk: 6
+- name: ギャルアーミー 丹
+  mods:
+    - atk: 4
+    - atk: 0
+    - atk: 5.5
 - name: エモい出ビキニ 丹
   mods:
     - atk: 4
     - atk: 6.1
     - atk: 4.4
+- name: 幻想秘湯天女 丹
+  mods:
+    - atk: 4
+    - atk: 0
+    - atk: 3
 - name: 武良穂スポーツユニ 陽彩
   mods:
     - atk: 3.8
@@ -85,6 +95,11 @@
     - atk: 2
       def: 3.2
     - atk: 0
+- name: オーセンティックメイド 陽彩
+  mods:
+    - atk: 4.1
+    - atk: 0
+    - atk: 4.3
 - name: †ハロウィッチ† 陽彩
   mods:
     - atk: 1.6
@@ -96,6 +111,16 @@
     - atk: 3.9
     - atk: 3.2
     - atk: 7.3
+- name: 幻想秘湯天女 陽彩
+  mods:
+    - atk: 4
+    - atk: 5.6
+    - atk: 0
+- name: ホーリーサンタ 陽彩
+  mods:
+    - atk: 3.2
+    - atk: 5.4
+    - atk: 4.6
 - name: ラウンジウェア 蒼
   mods:
     - atk: 3.4
@@ -210,6 +235,24 @@
     - atk: 0
     - atk: 3
       def: 5.1
+- name: エモい出ビキニ エリザ
+  mods:
+    - atk: 4
+    - atk: 2.6
+      hp: 0.24
+    - atk: 2.25
+      hp: 0.39
+- name: "姫会ドレス #リムパ エリザ"
+  mods:
+    - atk: 4.1
+    - atk: 1.8
+    - atk: 0
+- name: †ハロウィッチ† エリザ
+  mods:
+    - atk: 1.6
+      hp: 0.16
+    - atk: 5.2
+    - atk: 7.5
 - name: シブハロ↑ナイトコス エリザ
   mods:
     - atk: 3.9
@@ -261,6 +304,17 @@
   mods:
     - atk: 3.486882016
     - atk: 0
+    - atk: 0
+- name: 炎節わっしょい神輿 はなび
+  mods:
+    - atk: 3.8
+    - atk: 2
+      def: 3.2
+    - atk: 8
+- name: オーセンティックメイド はなび
+  mods:
+    - atk: 4.1
+    - atk: 6
     - atk: 0
 - name: ウェスタンカウガール はなび
   mods:
@@ -326,6 +380,11 @@
     - atk: 4
     - atk: 6
     - atk: 4.8
+- name: フラッフィーラビット 依子
+  mods:
+    - atk: 1.8
+    - atk: 3.7
+    - atk: 0
 - name: 幻想秘湯天女 依子
   mods:
     - atk: 4
@@ -386,6 +445,12 @@
     - atk: 1.8
     - atk: 3.7
     - atk: 0
+- name: †ハロウィッチ† いろは
+  mods:
+    - atk: 1.6
+      hp: 0.16
+    - atk: 5.2
+    - atk: 0
 - name: 有羽スポーツユニ 花織
   mods:
     - atk: 3.8
@@ -433,6 +498,12 @@
     - atk: 4
     - atk: 0
     - atk: 4.3
+- name: エモい出ビキニ 花織
+  mods:
+    - atk: 4
+    - atk: 6.1
+    - atk: 2
+      def: 2.1
 - name: フラッフィーラビット 花織
   mods:
     - atk: 1.8
@@ -442,6 +513,12 @@
     - atk: 3.5
     - atk: 0
     - atk: 4.4
+- name: †ハロウィッチ† 花織
+  mods:
+    - atk: 1.6
+      hp: 0.16
+    - atk: 4.2
+    - atk: 0
 - name: エンシェントウィズダム 花織
   mods:
     - atk: 4
@@ -499,6 +576,28 @@
     - atk: 4
     - atk: 6
     - atk: 7.6
+- name: 炎節わっしょい神輿 ここあ
+  mods:
+    - atk: 3.8
+    - atk: 4.8
+      hp: 0.48
+    - atk: 0
+- name: †ハロウィッチ† ここあ
+  mods:
+    - atk: 1.6
+      hp: 0.16
+    - atk: 0
+    - atk: 0
+- name: 幻想秘湯天女 ここあ
+  mods:
+    - atk: 4
+    - atk: 5.6
+    - atk: 11
+- name: ホーリーサンタ ここあ
+  mods:
+    - atk: 3.2
+    - atk: 5.4
+    - atk: 7.6
 - name: 聖チャールズスポーツユニ りり
   mods:
     - atk: 3.8
@@ -547,6 +646,15 @@
     - atk: 4.1
     - atk: 3.7
     - atk: 5.1
+- name: "姫会ドレス #リムパ りり"
+  mods:
+    - atk: 4.1
+    - atk: 7.6
+    - atk: 4.2
+- name: ブリュンヒルデ りり
+  mods:
+    - atk: 4.2
+    - atk: 0
 - name: 鬼魔愚零卍神特攻服 りり
   mods:
     - atk: 1.9
@@ -599,6 +707,10 @@
     - atk: 4
     - atk: 6.1
     - atk: 7.6
+- name: ブリュンヒルデ マリアンヌ
+  mods:
+    - atk: 4.2
+    - atk: 0
 - name: 有羽スポーツユニ セイラ
   mods:
     - atk: 3.8
@@ -636,14 +748,29 @@
     - atk: 4.3
     - atk: 3.8
     - atk: 4.199999999999999
+- name: モテカワ美少女戦士 セイラ
+  mods:
+    - atk: 3.8
+    - atk: 6.4
+    - atk: 5
+      targetHp: 0.2
 - name: バカンスビキニ2019 セイラ
   mods:
     - atk: 4.1
     - atk: 3.7
     - atk: 8
+- name: "姫会ドレス #リムパ セイラ"
+  mods:
+    - atk: 4.1
+    - atk: 1.8
+    - atk: 0
 - name: 熱血応援☆チアガール セイラ
   mods:
     - atk: 3.5
     - atk: 0
     - atk: 6.5
+- name: ブリュンヒルデ セイラ
+  mods:
+    - atk: 4.2
+    - atk: 8
 
