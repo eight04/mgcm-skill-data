@@ -10,7 +10,7 @@ export function simulateSubDress({
   mainDressName,
   mainDress = allDresses.find(d => d.name === mainDressName),
   focusOn,
-  orb,
+  orbRarity,
   buff
 }) {
   const mod = focusOn === "dps" ? simulateSkillMod(mainDress) : {[focusOn]: 1};
@@ -18,11 +18,11 @@ export function simulateSubDress({
   const mainDressResult = buildDress({
     dress: mainDress,
     mod,
-    orbRarity: orb,
+    orbRarity,
     buff
   });
   
-  const allSubs = [...getAllSubs(mainDress, allDresses, mod, orb, buff, true)]
+  const allSubs = [...getAllSubs(mainDress, allDresses, mod, orbRarity, buff, true)]
     .sort(cmpScore)
     .reverse();
   
@@ -172,10 +172,15 @@ function getChar(dress) {
 function buildOrb({dress, rarity, mod, buff, subElement}) {
   const suggestedEffects = Object.keys(mod).filter(t => !t.startsWith("target"));
   return [...generateOrbs(dress, rarity, suggestedEffects, subElement)]
-    .map(orb => ({
-      score: calcScore(orb.stats, mod, buff),
-      name: `${orb.mainEffect}${subElement ? "*" : ""} (${orb.subEffects.join(",")})`
-    }))
+    .map(orb => {
+      if (subElement) {
+        orb.subEffects.push("elm");
+      }
+      return {
+        score: calcScore(orb.stats, mod, buff),
+        name: `${orb.mainEffect} (${orb.subEffects.join(",")})`
+      };
+    })
     .sort(cmpScore)
     .pop();
 }
