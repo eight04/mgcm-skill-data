@@ -9,6 +9,7 @@ const includedDresses = getStore("includedDresses", []);
 const maxLvDresses = getStore("maxLVDresses", []);
 let choosedDress = $includedDresses[0];
 let focusOn = "dps";
+let orbRarity = "sr";
 
 let result;
 let resultErr;
@@ -19,7 +20,8 @@ async function simulate() {
       includedDresses: $includedDresses,
       maxLvDresses: $maxLvDresses,
       mainDressName: choosedDress,
-      focusOn
+      focusOn,
+      orbRarity
     });
     resultErr = false;
   } catch (err) {
@@ -36,16 +38,26 @@ async function simulate() {
   {/each}
 </select>
 
-<label for="focusOn">Focus on</label>
-<select id="focusOn" bind:value={focusOn}>
-  <option value="dps">DPS</option>
-  <option value="hp">HP</option>
-  <option value="atk">ATK</option>
-  <option value="def">DEF</option>
-  <option value="spd">SPD</option>
-  <option value="fcs">FCS</option>
-  <option value="rst">RST</option>
-</select>
+<label>
+  Orb rarity
+  <select bind:value={orbRarity}>
+    <option value="sr">SR</option>
+    <option value="ur">UR</option>
+  </select>
+</label>
+
+<label>
+  Focus on
+  <select id="focusOn" bind:value={focusOn}>
+    <option value="dps">DPS</option>
+    <option value="hp">HP</option>
+    <option value="atk">ATK</option>
+    <option value="def">DEF</option>
+    <option value="spd">SPD</option>
+    <option value="fcs">FCS</option>
+    <option value="rst">RST</option>
+  </select>
+</label>
 
 <button on:click={simulate}>Simulate</button>
 
@@ -58,7 +70,6 @@ async function simulate() {
     <h3>Main</h3>
     <DressTable dresses={[result.mainDress]}></DressTable>
     <h3>Subs</h3>
-    <div class="help">* = sub element orb</div>
     <DressTable dresses={result.subDresses}></DressTable>
   {/if}
 {/if}

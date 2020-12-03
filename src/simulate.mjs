@@ -1,6 +1,9 @@
 import dressDB from "../dress-db.yml";
 import skillData from "./skill-data.yml";
 
+import {calcScore, cmpScore} from "./simulate-util.mjs";
+import {buildOrb} from "./simulate-orb.mjs";
+
 const skillMap = new Map(skillData.map(s => [s.name, s]));
 
 export function simulateSubDress({
@@ -10,7 +13,7 @@ export function simulateSubDress({
   mainDressName,
   mainDress = allDresses.find(d => d.name === mainDressName),
   focusOn,
-  orb,
+  orbRarity,
   buff
 }) {
   const mod = focusOn === "dps" ? simulateSkillMod(mainDress) : {[focusOn]: 1};
@@ -18,11 +21,11 @@ export function simulateSubDress({
   const mainDressResult = buildDress({
     dress: mainDress,
     mod,
-    orb,
+    orbRarity,
     buff
   });
   
-  const allSubs = [...getAllSubs(mainDress, allDresses, mod, orb, buff, true)]
+  const allSubs = [...getAllSubs(mainDress, allDresses, mod, orbRarity, buff, true)]
     .sort(cmpScore)
     .reverse();
   
@@ -37,32 +40,21 @@ function *getAllSubs(mainDress, allDresses, mod, orb, buff, useSubEl) {
   for (const dress of allDresses) {
     if (dress === mainDress) continue;
     
-    const build = ignoreElement => {
-      const r = buildDress({
+    const build = subElement =>
+      buildDress({
         dress,
         mod,
-        subRatio: getSubRatio(mainDress, dress, ignoreElement),
-        orb,
+        subRatio: getSubRatio(mainDress, dress, subElement),
+        subElement,
+        orbRarity: orb,
         buff
       });
-      r.ignoreElement = ignoreElement;
-      return r;
-    };
     
-    if (dress.rarity === "R") {
-      yield build(true);
-      continue;
-    }
-    
-    if (mainDress.element === dress.element) {
-      yield build(false);
-      continue;
-    }
-    
-    if (useSubEl) {
-      yield build(true);
-    }
     yield build(false);
+    
+    if (useSubEl && dress.rarity !== "R" && mainDress.element !== dress.element) {
+      yield build(true);
+    }
   }
 }
 
@@ -128,7 +120,7 @@ export function simulateDps({
     const mainDress = buildDress({
       dress,
       mod,
-      orb,
+      orbRarity: orb,
       buff
     });
     const subs = [...getAllSubs(dress, allDresses, mod, orb, buff, ignoreElement)]
@@ -158,63 +150,36 @@ export function simulateDps({
     .reverse();
 }
 
-function getSubRatio(main, sub, ignoreElement = false) {
+function getSubRatio(main, sub, subElement) {
   return (20 +
     (getChar(main) === getChar(sub) ? 5 : 0) +
-    (main.element === sub.element || ignoreElement ? 5 : 0)) / 100;
+    (main.element === sub.element || sub.rarity === "R" || subElement ? 5 : 0)) / 100;
 }
 
 function getChar(dress) {
   return dress.name.split(" ").pop();
 }
 
-function buildOrb(dress, rarity, mod, buff) {
-  return [...generateOrbs(dress, rarity)]
-    .map(([name, p]) => ({
-      score: calcScore(p, mod, buff),
-      name
-    }))
-    .sort(cmpScore)
-    .pop();
-}
-
-const FLAT_ORBS = {
-  hp: [4240, 5220],
-  atk: [270, 345],
-  def: [270, 345],
-  spd: [45, 60],
-  fcs: [65, 80],
-  rst: [65, 80]
-};
-
-function *generateOrbs(dress, rarity = "sr") {
-  for (const stat of ["hp", "atk", "def"]) {
-    yield [`${stat}%`, {
-      [stat]: dress[stat] * (rarity === "ur" ? 0.65 : 0.5)
-    }];
-  }
-  for (const [stat, value] of Object.entries(FLAT_ORBS)) {
-    yield [stat, {[stat]: value[rarity === "ur" ? 1 : 0]}];
-  }
-}
-
 function buildDress({
   dress,
   mod, 
   subRatio = 1,
-  orb: orbRarity = "sr",
+  subElement = false,
+  orbRarity = "sr",
   buff = {}
 }) {
-  const orb = buildOrb(dress, orbRarity, mod, buff);
+  const orb = buildOrb({
+    dress,
+    rarity: orbRarity,
+    mod,
+    buff,
+    subElement
+  });
   return {
     score: (calcScore(dress, mod, buff) + orb.score) * subRatio,
     dress,
     orb
   };
-}
-
-function cmpScore(a, b) {
-  return a.score - b.score;
 }
 
 function getAllDresses(included, maxLv) {
@@ -236,12 +201,4 @@ function getAllDresses(included, maxLv) {
 
 function shallowCopy(obj) {
   return {...obj};
-}
-
-function calcScore(dress, mod, buff) {
-  let score = 0;
-  for (const stat in mod) {
-    score += (dress[stat] || 0) * mod[stat] * (buff[stat] || 1);
-  }
-  return score;
 }
