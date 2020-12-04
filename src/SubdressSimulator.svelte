@@ -49,7 +49,7 @@ async function simulate() {
 <label>
   Focus on
   <select id="focusOn" bind:value={focusOn}>
-    <option value="dps">DPS</option>
+    <option value="dps">DPT</option>
     <option value="hp">HP</option>
     <option value="atk">ATK</option>
     <option value="def">DEF</option>

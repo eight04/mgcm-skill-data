@@ -28,7 +28,7 @@ import {language} from "./i18n.mjs";
 </details>
 
 <details>
-  <summary>DPS Simulator</summary>
+  <summary>DPT Simulator</summary>
   <DPSSimulator />
 </details>
 

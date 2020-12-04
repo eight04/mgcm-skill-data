@@ -81,6 +81,10 @@ function simulateSkillMod(dress, turn = 5) {
     }
   }
   
+  for (const key in finalMod) {
+    finalMod[key] = finalMod[key] / turn;
+  }
+  
   return finalMod;
 }
 
