@@ -107,8 +107,11 @@ export function simulateDps({
   maxLvDresses,
   ignoreElement,
   orb,
-  buff
+  buff,
+  target = {}
 }) {
+  target = normalizeTarget(target);
+  
   const allDresses = getAllDresses(includedDresses, maxLvDresses);
   
   const result = [];
@@ -138,8 +141,10 @@ export function simulateDps({
    
     const subScore = subDresses.reduce((n, r) => n + r.score, 0);
     
+    const targetScore = calcScore(target, mod, buff);
+    
     result.push({
-      score: mainDress.score + subScore,
+      score: mainDress.score + subScore + targetScore,
       mainDress,
       subDresses
     });
@@ -148,6 +153,14 @@ export function simulateDps({
   return result
     .sort(cmpScore)
     .reverse();
+}
+
+function normalizeTarget(target) {
+  const result = {};
+  for (const key in target) {
+    result[`target${key[0].toUpperCase()}${key.slice(1)}`] = target[key];
+  }
+  return result;
 }
 
 function getSubRatio(main, sub, subElement) {

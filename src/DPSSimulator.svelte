@@ -10,6 +10,7 @@ const maxLvDresses = getStore("maxLVDresses", []);
 let ignoreElement = false;
 let orbRarity = "sr";
 let buff = [];
+let target = {hp: 0};
 
 let running = false;
 let result;
@@ -30,7 +31,8 @@ async function simulate() {
       maxLvDresses: $maxLvDresses,
       ignoreElement,
       orb: orbRarity,
-      buff: Object.fromEntries(buff.map(b => [b, BUFF_VALUE[b]]))
+      buff: Object.fromEntries(buff.map(b => [b, BUFF_VALUE[b]])),
+      target
     });
     resultErr = false;
     maxScore = result[0].score;
@@ -79,7 +81,12 @@ function getOrbName(build) {
   </label>
 </div>
 
-<div class="action">
+<label>
+  Target HP
+  <input type="number" bind:value={target.hp}>
+</label>
+
+<div class="actions">
   <button on:click={simulate} disabled={running}>Simulate</button>
 </div>
 
@@ -160,7 +167,7 @@ th, td {
 .radio-title {
   margin: .3em 0;
 }
-.radio-group {
+.radio-group, .actions {
   margin: .6em 0;
 }
 li {
