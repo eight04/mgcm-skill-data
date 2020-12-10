@@ -1,10 +1,8 @@
 import dressDB from "../dress-db.yml";
-import skillData from "./skill-data.yml";
 
 import {calcScore, cmpScore} from "./simulate-util.mjs";
 import {buildOrb} from "./simulate-orb.mjs";
-
-const skillMap = new Map(skillData.map(s => [s.name, s]));
+import {simulateSkillMod, skillMap} from "./simulate-skill.mjs";
 
 export function simulateSubDress({
   includedDresses,
@@ -16,7 +14,7 @@ export function simulateSubDress({
   orbRarity,
   buff
 }) {
-  const mod = focusOn === "dps" ? simulateSkillMod(mainDress) : {[focusOn]: 1};
+  const mod = focusOn === "dps" ? simulateSkillMod({dress: mainDress}) : {[focusOn]: 1};
   
   const mainDressResult = buildDress({
     dress: mainDress,
@@ -58,54 +56,6 @@ function *getAllSubs(mainDress, allDresses, mod, orb, buff, useSubEl) {
   }
 }
 
-function simulateSkillMod(dress, turn = 5) {
-  const skill = skillMap.get(dress.name);
-  if (!skill) throw new Error(`missing skill data for ${dress.name}`);
-
-  const skills = skill.mods.map((mod, i) => ({
-    mod,
-    cd: dress.skill[i].cd?.[1] || 1,
-    bonus: dress.skill[i].bonus,
-    sleep: 0
-  })).sort(cmpSkill);
-  
-  const finalMod = {};
-  
-  for (let i = 0; i < turn; i++) {
-    const s = skills.filter(s => !s.sleep).pop();
-    s.sleep = s.cd;
-    addMod(finalMod, s.mod, s.bonus);
-    
-    for (const s of skills) {
-      if (s.sleep) s.sleep--;
-    }
-  }
-  
-  for (const key in finalMod) {
-    finalMod[key] = finalMod[key] / turn;
-  }
-  
-  return finalMod;
-}
-
-function addMod(a, b, bonus) {
-  for (const key in b) {
-    if (a[key]) {
-      a[key] += b[key] * (100 + bonus) / 100;
-    } else {
-      a[key] = b[key] * (100 + bonus) / 100;
-    }
-  }
-}
-
-function cmpSkill(a, b) {
-  if (Object.keys(b).every(k => a[k] > b[k])) return 1;
-  if (Object.keys(b).every(k => a[k] < b[k])) return -1;
-  
-  // FIXME: is this the best way to choose skill?
-  return a.cd - b.cd;
-}
-
 export function simulateDps({
   includedDresses,
   maxLvDresses,
@@ -123,7 +73,12 @@ export function simulateDps({
   for (const dress of allDresses) {
     if (!skillMap.has(dress.name)) continue;
     
-    const mod = simulateSkillMod(dress);
+    const mod = simulateSkillMod({
+      dress, 
+      targetDef: target.targetDef,
+      targetElement: target.targetElement,
+      buff
+    });
     const mainDress = buildDress({
       dress,
       mod,

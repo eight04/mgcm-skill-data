@@ -8,7 +8,7 @@ export async function getAllDresses() {
 }
 
 export async function getAllSkills() {
-  const allSkills = [];
+  const allSkills = new Map;
   for (const name of NAMES) {
     const map = YAML.parse(await readFile(`data/${name}.yml`, "utf8"));
     for (const [dressName, skills] of Object.entries(map)) {
@@ -18,14 +18,41 @@ export async function getAllSkills() {
       ) {
         continue;
       }
-      allSkills.push({
+      allSkills.set(dressName, {
         name: dressName,
         mods: skills.map(parseSkill)
       });
     }
+    
+    let specialMap;
+    try {
+      specialMap = YAML.parse(await readFile(`data/${name}-special.yml`, "utf8"));
+    } catch (err) {
+      if (err.code === "ENOENT") {
+        continue;
+      }
+      throw err;
+    }
+    for (const [dressName, data] of Object.entries(specialMap)) {
+      if (!data) continue;
+      let passive, active;
+      if (Array.isArray(data)) {
+        active = data;
+      } else {
+        ({active, passive} = data);
+      }
+      const skill = allSkills.get(dressName);
+      if (!skill) continue;
+      
+      if (active) {
+        skill.special = active;
+      }
+      if (passive) {
+        skill.passive = passive;
+      }
+    }
   }
-  // console.log(skills.length);
-  return allSkills;
+  return [...allSkills.values()];
 }
 
 function parseSkill(text) {
