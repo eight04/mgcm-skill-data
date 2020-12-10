@@ -1,0 +1,15 @@
+Magica1984 ここあ:
+  passive:
+    critRate: 0.3
+    extraDamageOnCrit: 1.3
+灼熱野球ユニ ここあ:
+  - null
+  - null
+  - critRate: 999
+    missRate: 999
+玉藻前 ここあ:
+  passive:
+    element: superior
+  active:
+    - null
+    - ignoreDefRate: 1

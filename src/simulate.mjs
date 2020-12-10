@@ -52,7 +52,7 @@ function *getAllSubs(mainDress, allDresses, mod, orb, buff, useSubEl) {
     
     yield build(false);
     
-    if (useSubEl && dress.rarity !== "R" && mainDress.element !== dress.element) {
+    if (useSubEl && !isJoker(dress) && mainDress.element !== dress.element) {
       yield build(true);
     }
   }
@@ -170,7 +170,11 @@ function normalizeTarget(target) {
 function getSubRatio(main, sub, subElement) {
   return (20 +
     (getChar(main) === getChar(sub) ? 5 : 0) +
-    (main.element === sub.element || sub.rarity === "R" || subElement ? 5 : 0)) / 100;
+    (main.element === sub.element || isJoker(sub) || subElement ? 5 : 0)) / 100;
+}
+
+function isJoker(dress) {
+  return dress.rarity === "R" || /^Magica 2020 \S+$/.test(dress.name);
 }
 
 function getChar(dress) {
