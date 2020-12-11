@@ -11,7 +11,7 @@ const SPECIALS = {
   "ギャルアーミー 丹": [
     null,
     {
-      condBonus: ({targetDebuff}) => Object.keys(targetDebuff).length ? 1.5 : 1
+      condBonus: ({targetDebuff}) => targetDebuff.length ? 1.5 : 1
     }
   ],
   "ワイン娘 いろは": [
@@ -58,7 +58,7 @@ const SPECIALS = {
     condBonus: bonusByBuffNumber(0.1)
   },
   "デモンズスタイルレウコシア 丹": {
-    critRate: ({targetDebuff}) => Object.keys(targetDebuff).length ? 0 : 1
+    critRate: ({targetDebuff}) => targetDebuff.length ? 0 : 1
   }
 };
 
@@ -96,7 +96,7 @@ function bonusByBuffNumber(bonus) {
 }
 
 function bonusByTargetDebuff(bonus) {
-  return ({targetDebuff}) => Object.keys(targetDebuff).length * bonus + 1;
+  return ({targetDebuff}) => targetDebuff.length * bonus + 1;
 }
 
 const SUPER = {
@@ -173,29 +173,35 @@ function getSpecialBonus({
   buff = {},
   debuff = {},
   targetBuff = {},
-  targetDebuff = {}
+  targetDebuff = {length: 0}
 }) {
   const context = {buff, debuff, targetBuff, targetDebuff};
   
   const baseRate = BASE_RATE[
     special.element?.[0] ||
+    targetElement in BASE_RATE && targetElement ||
     getElementAffinity(element, targetElement)
   ];
   
   const r = {};
   for (const key in baseRate) {
-    r[key] = Math.min(Math.max(baseRate[key] + sum(special[key], context), 0), 1);
+    let value = baseRate[key] + sum(special[key], context);
+    if (key === "critRate" && buff.crit) {
+      value += 0.3;
+    }
+    r[key] = Math.min(Math.max(value, 0), 1);
   }
   
   const elementBonus = r.missRate * 0.7
     // FIXME: do they add up?
     + (1-r.missRate) * r.critRate * 1.5 * product(special.extraDamageOnCrit, context)
-    + (1-r.missRate) * (1-r.critRate) * r.heavyRate * 1.3;
+    + (1-r.missRate) * (1-r.critRate) * r.heavyRate * 1.3
+    + (1-r.missRate) * (1-r.critRate) * (1-r.heavyRate) * 1;
     
   const condBonus = product(special.condBonus, context);
     
   const defBonus = r.ignoreDefRate * 1 +
-    (1-r.ignoreDefRate) * (750 / (750 + targetDef));
+    (1-r.ignoreDefRate) * (750 / (750 + targetDef * (targetDebuff.def ? 0.3 : 1)));
     
   return elementBonus * condBonus * defBonus;
 }
@@ -250,12 +256,12 @@ export function simulateSkillMod({
   return finalMod;
 }
 
-function addMod(a, b, bonus) {
+function addMod(a, b, bonus, special) {
   for (const key in b) {
     if (a[key]) {
-      a[key] += b[key] * (100 + bonus) / 100;
+      a[key] += b[key] * (100 + bonus) / 100 * special;
     } else {
-      a[key] = b[key] * (100 + bonus) / 100;
+      a[key] = b[key] * (100 + bonus) / 100 * special;
     }
   }
 }

@@ -10,18 +10,14 @@ const maxLvDresses = getStore("maxLVDresses", []);
 let ignoreElement = false;
 let orbRarity = "sr";
 let buff = [];
-let target = {hp: 0};
+let target = {hp: 0, def: 0, element: "neutral"};
+let targetDebuff = [];
+let targetDebuffCut = 0;
 
 let running = false;
 let result;
 let resultErr;
 let maxScore;
-
-const BUFF_VALUE = {
-  atk: 1.5,
-  def: 1.7,
-  spd: 1.3
-};
 
 async function simulate() {
   running = true;
@@ -31,7 +27,8 @@ async function simulate() {
       maxLvDresses: $maxLvDresses,
       ignoreElement,
       orb: orbRarity,
-      buff: Object.fromEntries(buff.map(b => [b, BUFF_VALUE[b]])),
+      buff: Object.fromEntries(buff.map(b => [b, true])),
+      targetDebuff: [...targetDebuff, ...Array(targetDebuffCut).fill("cut")],
       target
     });
     resultErr = false;
@@ -79,11 +76,118 @@ function getOrbName(build) {
     <input type="checkbox" bind:group={buff} value="spd">
     SPD
   </label>
+  <label>
+    <input type="checkbox" bind:group={buff} value="crit">
+    Crit
+  </label>
+</div>
+
+<div class="radio-group">
+  <div class="radio-title">Target debuff</div>
+  <label>
+    <input type="checkbox" bind:group={targetDebuff} value="atk">
+    ATK
+  </label>
+  <label>
+    <input type="checkbox" bind:group={targetDebuff} value="def">
+    DEF
+  </label>
+  <label>
+    <input type="checkbox" bind:group={targetDebuff} value="spd">
+    SPD
+  </label>
+  <label>
+    <input type="checkbox" bind:group={targetDebuff} value="fcs">
+    FCS
+  </label>
+  <label>
+    <input type="checkbox" bind:group={targetDebuff} value="rst">
+    RST
+  </label>
+  <label>
+    <input type="checkbox" bind:group={targetDebuff} value="taunt">
+    Taunt
+  </label>
+  <label>
+    <input type="checkbox" bind:group={targetDebuff} value="noRecovery">
+    No recovery
+  </label>
+  <label>
+    <input type="checkbox" bind:group={targetDebuff} value="noBuff">
+    No buff
+  </label>
+  <label>
+    Cut
+    <input type="number" bind:value={targetDebuffCut} />
+  </label>
+  <label>
+    <input type="checkbox" bind:group={targetDebuff} value="sleep">
+    Sleep
+  </label>
+  <label>
+    <input type="checkbox" bind:group={targetDebuff} value="stun">
+    Stun
+  </label>
+  <label>
+    <input type="checkbox" bind:group={targetDebuff} value="oblivion">
+    Oblivion
+  </label>
+  <label>
+    <input type="checkbox" bind:group={targetDebuff} value="miss">
+    Miss rate
+  </label>
+  <label>
+    <input type="checkbox" bind:group={targetDebuff} value="silence">
+    Silence
+  </label>
+  <label>
+    <input type="checkbox" bind:group={targetDebuff} value="burn">
+    Burn
+  </label>
+  <label>
+    <input type="checkbox" bind:group={targetDebuff} value="shock">
+    Shock
+  </label>
+  <label>
+    <input type="checkbox" bind:group={targetDebuff} value="freeze">
+    Freeze
+  </label>
+  <label>
+    <input type="checkbox" bind:group={targetDebuff} value="seal">
+    Seal
+  </label>
+  <label>
+    <input type="checkbox" bind:group={targetDebuff} value="confusion">
+    Confusion
+  </label>
+  <label>
+    <input type="checkbox" bind:group={targetDebuff} value="poison">
+    Poison
+  </label>
 </div>
 
 <label>
   Target HP
   <input type="number" bind:value={target.hp}>
+</label>
+
+<label>
+  Target DEF
+  <input type="number" bind:value={target.def}>
+</label>
+
+<label>
+  Target element
+  <select bind:value={target.element}>
+    <option value="fire">Fire</option>
+    <option value="lightning">Lightning</option>
+    <option value="water">Water</option>
+    <option value="dark">Dark</option>
+    <option value="light">Light</option>
+    <option value="neutral">Neutral</option>
+    <option value="superior">Always superior</option>
+    <option value="inferior">Always inferior</option>
+  </select>
 </label>
 
 <div class="actions">
@@ -146,8 +250,8 @@ function getOrbName(build) {
     <li>Simulate 5 turns and calculate average damage.</li>
     <li>Try to use the skill with highest modifier or longest CD.</li>
     <li>All skills are lv. max.</li>
-    <li>Conditional bonus are not calculated e.g. <a href="https://appmedia.jp/magicami/3790342">Magica2061 はなび</a>.</li>
-    <li>Critical/Heavy blow rate increase are not considered e.g. <a href="https://appmedia.jp/magicami/3790402">デモンズスタイルアラクネ いろは</a>, <a href="https://appmedia.jp/magicami/3790336">Magica2061 エリザ</a>.</li>
+    <li>Conditional bonus are calculated e.g. <a href="https://appmedia.jp/magicami/3790342">Magica2061 はなび</a>.</li>
+    <li>Critical/Heavy blow rate increase are considered e.g. <a href="https://appmedia.jp/magicami/3790402">デモンズスタイルアラクネ いろは</a>, <a href="https://appmedia.jp/magicami/3790336">Magica2061 エリザ</a>.</li>
   </ul>
 {/if}
 
@@ -169,6 +273,10 @@ th, td {
 }
 .radio-group, .actions {
   margin: .6em 0;
+}
+.radio-group label {
+  display: inline-block;
+  margin-right: .6em;
 }
 li {
   margin-top: .3em;

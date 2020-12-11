@@ -56,13 +56,24 @@ function *getAllSubs(mainDress, allDresses, mod, orb, buff, useSubEl) {
   }
 }
 
+function normalizeDebuff(arr) {
+  const result = {
+    length: arr.length
+  };
+  for (const key of arr) {
+    result[key] = (result[key] || 0) + 1;
+  }
+  return result;
+}
+
 export function simulateDps({
   includedDresses,
   maxLvDresses,
   ignoreElement,
   orb,
   buff,
-  target = {}
+  target = {},
+  targetDebuff
 }) {
   target = normalizeTarget(target);
   
@@ -77,7 +88,8 @@ export function simulateDps({
       dress, 
       targetDef: target.targetDef,
       targetElement: target.targetElement,
-      buff
+      buff,
+      targetDebuff: normalizeDebuff(targetDebuff)
     });
     const mainDress = buildDress({
       dress,
