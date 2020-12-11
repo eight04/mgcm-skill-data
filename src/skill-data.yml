@@ -121,6 +121,10 @@
     - atk: 3.2
     - atk: 5.4
     - atk: 4.6
+  special:
+    - null
+    - null
+    - critRate: 0.3
 - name: ラウンジウェア 蒼
   mods:
     - atk: 3.4
@@ -147,6 +151,11 @@
     - atk: 3.6
     - atk: 5.2
     - atk: 6.1
+  special:
+    - null
+    - null
+    - missRate: -999
+      critRate: 999
 - name: Magica2061 蒼
   mods:
     - atk: 4.1
@@ -215,6 +224,12 @@
     - atk: 4.1
     - atk: 4.6
     - atk: 5.9
+  special:
+    - null
+    - null
+    - missRate: -999
+      critRate: -999
+      heavyRate: 999
 - name: デモンズスタイルアラクネ エリザ
   mods:
     - atk: 3.5
@@ -225,6 +240,10 @@
     - atk: 4
     - atk: 3.8
     - atk: 8.1
+  special:
+    - null
+    - missRate: -999
+    - critRate: 0.7
 - name: モテカワ美少女戦士 エリザ
   mods:
     - atk: 3.8
@@ -295,6 +314,10 @@
     - atk: 4
     - atk: 0
     - atk: 5.4
+  special:
+    - null
+    - null
+    - ignoreDefRate: 0.5
 - name: デモンズスタイルアラクネ はなび
   mods:
     - atk: 4.3
@@ -385,6 +408,8 @@
     - atk: 1.8
     - atk: 3.7
     - atk: 0
+  special:
+    - ignoreDefRate: 1
 - name: 幻想秘湯天女 依子
   mods:
     - atk: 4
@@ -426,6 +451,12 @@
   mods:
     - atk: 4.3
     - atk: 3.3
+  special:
+    - null
+    - critRate: 0.5
+  passive:
+    critRate: 0.2
+    extraDamageOnCrit: 1.5
 - name: モテカワ美少女戦士 いろは
   mods:
     - atk: 3.1
@@ -445,6 +476,8 @@
     - atk: 1.8
     - atk: 3.7
     - atk: 0
+  special:
+    - ignoreDefRate: 1
 - name: †ハロウィッチ† いろは
   mods:
     - atk: 1.6
@@ -508,6 +541,8 @@
   mods:
     - atk: 1.8
     - atk: 7.4
+  special:
+    - ignoreDefRate: 1
 - name: 熱血応援☆チアガール 花織
   mods:
     - atk: 3.5
@@ -556,6 +591,9 @@
   mods:
     - atk: 3.9000000000000004
     - atk: 5.8
+  passive:
+    critRate: 0.3
+    extraDamageOnCrit: 1.3
 - name: Magica2061 ここあ
   mods:
     - atk: 4.1
@@ -576,6 +614,11 @@
     - atk: 4
     - atk: 6
     - atk: 7.6
+  special:
+    - null
+    - null
+    - critRate: 999
+      missRate: 999
 - name: 炎節わっしょい神輿 ここあ
   mods:
     - atk: 3.8
@@ -773,4 +816,6 @@
   mods:
     - atk: 4.2
     - atk: 8
+  passive:
+    missRate: -999
 

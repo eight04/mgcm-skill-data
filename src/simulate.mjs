@@ -1,10 +1,8 @@
 import dressDB from "../dress-db.yml";
-import skillData from "./skill-data.yml";
 
 import {calcScore, cmpScore} from "./simulate-util.mjs";
 import {buildOrb} from "./simulate-orb.mjs";
-
-const skillMap = new Map(skillData.map(s => [s.name, s]));
+import {simulateSkillMod, skillMap} from "./simulate-skill.mjs";
 
 export function simulateSubDress({
   includedDresses,
@@ -16,7 +14,7 @@ export function simulateSubDress({
   orbRarity,
   buff
 }) {
-  const mod = focusOn === "dps" ? simulateSkillMod(mainDress) : {[focusOn]: 1};
+  const mod = focusOn === "dps" ? simulateSkillMod({dress: mainDress}) : {[focusOn]: 1};
   
   const mainDressResult = buildDress({
     dress: mainDress,
@@ -52,58 +50,20 @@ function *getAllSubs(mainDress, allDresses, mod, orb, buff, useSubEl) {
     
     yield build(false);
     
-    if (useSubEl && dress.rarity !== "R" && mainDress.element !== dress.element) {
+    if (useSubEl && !isJoker(dress) && mainDress.element !== dress.element) {
       yield build(true);
     }
   }
 }
 
-function simulateSkillMod(dress, turn = 5) {
-  const skill = skillMap.get(dress.name);
-  if (!skill) throw new Error(`missing skill data for ${dress.name}`);
-
-  const skills = skill.mods.map((mod, i) => ({
-    mod,
-    cd: dress.skill[i].cd?.[1] || 1,
-    bonus: dress.skill[i].bonus,
-    sleep: 0
-  })).sort(cmpSkill);
-  
-  const finalMod = {};
-  
-  for (let i = 0; i < turn; i++) {
-    const s = skills.filter(s => !s.sleep).pop();
-    s.sleep = s.cd;
-    addMod(finalMod, s.mod, s.bonus);
-    
-    for (const s of skills) {
-      if (s.sleep) s.sleep--;
-    }
+function normalizeBuff(arr) {
+  const result = {
+    length: arr.length
+  };
+  for (const key of arr) {
+    result[key] = (result[key] || 0) + 1;
   }
-  
-  for (const key in finalMod) {
-    finalMod[key] = finalMod[key] / turn;
-  }
-  
-  return finalMod;
-}
-
-function addMod(a, b, bonus) {
-  for (const key in b) {
-    if (a[key]) {
-      a[key] += b[key] * (100 + bonus) / 100;
-    } else {
-      a[key] = b[key] * (100 + bonus) / 100;
-    }
-  }
-}
-
-function cmpSkill(a, b) {
-  if (Object.keys(b).every(k => a[k] > b[k])) return 1;
-  if (Object.keys(b).every(k => a[k] < b[k])) return -1;
-  
-  // FIXME: is this the best way to choose skill?
-  return a.cd - b.cd;
+  return result;
 }
 
 export function simulateDps({
@@ -112,9 +72,12 @@ export function simulateDps({
   ignoreElement,
   orb,
   buff,
-  target = {}
+  target = {},
+  targetDebuff
 }) {
   target = normalizeTarget(target);
+  buff = normalizeBuff(buff);
+  targetDebuff = normalizeBuff(targetDebuff);
   
   const allDresses = getAllDresses(includedDresses, maxLvDresses);
   
@@ -123,7 +86,13 @@ export function simulateDps({
   for (const dress of allDresses) {
     if (!skillMap.has(dress.name)) continue;
     
-    const mod = simulateSkillMod(dress);
+    const mod = simulateSkillMod({
+      dress, 
+      targetDef: target.targetDef,
+      targetElement: target.targetElement,
+      buff,
+      targetDebuff
+    });
     const mainDress = buildDress({
       dress,
       mod,
@@ -170,7 +139,11 @@ function normalizeTarget(target) {
 function getSubRatio(main, sub, subElement) {
   return (20 +
     (getChar(main) === getChar(sub) ? 5 : 0) +
-    (main.element === sub.element || sub.rarity === "R" || subElement ? 5 : 0)) / 100;
+    (main.element === sub.element || isJoker(sub) || subElement ? 5 : 0)) / 100;
+}
+
+function isJoker(dress) {
+  return dress.rarity === "R" || /^Magica 2020 \S+$/.test(dress.name);
 }
 
 function getChar(dress) {

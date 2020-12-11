@@ -1,0 +1,15 @@
+デモンズスタイルアラクネ いろは:
+  passive:
+    critRate: 0.2
+    extraDamageOnCrit: 1.5
+  active:
+    - null
+    - critRate: 0.5
+フラッフィーラビット いろは:
+  - ignoreDefRate: 1
+デモンズスーツエンビ いろは:
+  - null
+  - null
+  - missRate: -999
+    critRate: 999
+    
