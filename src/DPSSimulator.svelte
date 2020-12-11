@@ -27,7 +27,7 @@ async function simulate() {
       maxLvDresses: $maxLvDresses,
       ignoreElement,
       orb: orbRarity,
-      buff: Object.fromEntries(buff.map(b => [b, true])),
+      buff,
       targetDebuff: [...targetDebuff, ...Array(targetDebuffCut).fill("cut")],
       target
     });
