@@ -50,6 +50,11 @@
     - atk: 4
     - atk: 0
     - atk: 3
+- name: ホーリーサンタ 丹
+  mods:
+    - atk: 3.2
+    - atk: 4
+    - atk: 0
 - name: 武良穂スポーツユニ 陽彩
   mods:
     - atk: 3.8
@@ -89,6 +94,14 @@
     - atk: 4.3
     - atk: 4.9
     - atk: 0
+- name: フラッフィーラビット 陽彩
+  mods:
+    - atk: 1.8
+    - atk: 2
+      def: 4.5
+    - atk: 0
+  special:
+    - ignoreDefRate: 1
 - name: 炎節わっしょい神輿 陽彩
   mods:
     - atk: 3.8
@@ -283,6 +296,14 @@
     - atk: 4
     - atk: 6
     - atk: 0
+- name: セクシートナカイ エリザ
+  mods:
+    - atk: 1.4
+      def: 2.6
+    - atk: 2.5
+      def: 2.8
+    - atk: 1.6
+      def: 3
 - name: 聖チャールズスポーツユニ はなび
   mods:
     - atk: 3.8
@@ -352,6 +373,11 @@
       hp: 0.32
     - atk: 0
       hp: 0.3
+- name: ホーリーサンタ はなび
+  mods:
+    - atk: 3.2
+    - atk: 5.4
+    - atk: 0
 - name: 聖チャールズスポーツユニ 依子
   mods:
     - atk: 3.8
@@ -483,6 +509,11 @@
     - atk: 1.6
       hp: 0.16
     - atk: 5.2
+    - atk: 0
+- name: ホーリーサンタ いろは
+  mods:
+    - atk: 3.2
+    - atk: 6
     - atk: 0
 - name: 有羽スポーツユニ 花織
   mods:
@@ -754,6 +785,14 @@
   mods:
     - atk: 4.2
     - atk: 0
+- name: セクシートナカイ マリアンヌ
+  mods:
+    - atk: 1.4
+      def: 2.6
+    - atk: 2.5
+      def: 2.8
+    - atk: 4.5
+      def: 4.5
 - name: 有羽スポーツユニ セイラ
   mods:
     - atk: 3.8
@@ -818,4 +857,12 @@
     - atk: 8
   passive:
     missRate: -999
+- name: セクシートナカイ セイラ
+  mods:
+    - atk: 1.4
+      def: 2.6
+    - atk: 2
+      def: 3.3
+    - atk: 0
+      def: 8
 

@@ -15,6 +15,7 @@ function formatDress(lang, dressName) {
   const charName = t.pop();
   const seriesName = t.join(" ");
   const dress = dressMap.get(seriesName);
+  if (!dress) return dressName;
   const char = charMap.get(charName);
   return `${dress[lang] || dress.jp} ${char[lang] || char.jp}`;
 }

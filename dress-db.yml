@@ -722,7 +722,7 @@
   name: クッキングエプロン セイラ
   rarity: R
   element: dark
-  pool: gacha
+  pool: story
   hp:
     - 3235
     - 8068
@@ -752,7 +752,7 @@
   name: クッキングエプロン ここあ
   rarity: R
   element: light
-  pool: gacha
+  pool: story
   hp:
     - 3290
     - 8205
@@ -782,7 +782,7 @@
   name: クッキングエプロン 陽彩
   rarity: R
   element: dark
-  pool: gacha
+  pool: story
   hp:
     - 2795
     - 6970
@@ -812,7 +812,7 @@
   name: クッキングエプロン 蒼
   rarity: R
   element: water
-  pool: gacha
+  pool: story
   hp:
     - 3180
     - 7930
@@ -842,7 +842,7 @@
   name: クッキングエプロン 丹
   rarity: R
   element: fire
-  pool: gacha
+  pool: story
   hp:
     - 3565
     - 8890
@@ -872,7 +872,7 @@
   name: クッキングエプロン エリザ
   rarity: R
   element: lightning
-  pool: gacha
+  pool: story
   hp:
     - 3125
     - 7793
@@ -1082,7 +1082,7 @@
   name: ホリデーカジュアル セイラ
   rarity: R
   element: dark
-  pool: gacha
+  pool: story
   hp:
     - 3180
     - 7930
@@ -1112,7 +1112,7 @@
   name: ホリデーカジュアル ここあ
   rarity: R
   element: light
-  pool: gacha
+  pool: story
   hp:
     - 3675
     - 9165
@@ -1142,7 +1142,7 @@
   name: ホリデーカジュアル 陽彩
   rarity: R
   element: dark
-  pool: gacha
+  pool: story
   hp:
     - 2905
     - 7245
@@ -1172,7 +1172,7 @@
   name: ホリデーカジュアル 蒼
   rarity: R
   element: water
-  pool: gacha
+  pool: story
   hp:
     - 2960
     - 7382
@@ -1202,7 +1202,7 @@
   name: ホリデーカジュアル 丹
   rarity: R
   element: fire
-  pool: gacha
+  pool: story
   hp:
     - 3235
     - 8068
@@ -1232,7 +1232,7 @@
   name: ホリデーカジュアル エリザ
   rarity: R
   element: lightning
-  pool: gacha
+  pool: story
   hp:
     - 2685
     - 6696
@@ -1838,7 +1838,7 @@
   name: Magica1984 セイラ
   rarity: SR
   element: dark
-  pool: gacha
+  pool: story
   hp:
     - 3400
     - 8479
@@ -1871,7 +1871,7 @@
   name: Magica1984 ここあ
   rarity: SR
   element: light
-  pool: gacha
+  pool: story
   hp:
     - 3345
     - 8342
@@ -1934,7 +1934,7 @@
   name: Magica1984 蒼
   rarity: SR
   element: water
-  pool: gacha
+  pool: story
   hp:
     - 3400
     - 8479
@@ -1967,7 +1967,7 @@
   name: Magica1984 丹
   rarity: SR
   element: fire
-  pool: gacha
+  pool: story
   hp:
     - 3675
     - 9165
@@ -2000,7 +2000,7 @@
   name: Magica1984 エリザ
   rarity: SR
   element: lightning
-  pool: gacha
+  pool: story
   hp:
     - 3345
     - 8342
@@ -2198,7 +2198,7 @@
   name: Magica2061 花織
   rarity: SR
   element: water
-  pool: gacha
+  pool: story
   hp:
     - 4115
     - 10262
@@ -2231,7 +2231,7 @@
   name: Magica2061 セイラ
   rarity: SR
   element: dark
-  pool: gacha
+  pool: story
   hp:
     - 3620
     - 9028
@@ -2264,7 +2264,7 @@
   name: Magica2061 ここあ
   rarity: SR
   element: light
-  pool: gacha
+  pool: story
   hp:
     - 3290
     - 8205
@@ -2330,7 +2330,7 @@
   name: Magica2061 蒼
   rarity: SR
   element: water
-  pool: gacha
+  pool: story
   hp:
     - 3235
     - 8068
@@ -2360,7 +2360,7 @@
   name: Magica2061 丹
   rarity: SR
   element: fire
-  pool: gacha
+  pool: story
   hp:
     - 3400
     - 8479
@@ -2393,7 +2393,7 @@
   name: Magica2061 エリザ
   rarity: SR
   element: lightning
-  pool: gacha
+  pool: story
   hp:
     - 3675
     - 9165
@@ -9684,5 +9684,166 @@
       cd:
         - 5
         - 3
+    - bonus: 0
+- id: 5727683
+  name: ホーリーサンタ2020 蒼
+  rarity: UR
+  element: fire
+  pool: gacha
+  hp:
+    - 3850
+    - 9601
+    - 11550
+  atk:
+    - 273
+    - 683
+    - 821
+  def:
+    - 183
+    - 458
+    - 550
+  spd:
+    - 60
+    - 96
+    - 108
+  fcs: 60
+  rst: 20
+  skill:
+    - bonus: 35
+    - bonus: 25
+      cd:
+        - 5
+        - 4
+    - bonus: 30
+      cd:
+        - 5
+        - 4
+    - bonus: 0
+- id: 5728133
+  name: ホーリーサンタ2020 エリザ
+  rarity: UR
+  element: lightning
+  pool: event
+  hp:
+    - 3935
+    - 9813
+    - 11805
+  atk:
+    - 227
+    - 567
+    - 681
+  def:
+    - 224
+    - 560
+    - 673
+  spd:
+    - 57
+    - 93
+    - 105
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 35
+    - bonus: 25
+      cd:
+        - 4
+        - 3
+    - bonus: 30
+      cd:
+        - 5
+        - 4
+- id: 5728151
+  name: ホーリーサンタ2020 依子
+  rarity: SR
+  element: light
+  pool: gacha
+  hp:
+    - 3500
+    - 8728
+    - 10500
+  atk:
+    - 241
+    - 602
+    - 724
+  def:
+    - 183
+    - 458
+    - 551
+  spd:
+    - 58
+    - 94
+    - 106
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 35
+    - bonus: 20
+      cd:
+        - 4
+        - 3
+    - bonus: 30
+      cd:
+        - 4
+        - 3
+- id: 5763836
+  name: 異世界レイヤーズⅡ マリアンヌ
+  rarity: UR
+  element: water
+  pool: gacha
+  hp:
+    - 3920
+    - 9776
+    - 11760
+  atk:
+    - 220
+    - 551
+    - 662
+  def:
+    - 231
+    - 578
+    - 695
+  spd:
+    - 61
+    - 97
+    - 109
+  fcs: 20
+  rst: 60
+  skill:
+    - bonus: 25
+    - bonus: 0
+      cd:
+        - 5
+        - 3
+    - bonus: 0
+    - bonus: 0
+- id: 5763917
+  name: 異世界レイヤーズⅡ セイラ
+  rarity: SR
+  element: lightning
+  pool: gacha
+  hp:
+    - 3625
+    - 9040
+    - 10875
+  atk:
+    - 180
+    - 449
+    - 540
+  def:
+    - 236
+    - 590
+    - 710
+  spd:
+    - 53
+    - 89
+    - 101
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 20
+      cd:
+        - 3
+        - 2
     - bonus: 0
 
