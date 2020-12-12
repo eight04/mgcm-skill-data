@@ -14,7 +14,8 @@ export function simulateSubDress({
   orbRarity,
   buff
 }) {
-  const mod = focusOn === "dps" ? simulateSkillMod({dress: mainDress}) : {[focusOn]: 1};
+  buff = normalizeBuff(buff);
+  const mod = focusOn === "dps" ? simulateSkillMod({dress: mainDress, buff}) : {[focusOn]: 1};
   
   const mainDressResult = buildDress({
     dress: mainDress,

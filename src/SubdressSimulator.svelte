@@ -1,5 +1,6 @@
 <script>
 import DressTable from "./DressTable.svelte";
+import BuffChooser from "./BuffChooser.svelte";
 
 import {getStore} from "./store.mjs";
 import {simulateSubDress} from "./simulate.mjs";
@@ -10,6 +11,7 @@ const maxLvDresses = getStore("maxLVDresses", []);
 let choosedDress = $includedDresses[0];
 let focusOn = "dps";
 let orbRarity = "sr";
+let buff = [];
 
 let result;
 let resultErr;
@@ -21,7 +23,8 @@ async function simulate() {
       maxLvDresses: $maxLvDresses,
       mainDressName: choosedDress,
       focusOn,
-      orbRarity
+      orbRarity,
+      buff
     });
     resultErr = false;
   } catch (err) {
@@ -32,32 +35,38 @@ async function simulate() {
 }
 </script>
 
-<select id="choosedDress" bind:value={choosedDress}>
-  {#each $includedDresses as name}
-    <option value={name}>{$_d(name)}</option>
-  {/each}
-</select>
-
-<label>
-  Orb rarity
-  <select bind:value={orbRarity}>
-    <option value="sr">SR</option>
-    <option value="ur">UR</option>
+<div class="input-group">
+  <select id="choosedDress" bind:value={choosedDress}>
+    {#each $includedDresses as name}
+      <option value={name}>{$_d(name)}</option>
+    {/each}
   </select>
-</label>
+  <label>
+    Orb rarity
+    <select bind:value={orbRarity}>
+      <option value="sr">SR</option>
+      <option value="ur">UR</option>
+    </select>
+  </label>
+  <label>
+    Focus on
+    <select id="focusOn" bind:value={focusOn}>
+      <option value="dps">DPT</option>
+      <option value="hp">HP</option>
+      <option value="atk">ATK</option>
+      <option value="def">DEF</option>
+      <option value="spd">SPD</option>
+      <option value="fcs">FCS</option>
+      <option value="rst">RST</option>
+    </select>
+  </label>
+</div>
 
-<label>
-  Focus on
-  <select id="focusOn" bind:value={focusOn}>
-    <option value="dps">DPT</option>
-    <option value="hp">HP</option>
-    <option value="atk">ATK</option>
-    <option value="def">DEF</option>
-    <option value="spd">SPD</option>
-    <option value="fcs">FCS</option>
-    <option value="rst">RST</option>
-  </select>
-</label>
+{#if focusOn === "dps"}
+  <div class="input-group">
+    <BuffChooser bind:buff={buff} />
+  </div>
+{/if}
 
 <button on:click={simulate}>Simulate</button>
 
@@ -77,5 +86,8 @@ async function simulate() {
 <style>
 .result-err {
   color: red;
+}
+.input-group {
+  margin: .6em 0;
 }
 </style>

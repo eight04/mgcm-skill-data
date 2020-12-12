@@ -1,5 +1,6 @@
 <script>
 import DressLink from "./DressLink.svelte";
+import BuffChooser from "./BuffChooser.svelte";
 
 import {getStore} from "./store.mjs";
 import {simulateDps} from "./simulate.mjs";
@@ -62,25 +63,7 @@ function getOrbName(build) {
   </label>
 </div>
 
-<div class="radio-group">
-  <div class="radio-title">Buff</div>
-  <label>
-    <input type="checkbox" bind:group={buff} value="atk">
-    ATK
-  </label>
-  <label>
-    <input type="checkbox" bind:group={buff} value="def">
-    DEF
-  </label>
-  <label>
-    <input type="checkbox" bind:group={buff} value="spd">
-    SPD
-  </label>
-  <label>
-    <input type="checkbox" bind:group={buff} value="crit">
-    Crit
-  </label>
-</div>
+<BuffChooser bind:buff={buff}></BuffChooser>
 
 <div class="radio-group">
   <div class="radio-title">Target debuff</div>
