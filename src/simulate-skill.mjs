@@ -208,7 +208,7 @@ function getSpecialBonus({
 
 export function simulateSkillMod({
   dress,
-  turn = 5,
+  turn: maxTurn = 5,
   targetElement,
   targetDef,
   buff,
@@ -220,6 +220,7 @@ export function simulateSkillMod({
   if (!skillData) throw new Error(`missing skill data for ${dress.name}`);
 
   const skills = skillData.map((s, i) => ({
+    index: i,
     mod: s.mod,
     cd: dress.skill[i].cd?.[1] || 1,
     bonus: dress.skill[i].bonus,
@@ -234,42 +235,112 @@ export function simulateSkillMod({
       debuff,
       targetBuff,
       targetDebuff
-    })
-  })).sort(cmpSkill);
+    }),
+    prefer: [],
+    cut: 0
+  })).reverse();
   
-  const finalMod = {};
-  
-  for (let i = 0; i < turn; i++) {
-    const usedSkill = skills.filter(s => s.sleep <= 0).pop();
-    usedSkill.sleep = usedSkill.cd;
-    addMod(finalMod, usedSkill.mod, usedSkill.bonus, usedSkill.specialBonus);
+  // FIXME: currently we only calculate `prefer` for 1cd skill. does it also work for other skills?
+  for (const skill of skills) {
+    if (skill.cd > 1) continue;
     
     for (const s of skills) {
-      s.sleep += usedSkill.recast - 1;
+      if (s !== skill && cmpSkill(s, skill) > 0) {
+        skill.prefer.push(s.index);
+      }
     }
   }
   
-  for (const key in finalMod) {
-    finalMod[key] = finalMod[key] / turn;
-  }
+  // if we use s1 while s2 is not in cd, add s2 to deadzone so we only generate rotation like
+  // 21112... instead of 12111...
+  let deadZone = new Set;
+  const results = [];
   
-  return finalMod;
+  search(0, Array(skills.length).fill(0), {}, []);
+  
+  return results;
+  
+  function search(turn, sleep, mod, history) {
+    if (turn >= maxTurn) {
+      for (let i = 0; i < results.length; i++) {
+        const r1 = cmpMod(mod, results[i].mod);
+        if (r1 > 0) {
+          results[i] = {history: history.slice(), mod};
+          return;
+        }
+        const r2 = cmpMod(results[i].mod, mod)
+        if (r2 > 0) {
+          return;
+        }
+        if (r1 === r2 && r1 === 0) return;
+      }
+      results.push({history: history.slice(), mod});
+      return;
+    }
+    
+    for (const skill of skills) {
+      if (sleep[skill.index] > 0) continue;
+      
+      if (skill.prefer.some(i => sleep[i] <= 0)) continue;
+      
+      let oldDeadZone;
+      if (skill.cd === 1) {
+        oldDeadZone = new Set(deadZone);
+        for (const s of skills) {
+          if (s === skill || sleep[s.index] > 0) continue;
+          deadZone.add(s.index);
+        }
+      }
+      
+      const newMod = addMod(mod, skill.mod, skill.bonus, skill.specialBonus);
+      const newSleep = sleep.slice();
+      newSleep[skill.index] = skill.cd;      
+      for (let i = 0; i < newSleep.length; i++) {
+        newSleep[i] += skill.recast - 1;
+      }
+      history.push(skill.index);
+      
+      search(turn + 1, newSleep, newMod, history);
+      
+      history.pop();
+      if (oldDeadZone) {
+        deadZone = oldDeadZone;
+      }
+    }
+  }
 }
 
 function addMod(a, b, bonus, special) {
+  const result = {...a};
   for (const key in b) {
-    if (a[key]) {
-      a[key] += b[key] * (100 + bonus) / 100 * special;
+    if (result[key]) {
+      result[key] += b[key] * (100 + bonus) / 100 * special;
     } else {
-      a[key] = b[key] * (100 + bonus) / 100 * special;
+      result[key] = b[key] * (100 + bonus) / 100 * special;
     }
   }
+  return result;
 }
 
 function cmpSkill(a, b) {
-  if (Object.keys(b).every(k => a[k] > b[k])) return 1;
-  if (Object.keys(b).every(k => a[k] < b[k])) return -1;
-  
-  // FIXME: is this the best way to choose skill?
-  return a.cd - b.cd;
+  const r = cmpMod(a.mod, b.mod);
+  if (r > 0 && a.cut >= b.cut) {
+    return 1;
+  }
+  if (r === 0 && a.cut > b.cut) {
+    return 1;
+  }
+  if (r === 0 && a.cut === b.cut) {
+    return 0;
+  }
+  return -1;
+}
+
+function cmpMod(a, b) {
+  let greater = false;
+  for (const key in b) {
+    if (!(key in a) || a[key] < b[key]) return -1;
+    if (a[key] > b[key]) greater = true;
+  }
+  return greater ? 1 : 0;
 }

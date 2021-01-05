@@ -4,6 +4,15 @@ import SubdressSimulator from "./SubdressSimulator.svelte";
 import DPSSimulator from "./DPSSimulator.svelte";
 
 import {language} from "./i18n.mjs";
+
+let subSim;
+let subSimEl;
+
+function openSub(e) {
+  subSim.setCustomMod(e.detail);
+  subSimEl.open = true;
+  subSimEl.scrollIntoView({behavior: "smooth"});
+}
 </script>
 
 <h1>MGCM Skill Data</h1>
@@ -22,14 +31,14 @@ import {language} from "./i18n.mjs";
   <DressChooser />
 </details>
 
-<details>
+<details bind:this={subSimEl}>
   <summary>Subdress Simulator</summary>
-  <SubdressSimulator />
+  <SubdressSimulator bind:this={subSim} />
 </details>
 
 <details>
-  <summary>DPT Simulator</summary>
-  <DPSSimulator />
+  <summary>Damage Simulator</summary>
+  <DPSSimulator on:openSub={openSub} />
 </details>
 
 <footer>

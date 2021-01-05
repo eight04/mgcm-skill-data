@@ -10,12 +10,11 @@ export function simulateSubDress({
   allDresses = getAllDresses(includedDresses, maxLvDresses),
   mainDressName,
   mainDress = allDresses.find(d => d.name === mainDressName),
-  focusOn,
   orbRarity,
-  buff
+  buff,
+  mod
 }) {
   buff = normalizeBuff(buff);
-  const mod = focusOn === "dps" ? simulateSkillMod({dress: mainDress, buff}) : {[focusOn]: 1};
   
   const mainDressResult = buildDress({
     dress: mainDress,
@@ -57,7 +56,7 @@ function *getAllSubs(mainDress, allDresses, mod, orb, buff, useSubEl) {
   }
 }
 
-function normalizeBuff(arr) {
+function normalizeBuff(arr = []) {
   const result = {
     length: arr.length
   };
@@ -74,7 +73,8 @@ export function simulateDps({
   orb,
   buff,
   target = {},
-  targetDebuff
+  targetDebuff,
+  turn
 }) {
   target = normalizeTarget(target);
   buff = normalizeBuff(buff);
@@ -87,46 +87,59 @@ export function simulateDps({
   for (const dress of allDresses) {
     if (!skillMap.has(dress.name)) continue;
     
-    const mod = simulateSkillMod({
+    for (const {history, mod} of simulateSkillMod({
+      turn,
       dress, 
       targetDef: target.targetDef,
       targetElement: target.targetElement,
       buff,
       targetDebuff
-    });
-    const mainDress = buildDress({
-      dress,
-      mod,
-      orbRarity: orb,
-      buff
-    });
-    const subs = [...getAllSubs(dress, allDresses, mod, orb, buff, ignoreElement)]
-      .sort(cmpScore)
-      .reverse();
+    })) {
+      const mainDress = buildDress({
+        dress,
+        mod,
+        orbRarity: orb,
+        buff
+      });
+      const subs = [...getAllSubs(dress, allDresses, mod, orb, buff, ignoreElement)]
+        .sort(cmpScore)
+        .reverse();
+        
+      const subDresses = [];
+      const set = new Set;
+      for (const sub of subs) {
+        if (set.has(sub.dress.name)) continue;
+        set.add(sub.dress.name);
+        subDresses.push(sub);
+        if (subDresses.length >= 4) break;
+      }
+     
+      const subScore = subDresses.reduce((n, r) => n + r.score, 0);
       
-    const subDresses = [];
-    const set = new Set;
-    for (const sub of subs) {
-      if (set.has(sub.dress.name)) continue;
-      set.add(sub.dress.name);
-      subDresses.push(sub);
-      if (subDresses.length >= 4) break;
+      const targetScore = calcScore(target, mod, buff);
+      
+      result.push({
+        score: mainDress.score + subScore + targetScore,
+        mainDress,
+        subDresses,
+        mod,
+        history
+      });
     }
-   
-    const subScore = subDresses.reduce((n, r) => n + r.score, 0);
-    
-    const targetScore = calcScore(target, mod, buff);
-    
-    result.push({
-      score: mainDress.score + subScore + targetScore,
-      mainDress,
-      subDresses
-    });
   }
+  
+  const set = new Set;
   
   return result
     .sort(cmpScore)
-    .reverse();
+    .reverse()
+    .filter(r => {
+      if (set.has(r.mainDress.dress.name)) {
+        return false;
+      }
+      set.add(r.mainDress.dress.name);
+      return true;
+    });
 }
 
 function normalizeTarget(target) {
