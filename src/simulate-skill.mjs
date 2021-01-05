@@ -283,6 +283,8 @@ export function simulateSkillMod({
       
       if (skill.prefer.some(i => sleep[i] <= 0)) continue;
       
+      if (deadZone.has(skill.index)) continue;
+      
       let oldDeadZone;
       if (skill.cd === 1) {
         oldDeadZone = new Set(deadZone);
