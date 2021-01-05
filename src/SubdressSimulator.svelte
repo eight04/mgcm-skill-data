@@ -9,12 +9,22 @@ import {_d} from "./i18n.mjs";
 const includedDresses = getStore("includedDresses", []);
 const maxLvDresses = getStore("maxLVDresses", []);
 let choosedDress = $includedDresses[0];
-let focusOn = "dps";
+let focusType = "stat";
+let focusOn = "atk";
 let orbRarity = "sr";
+let customMod = "";
 let buff = [];
 
 let result;
 let resultErr;
+
+export function setCustomMod({dressName, mod, buff: newBuff}) {
+  focusType = "mod";
+  customMod = JSON.stringify(mod, null, 2);
+  choosedDress = dressName;
+  buff = newBuff;
+  result = null;
+}
 
 async function simulate() {
   try {
@@ -24,6 +34,8 @@ async function simulate() {
       mainDressName: choosedDress,
       focusOn,
       orbRarity,
+      mod: focusType === "mod" ?
+        JSON.parse(customMod) : {[focusOn]: 1},
       buff
     });
     resultErr = false;
@@ -48,25 +60,41 @@ async function simulate() {
       <option value="ur">UR</option>
     </select>
   </label>
-  <label>
-    Focus on
-    <select id="focusOn" bind:value={focusOn}>
-      <option value="dps">DPT</option>
-      <option value="hp">HP</option>
-      <option value="atk">ATK</option>
-      <option value="def">DEF</option>
-      <option value="spd">SPD</option>
-      <option value="fcs">FCS</option>
-      <option value="rst">RST</option>
-    </select>
-  </label>
 </div>
 
-{#if focusOn === "dps"}
-  <div class="input-group">
-    <BuffChooser bind:buff={buff} />
+<div class="input-group">
+  <BuffChooser bind:buff={buff}></BuffChooser>
+</div>
+
+<div class="check-group">
+  <div class="check-title">
+    Score function
   </div>
-{/if}
+  <label>
+    <input type="radio" value="stat" bind:group={focusType}>
+    Base on status
+    <fieldset disabled={focusType !== "stat"}>
+      <label>
+        Focus on
+        <select id="focusOn" bind:value={focusOn}>
+          <option value="hp">HP</option>
+          <option value="atk">ATK</option>
+          <option value="def">DEF</option>
+          <option value="spd">SPD</option>
+          <option value="fcs">FCS</option>
+          <option value="rst">RST</option>
+        </select>
+      </label>
+    </fieldset>
+  </label>
+  <label>
+    <input type="radio" value="mod" name="" bind:group={focusType}>
+    <span class="input-title">Custom mod</span>
+    <fieldset disabled={focusType !== "mod"}>
+      <textarea bind:value={customMod}></textarea>
+    </fieldset>
+  </label>
+</div>
 
 <button on:click={simulate}>Simulate</button>
 
@@ -89,5 +117,27 @@ async function simulate() {
 }
 .input-group {
   margin: .6em 0;
+}
+
+.check-title {
+  margin: .4em 0;
+}
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0 0 0 1.6em;
+}
+fieldset[disabled] {
+  color: grey;
+}
+textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 6em;
+  margin: 0.3em 0;
+}
+button {
+  margin: 0.6em 0;
 }
 </style>
