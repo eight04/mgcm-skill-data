@@ -1,5 +1,5 @@
 <script>
-import { createEventDispatcher } from 'svelte';
+import { createEventDispatcher } from "svelte";
 
 import DressLink from "./DressLink.svelte";
 import BuffChooser from "./BuffChooser.svelte";

@@ -268,7 +268,7 @@ export function simulateSkillMod({
           results[i] = {history: history.slice(), mod};
           return;
         }
-        const r2 = cmpMod(results[i].mod, mod)
+        const r2 = cmpMod(results[i].mod, mod);
         if (r2 > 0) {
           return;
         }
