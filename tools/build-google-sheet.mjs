@@ -24,7 +24,7 @@ const doc = new gs.GoogleSpreadsheet("1N80A2Uz0lQe8COz3e_xWOePh0_RIMq0hYxkgsMv0C
 doc.useApiKey("AIzaSyBmF9PBdznx-Dpxa2YOWWK6gcThwPFpLDM");
 await doc.loadInfo();
 const sheet = doc.sheetsByIndex[0];
-await sheet.loadCells("Q2:Z");
+await sheet.loadCells("O2:Z");
 await sheet.loadCells("AG2:AL");
 
 for (let i = 1; i < sheet.rowCount; i++) {
@@ -32,8 +32,14 @@ for (let i = 1; i < sheet.rowCount; i++) {
   
   if (!name.value) continue;
   
+  console.log(name.value, sheet.getCell(i, aToIndex("O")).value);
+  
   const charName = NAME_JP2EN[name.value.split(" ").pop()];
   const list = chars.get(charName);
+  
+  if (!list && sheet.getCell(i, aToIndex("O")).value === false) {
+    continue;
+  }
   
   if (list.get(name.value)) continue;
   
