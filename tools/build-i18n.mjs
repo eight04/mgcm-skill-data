@@ -1,4 +1,4 @@
-import {readFile} from "fs/promises";
+import {readFile, writeFile} from "fs/promises";
 import YAML from "yaml";
 
 import {getAllDresses} from "./lib/util.mjs";
@@ -11,7 +11,7 @@ for (const dress of oldData) {
   allDresses.set(dress.jp, dress);
 }
 
-console.log(YAML.stringify([...allDresses.values()]));
+await writeFile("src/i18n-all-dresses.yml", YAML.stringify([...allDresses.values()]));
 
 function getSeriesName(dress) {
   const t = dress.name.split(" ");
