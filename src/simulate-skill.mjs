@@ -18,7 +18,7 @@ const SPECIALS = {
     null,
     null,
     {
-      condBonus: ({targetBuff}) => targetBuff.imune.stun ? 1.5 : 1
+      condBonus: ({targetBuff}) => targetBuff.immune.stun ? 1.5 : 1
     }
   ],
   "サディスティックサキュバス マリアンヌ": [
