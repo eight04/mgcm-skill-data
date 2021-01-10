@@ -5824,8 +5824,8 @@
     - bonus: 30
     - bonus: 20
       cd:
-        - 5
         - 4
+        - 3
     - bonus: 0
 - id: 4200025
   name: ホーリーサンタ ここあ
@@ -6442,6 +6442,7 @@
       cd:
         - 5
         - 4
+    - bonus: 0
 - id: 4382524
   name: Magica2020 りり
   rarity: SR
@@ -7426,6 +7427,7 @@
       cd:
         - 4
         - 3
+    - bonus: 0
 - id: 4750489
   name: Magica2020 依子
   rarity: SR
@@ -7617,8 +7619,8 @@
         - 3
     - bonus: 0
       cd:
-        - 6
         - 5
+        - 4
 - id: 4831717
   name: 格闘女神ISHTAR エリザ
   rarity: UR
@@ -9846,4 +9848,333 @@
         - 3
         - 2
     - bonus: 0
+- id: 5796953
+  name: Magica2020 Evo いろは
+  rarity: UR
+  element: fire
+  pool: gacha
+  hp:
+    - 3630
+    - 9053
+    - 10890
+  atk:
+    - 275
+    - 686
+    - 825
+  def:
+    - 196
+    - 491
+    - 590
+  spd:
+    - 58
+    - 94
+    - 106
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 30
+      cd:
+        - 4
+        - 2
+    - bonus: 30
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+- id: 5796935
+  name: Magica2020 いろは
+  rarity: SR
+  element: fire
+  pool: gacha
+  hp:
+    - 3525
+    - 8791
+    - 10575
+  atk:
+    - 236
+    - 590
+    - 710
+  def:
+    - 186
+    - 466
+    - 560
+  spd:
+    - 57
+    - 93
+    - 105
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 30
+      cd:
+        - 4
+        - 2
+    - bonus: 0
+- id: 5833828
+  name: Magica2020 Evo 花織
+  rarity: UR
+  element: water
+  pool: gacha
+  hp:
+    - 4060
+    - 10125
+    - 12180
+  atk:
+    - 206
+    - 514
+    - 618
+  def:
+    - 237
+    - 591
+    - 711
+  spd:
+    - 61
+    - 97
+    - 109
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 30
+    - bonus: 30
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+      cd:
+        - 5
+        - 3
+    - bonus: 0
+- id: 5833843
+  name: Magica2020 花織
+  rarity: SR
+  element: water
+  pool: gacha
+  hp:
+    - 3485
+    - 8691
+    - 10455
+  atk:
+    - 215
+    - 537
+    - 645
+  def:
+    - 201
+    - 502
+    - 603
+  spd:
+    - 59
+    - 95
+    - 107
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 30
+    - bonus: 30
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+- id: 5868004
+  name: 新春巫女2021 ここあ
+  rarity: UR
+  element: lightning
+  pool: gacha
+  hp:
+    - 3950
+    - 9850
+    - 11850
+  atk:
+    - 219
+    - 547
+    - 658
+  def:
+    - 231
+    - 577
+    - 693
+  spd:
+    - 51
+    - 87
+    - 99
+  fcs: 20
+  rst: 60
+  skill:
+    - bonus: 25
+    - bonus: 25
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+      cd:
+        - 6
+        - 4
+    - bonus: 0
+- id: 5868013
+  name: 新春巫女2021 丹
+  rarity: UR
+  element: light
+  pool: event
+  hp:
+    - 4115
+    - 10262
+    - 12345
+  atk:
+    - 221
+    - 552
+    - 663
+  def:
+    - 218
+    - 545
+    - 655
+  spd:
+    - 54
+    - 90
+    - 102
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 20
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+      cd:
+        - 5
+        - 3
+- id: 5868037
+  name: 新春巫女2021 はなび
+  rarity: SR
+  element: fire
+  pool: gacha
+  hp:
+    - 3400
+    - 8479
+    - 10200
+  atk:
+    - 247
+    - 618
+    - 743
+  def:
+    - 184
+    - 459
+    - 552
+  spd:
+    - 52
+    - 88
+    - 100
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 0
+      cd:
+        - 5
+        - 3
+    - bonus: 25
+      cd:
+        - 5
+        - 4
+- id: 5869393
+  name: Ultimate Magica 陽彩
+  rarity: UR
+  element: dark
+  pool: gacha
+  hp:
+    - 3345
+    - 8342
+    - 10035
+  atk:
+    - 308
+    - 769
+    - 924
+  def:
+    - 182
+    - 456
+    - 548
+  spd:
+    - 53
+    - 89
+    - 101
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 35
+    - bonus: 30
+      cd:
+        - 4
+        - 3
+    - bonus: 30
+      cd:
+        - 6
+        - 5
+    - bonus: 0
+- id: 5895319
+  name: みるきぃ☆ふぁーむ 依子
+  rarity: UR
+  element: lightning
+  pool: gacha
+  hp:
+    - 4225
+    - 10536
+    - 12675
+  atk:
+    - 230
+    - 576
+    - 692
+  def:
+    - 201
+    - 502
+    - 604
+  spd:
+    - 58
+    - 94
+    - 106
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 25
+      cd:
+        - 4
+        - 2
+    - bonus: 30
+      cd:
+        - 5
+        - 4
+    - bonus: 0
+- id: 5895343
+  name: みるきぃ☆ふぁーむ 花織
+  rarity: SR
+  element: water
+  pool: gacha
+  hp:
+    - 3950
+    - 9850
+    - 11850
+  atk:
+    - 182
+    - 456
+    - 548
+  def:
+    - 212
+    - 530
+    - 637
+  spd:
+    - 52
+    - 88
+    - 100
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 25
+      cd:
+        - 4
+        - 3
+    - bonus: 30
+      cd:
+        - 5
+        - 4
 

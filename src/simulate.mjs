@@ -66,6 +66,14 @@ function normalizeBuff(arr = []) {
   return result;
 }
 
+function getDefaultTargetBuff() {
+  return {
+    immune: {
+      stun: true // this makes wine iroha stronger
+    }
+  };
+}
+
 export function simulateDps({
   includedDresses,
   maxLvDresses,
@@ -93,6 +101,7 @@ export function simulateDps({
       targetDef: target.targetDef,
       targetElement: target.targetElement,
       buff,
+      targetBuff: getDefaultTargetBuff(), // FIXME: make it customizable
       targetDebuff
     })) {
       const mainDress = buildDress({
