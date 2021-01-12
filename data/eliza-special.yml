@@ -16,16 +16,12 @@ Magica2019 Evo エリザ:
   - null
   - recast: -1
 Magica2020 Evo エリザ:
-  - null
+  - cutRate: 1.6
   - missRate: -999
     critRate: 999
 Magica2020 エリザ:
-  - null
+  - cutRate: 1.6
   - missRate: -999
     critRate: 999
 格闘女神ISHTAR エリザ:
   - cutRate: 1
-Magica2020 Evo エリザ:
-  - cutRate: 1.6
-Magica2020 エリザ:
-  - cutRate: 1.6

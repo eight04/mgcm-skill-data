@@ -113,7 +113,7 @@ function bonusByTargetDebuff(bonus) {
 }
 
 function cutByCrit(scale) {
-  return ({r}) => (1 - r.missRate) * r.critRate * scale
+  return ({r}) => (1 - r.missRate) * r.critRate * scale;
 }
 
 const SUPER = {
