@@ -2,8 +2,19 @@ Magica2019 Evo はなび:
   - null
   - null
   - ignoreDefRate: 0.5
+Magica2061 はなび:
+  - null
+  - cutRate: 2
+炎節わっしょい神輿 はなび:
+  - cutRate: 1
+ロイヤルナイトアーマー はなび:
+  - null
+  - cutRate: 2
 Magica2020 Evo はなび:
   - null
   - null
   - ignoreDefRate: 0.25
-  
+ブリュンヒルデ はなび:
+  - cutRate: 1
+カラス天狗 はなび:
+  - cutRate: 1

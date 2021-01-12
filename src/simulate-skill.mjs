@@ -1,6 +1,12 @@
 import allSkillData from "./skill-data.yml";
 
 const SPECIALS = {
+  "聖チャールズスポーツユニ りり": [
+    null,
+    {
+      cutRate: cutByCrit(3)
+    }
+  ],
   "Magica2061 はなび": [
     null,
     null,
@@ -12,6 +18,13 @@ const SPECIALS = {
     null,
     {
       condBonus: ({targetDebuff}) => targetDebuff.length ? 1.5 : 1
+    }
+  ],
+  "灼熱野球ユニ 蒼": [
+    null,
+    null,
+    {
+      cutRate: cutByCrit(4 * 2)
     }
   ],
   "ワイン娘 いろは": [
@@ -99,6 +112,10 @@ function bonusByTargetDebuff(bonus) {
   return ({targetDebuff}) => targetDebuff.length * bonus + 1;
 }
 
+function cutByCrit(scale) {
+  return ({r}) => (1 - r.missRate) * r.critRate * scale
+}
+
 const SUPER = {
   fire: "lightning",
   lightning: "water",
@@ -164,18 +181,8 @@ function product(arr, context) {
   return result;
 }
 
-function getSpecialBonus({
-  special,
-  element,
-  targetDef = 0,
-  targetElement,
-  
-  buff = {},
-  debuff = {},
-  targetBuff = {},
-  targetDebuff = {length: 0}
-}) {
-  const context = {buff, debuff, targetBuff, targetDebuff};
+function getBasicRate(context) {
+  const {special, element, targetElement, buff} = context;
   
   const baseRate = BASE_RATE[
     special.element?.[0] ||
@@ -191,6 +198,12 @@ function getSpecialBonus({
     }
     r[key] = Math.min(Math.max(value, 0), 1);
   }
+  
+  return r;
+}
+
+function getSpecialBonus(context) {
+  const {r, special, targetDef, targetDebuff} = context;
   
   const elementBonus = r.missRate * 0.7
     // FIXME: do they add up?
@@ -214,31 +227,38 @@ export function simulateSkillMod({
   buff,
   debuff,
   targetBuff,
-  targetDebuff
+  targetDebuff,
+  useCut = false
 }) {
   const skillData = skillMap.get(dress.name);
   if (!skillData) throw new Error(`missing skill data for ${dress.name}`);
 
-  const skills = skillData.map((s, i) => ({
-    index: i,
-    mod: s.mod,
-    cd: dress.skill[i].cd?.[1] || 1,
-    bonus: dress.skill[i].bonus,
-    sleep: 0,
-    recast: sum(s.special?.recast),
-    specialBonus: getSpecialBonus({
-      special: s.special,
-      element: dress.element,
-      targetElement,
-      targetDef,
+  const skills = skillData.map((rawData, index) => {
+    const context = {
       buff,
       debuff,
       targetBuff,
-      targetDebuff
-    }),
-    prefer: [],
-    cut: 0
-  })).reverse();
+      targetDebuff,
+      special: rawData.special,
+      element: dress.element,
+      targetElement,
+      targetDef
+    };
+    
+    context.r = getBasicRate(context);
+    
+    return {
+      index,
+      mod: rawData.mod,
+      cd: dress.skill[index].cd?.[1] || 1,
+      bonus: dress.skill[index].bonus,
+      sleep: 0,
+      recast: sum(rawData.special?.recast),
+      specialBonus: getSpecialBonus(context),
+      prefer: [],
+      cut: useCut ? sum(rawData.special?.cutRate, context) : 0
+    };
+  }).reverse();
   
   // FIXME: currently we only calculate `prefer` for 1cd skill. does it also work for other skills?
   for (const skill of skills) {
@@ -294,7 +314,7 @@ export function simulateSkillMod({
         }
       }
       
-      const newMod = addMod(mod, skill.mod, skill.bonus, skill.specialBonus);
+      const newMod = addMod(mod, skill.mod, skill.bonus, skill.specialBonus, skill.cut);
       const newSleep = sleep.slice();
       newSleep[skill.index] = skill.cd;      
       for (let i = 0; i < newSleep.length; i++) {
@@ -312,7 +332,7 @@ export function simulateSkillMod({
   }
 }
 
-function addMod(a, b, bonus, special) {
+function addMod(a, b, bonus, special, cut) {
   const result = {...a};
   for (const key in b) {
     if (result[key]) {
@@ -320,6 +340,9 @@ function addMod(a, b, bonus, special) {
     } else {
       result[key] = b[key] * (100 + bonus) / 100 * special;
     }
+  }
+  if (cut) {
+    result.targetHp = (result.targetHp || 0) + cut * 0.05;
   }
   return result;
 }
