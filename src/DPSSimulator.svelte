@@ -3,6 +3,7 @@ import { createEventDispatcher } from "svelte";
 
 import DressLink from "./DressLink.svelte";
 import BuffChooser from "./BuffChooser.svelte";
+import DebuffChooser from "./DebuffChooser.svelte";
 
 import {getStore} from "./store.mjs";
 import {simulateDps} from "./simulate.mjs";
@@ -16,9 +17,9 @@ let turn = 5;
 let ignoreElement = false;
 let orbRarity = "sr";
 let buff = [];
+let debuff = [];
 let target = {hp: 0, def: 1000, element: "neutral"};
 let targetDebuff = [];
-let targetDebuffCut = 0;
 let useCut = false;
 
 let running = false;
@@ -35,7 +36,8 @@ async function simulate() {
       ignoreElement,
       orb: orbRarity,
       buff,
-      targetDebuff: [...targetDebuff, ...Array(targetDebuffCut).fill("cut")],
+      debuff,
+      targetDebuff,
       target,
       turn,
       useCut
@@ -82,91 +84,9 @@ function getOrbName(build) {
     </label>
   </div>
 
-  <BuffChooser bind:buff={buff}></BuffChooser>
-
-  <div class="radio-group">
-    <div class="radio-title">Target debuff</div>
-    <label>
-      <input type="checkbox" bind:group={targetDebuff} value="atk">
-      ATK
-    </label>
-    <label>
-      <input type="checkbox" bind:group={targetDebuff} value="def">
-      DEF
-    </label>
-    <label>
-      <input type="checkbox" bind:group={targetDebuff} value="spd">
-      SPD
-    </label>
-    <label>
-      <input type="checkbox" bind:group={targetDebuff} value="fcs">
-      FCS
-    </label>
-    <label>
-      <input type="checkbox" bind:group={targetDebuff} value="rst">
-      RST
-    </label>
-    <label>
-      <input type="checkbox" bind:group={targetDebuff} value="taunt">
-      Taunt
-    </label>
-    <label>
-      <input type="checkbox" bind:group={targetDebuff} value="noRecovery">
-      No recovery
-    </label>
-    <label>
-      <input type="checkbox" bind:group={targetDebuff} value="noBuff">
-      No buff
-    </label>
-    <label>
-      Cut
-      <input type="number" bind:value={targetDebuffCut} class="input-inline" />
-    </label>
-    <label>
-      <input type="checkbox" bind:group={targetDebuff} value="sleep">
-      Sleep
-    </label>
-    <label>
-      <input type="checkbox" bind:group={targetDebuff} value="stun">
-      Stun
-    </label>
-    <label>
-      <input type="checkbox" bind:group={targetDebuff} value="oblivion">
-      Oblivion
-    </label>
-    <label>
-      <input type="checkbox" bind:group={targetDebuff} value="miss">
-      Miss rate
-    </label>
-    <label>
-      <input type="checkbox" bind:group={targetDebuff} value="silence">
-      Silence
-    </label>
-    <label>
-      <input type="checkbox" bind:group={targetDebuff} value="burn">
-      Burn
-    </label>
-    <label>
-      <input type="checkbox" bind:group={targetDebuff} value="shock">
-      Shock
-    </label>
-    <label>
-      <input type="checkbox" bind:group={targetDebuff} value="freeze">
-      Freeze
-    </label>
-    <label>
-      <input type="checkbox" bind:group={targetDebuff} value="seal">
-      Seal
-    </label>
-    <label>
-      <input type="checkbox" bind:group={targetDebuff} value="confusion">
-      Confusion
-    </label>
-    <label>
-      <input type="checkbox" bind:group={targetDebuff} value="poison">
-      Poison
-    </label>
-  </div>
+  <BuffChooser bind:value={buff}></BuffChooser>
+  <DebuffChooser bind:value={debuff}></DebuffChooser>
+  <DebuffChooser bind:value={targetDebuff} title="Target debuff"></DebuffChooser>
 
   <label class="input-group">
     <div class="input-title">Target HP</div>
@@ -306,12 +226,12 @@ li {
   margin-top: .3em;
   margin-bottom: .3em;
 }
-input[type=number], select {
+.container :global(input[type=number], select) {
   display: block;
   width: 100%;
   box-sizing: border-box;
 }
-input.input-inline {
+.container :global(input.input-inline) {
   display: inline-block;
   width: auto;
 }

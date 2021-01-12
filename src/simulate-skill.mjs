@@ -182,7 +182,7 @@ function product(arr, context) {
 }
 
 function getBasicRate(context) {
-  const {special, element, targetElement, buff} = context;
+  const {special, element, targetElement, buff, debuff} = context;
   
   const baseRate = BASE_RATE[
     special.element?.[0] ||
@@ -195,6 +195,9 @@ function getBasicRate(context) {
     let value = baseRate[key] + sum(special[key], context);
     if (key === "critRate" && buff.crit) {
       value += 0.3;
+    }
+    if (key === "missRate" && debuff.miss) {
+      value += 0.5;
     }
     r[key] = Math.min(Math.max(value, 0), 1);
   }

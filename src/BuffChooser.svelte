@@ -1,23 +1,24 @@
 <script>
-export let buff = [];
+export let title = "Buff";
+export let value = [];
 </script>
 
 <div class="radio-group">
-  <div class="radio-title">Buff</div>
+  <div class="radio-title">{title}</div>
   <label>
-    <input type="checkbox" bind:group={buff} value="atk">
+    <input type="checkbox" bind:group={value} value="atk">
     ATK
   </label>
   <label>
-    <input type="checkbox" bind:group={buff} value="def">
+    <input type="checkbox" bind:group={value} value="def">
     DEF
   </label>
   <label>
-    <input type="checkbox" bind:group={buff} value="spd">
+    <input type="checkbox" bind:group={value} value="spd">
     SPD
   </label>
   <label>
-    <input type="checkbox" bind:group={buff} value="crit">
+    <input type="checkbox" bind:group={value} value="crit">
     Crit
   </label>
 </div>
