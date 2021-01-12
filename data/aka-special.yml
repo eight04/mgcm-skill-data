@@ -1,0 +1,10 @@
+ホリデーカジュアル 丹:
+  - null
+  - cutRate: 2
+幻想秘湯天女 丹:
+  - null
+  - null
+  - cutRate: 4 # FIXME: this has to be calculated dynamically
+ドライアド 丹:
+  passive:
+    cutRate: 2

@@ -1,5 +1,20 @@
+Magica2019 セイラ:
+  - cutRate: 1.2
+デモンズスタイルアラクネ セイラ:
+  - null
+  - null
+  - cutRate: 3
 フラッフィーラビット セイラ:
   - ignoreDefRate: 1
+バカンスビキニ2019 セイラ:
+  - cutRate: 1
+  - cutRate: 3
 ブリュンヒルデ セイラ:
   passive:
     missRate: -999
+  active:
+    - cutRate: 1
+獄卒羅刹 セイラ:
+  - null
+  - null
+  - cutRate: 2

@@ -13,6 +13,9 @@
   mods:
     - atk: 3.9
     - atk: 6.2
+  special:
+    - null
+    - cutRate: 2
 - name: Magica2019 丹
   mods:
     - atk: 3.2
@@ -58,6 +61,10 @@
     - atk: 4
     - atk: 0
     - atk: 3
+  special:
+    - null
+    - null
+    - cutRate: 4
 - name: ホーリーサンタ 丹
   mods:
     - atk: 3.2
@@ -103,6 +110,9 @@
       hp: 0.1
     - atk: 1.8
       hp: 0.13
+  special:
+    - null
+    - cutRate: 2
 - name: Magica2019 Evo 陽彩
   mods:
     - atk: 4
@@ -127,6 +137,8 @@
     - atk: 2
       def: 3.2
     - atk: 0
+  special:
+    - cutRate: 1
 - name: オーセンティックメイド 陽彩
   mods:
     - atk: 4.1
@@ -209,10 +221,16 @@
     - atk: 4
     - atk: 3.9000000000000004
     - atk: 7.5
+  special:
+    - null
+    - cutRate: 4.5
 - name: デモンズスタイルアラクネ 蒼
   mods:
     - atk: 4.3
     - atk: 4.2
+  special:
+    - null
+    - cutRate: 2
 - name: 艶女医白衣 蒼
   mods:
     - atk: 3.6
@@ -224,6 +242,8 @@
     - atk: 4.1
     - atk: 0
     - atk: 6.6000000000000005
+  special:
+    - cutRate: 1
 - name: 灼熱野球ユニ 蒼
   mods:
     - atk: 4
@@ -240,6 +260,10 @@
     - atk: 4.1
       targetHp: 0.1
     - atk: 6.5
+  special:
+    - null
+    - null
+    - cutRate: 3
 - name: ワイン娘 蒼
   mods:
     - atk: 4
@@ -255,6 +279,10 @@
     - atk: 4
     - atk: 9
     - atk: 4.800000000000001
+  special:
+    - null
+    - null
+    - cutRate: 6
 - name: Magica2020 蒼
   mods:
     - atk: 4
@@ -361,6 +389,9 @@
       def: 2.8
     - atk: 1.6
       def: 3
+  special:
+    - null
+    - cutRate: 3
 - name: デモンズスタイルレウコシア エリザ
   mods:
     - atk: 4
@@ -371,7 +402,7 @@
     - atk: 7
     - atk: 0
   special:
-    - null
+    - cutRate: 1.6
     - missRate: -999
       critRate: 999
 - name: ホーリーサンタ2020 エリザ
@@ -408,6 +439,9 @@
     - atk: 4.1
     - atk: 3.8
     - atk: 5
+  special:
+    - null
+    - cutRate: 2
 - name: Magica2019 Evo はなび
   mods:
     - atk: 4
@@ -433,6 +467,8 @@
     - atk: 2
       def: 3.2
     - atk: 8
+  special:
+    - cutRate: 1
 - name: オーセンティックメイド はなび
   mods:
     - atk: 4.1
@@ -558,6 +594,8 @@
     - atk: 4
     - atk: 3.6
     - atk: 6.3
+  special:
+    - cutRate: 1.2
 - name: Magica1984 いろは
   mods:
     - atk: 3.9000000000000004
@@ -628,6 +666,8 @@
 - name: ラウンジウェア 花織
   mods:
     - atk: 3.5
+  special:
+    - cutRate: 0.6
 - name: 有羽スポーツユニ 花織
   mods:
     - atk: 3.8
@@ -641,11 +681,16 @@
     - atk: 3.9
     - atk: 2.1
       def: 2.9
+  special:
+    - null
+    - cutRate: 3
 - name: Magica2019 花織
   mods:
     - atk: 4
     - atk: 0
     - atk: 3.8
+  special:
+    - cutRate: 1.2
 - name: Magica1984 花織
   mods:
     - atk: 3.9000000000000004
@@ -703,6 +748,9 @@
     - atk: 4
     - atk: 0
     - atk: 0
+  special:
+    - null
+    - cutRate: 4
 - name: 鬼魔愚零卍神特攻服 花織
   mods:
     - atk: 1.9
@@ -735,6 +783,8 @@
     - atk: 4
     - atk: 4.6
     - atk: 0
+  special:
+    - cutRate: 1.2
 - name: Magica1984 ここあ
   mods:
     - atk: 3.9000000000000004
@@ -773,6 +823,8 @@
     - atk: 4.8
       hp: 0.48
     - atk: 0
+  special:
+    - cutRate: 1
 - name: †ハロウィッチ† ここあ
   mods:
     - atk: 1.6
@@ -803,6 +855,10 @@
     - atk: 4
     - atk: 5.9
     - atk: 7.5
+  special:
+    - null
+    - null
+    - cutRate: 6
 - name: デモンズスタイルレウコシア ここあ
   mods:
     - atk: 4
@@ -871,6 +927,9 @@
     - atk: 4.1
     - atk: 3.7
     - atk: 5.1
+  special:
+    - cutRate: 1
+    - cutRate: 3
 - name: "姫会ドレス #リムパ りり"
   mods:
     - atk: 4.1
@@ -886,6 +945,8 @@
   mods:
     - atk: 4.2
     - atk: 0
+  special:
+    - cutRate: 1
 - name: 鬼魔愚零卍神特攻服 りり
   mods:
     - atk: 1.9
@@ -903,6 +964,10 @@
     - atk: 3.9000000000000004
     - atk: 5.6
     - atk: 7.800000000000001
+  special:
+    - null
+    - cutRate: 2
+    - cutRate: 3
 - name: 新春巫女2020 りり
   mods:
     - atk: 1.2
@@ -967,10 +1032,15 @@
     - atk: 4
     - atk: 0
     - atk: 6.300000000000001
+  special:
+    - null
+    - cutRate: 4
 - name: ブリュンヒルデ マリアンヌ
   mods:
     - atk: 4.2
     - atk: 0
+  special:
+    - cutRate: 1
 - name: サディスティックサキュバス マリアンヌ
   mods:
     - atk: 3.9
@@ -984,11 +1054,18 @@
       def: 2.8
     - atk: 4.5
       def: 4.5
+  special:
+    - null
+    - cutRate: 3
 - name: ぐだぐだFallenAngel マリアンヌ
   mods:
     - atk: 3.8
     - atk: 5.8
     - atk: 10
+  special:
+    - null
+    - null
+    - cutRate: 9
 - name: ラウンジウェア セイラ
   mods:
     - atk: 3.6
@@ -1009,6 +1086,8 @@
     - atk: 4
     - atk: 6.5
     - atk: 4.3
+  special:
+    - cutRate: 1.2
 - name: Magica1984 セイラ
   mods:
     - atk: 3.9000000000000004
@@ -1029,6 +1108,10 @@
     - atk: 4.3
     - atk: 3.8
     - atk: 4.199999999999999
+  special:
+    - null
+    - null
+    - cutRate: 3
 - name: モテカワ美少女戦士 セイラ
   mods:
     - atk: 3.8
@@ -1040,6 +1123,9 @@
     - atk: 4.1
     - atk: 3.7
     - atk: 8
+  special:
+    - cutRate: 1
+    - cutRate: 3
 - name: "姫会ドレス #リムパ セイラ"
   mods:
     - atk: 4.1
@@ -1054,6 +1140,8 @@
   mods:
     - atk: 4.2
     - atk: 8
+  special:
+    - cutRate: 1
   passive:
     missRate: -999
 - name: サディスティックサキュバス セイラ

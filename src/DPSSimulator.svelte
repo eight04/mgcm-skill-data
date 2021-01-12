@@ -19,6 +19,7 @@ let buff = [];
 let target = {hp: 0, def: 1000, element: "neutral"};
 let targetDebuff = [];
 let targetDebuffCut = 0;
+let useCut = false;
 
 let running = false;
 let result;
@@ -36,7 +37,8 @@ async function simulate() {
       buff,
       targetDebuff: [...targetDebuff, ...Array(targetDebuffCut).fill("cut")],
       target,
-      turn
+      turn,
+      useCut
     });
     resultErr = false;
     maxScore = result[0].score;
@@ -174,6 +176,11 @@ function getOrbName(build) {
     </p>
   </label>
 
+  <label class="input-group">
+    <input type="checkbox" bind:checked={useCut}>
+    Calculate cut damage
+  </label>
+  
   <label class="input-group">
     <div class="input-title">Target DEF</div>
     <input type="number" bind:value={target.def}>

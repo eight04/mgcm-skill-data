@@ -1,3 +1,5 @@
+Magica2019 ここあ:
+  - cutRate: 1.2
 Magica1984 ここあ:
   passive:
     critRate: 0.3
@@ -7,9 +9,18 @@ Magica1984 ここあ:
   - null
   - critRate: 999
     missRate: 999
+炎節わっしょい神輿 ここあ:
+  - cutRate: 1
 玉藻前 ここあ:
   passive:
     element: superior
   active:
     - null
     - ignoreDefRate: 1
+獄卒羅刹 ここあ:
+  - null
+  - null
+  - cutRate: 6
+局中法度☆新選組 ここあ:
+  - null
+  - cutRate: 4.5

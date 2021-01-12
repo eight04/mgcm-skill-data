@@ -1,3 +1,5 @@
+Magica2019 いろは:
+  - cutRate: 1.2
 デモンズスタイルアラクネ いろは:
   passive:
     critRate: 0.2
@@ -12,4 +14,6 @@
   - null
   - missRate: -999
     critRate: 999
-    
+マジカルウェディング いろは:
+  - null
+  - cutRate: 4
