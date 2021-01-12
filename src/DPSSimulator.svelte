@@ -84,9 +84,15 @@ function getOrbName(build) {
     </label>
   </div>
 
-  <BuffChooser bind:value={buff}></BuffChooser>
-  <DebuffChooser bind:value={debuff}></DebuffChooser>
-  <DebuffChooser bind:value={targetDebuff} title="Target debuff"></DebuffChooser>
+  <div class="input-group">
+    <BuffChooser bind:value={buff} />
+  </div>
+  <div class="input-group">
+    <DebuffChooser bind:value={debuff} />
+  </div>
+  <div class="input-group">
+    <DebuffChooser bind:value={targetDebuff} title="Target debuff" />
+  </div>
 
   <label class="input-group">
     <div class="input-title">Target HP</div>
@@ -218,7 +224,7 @@ th, td {
   margin: .6em 0;
   display: block;
 }
-.radio-group label {
+.container :global(.radio-group label) {
   display: inline-block;
   margin-right: .6em;
 }
@@ -226,7 +232,8 @@ li {
   margin-top: .3em;
   margin-bottom: .3em;
 }
-.container :global(input[type=number], select) {
+.container :global(input[type=number]),
+.container :global(select) {
   display: block;
   width: 100%;
   box-sizing: border-box;
