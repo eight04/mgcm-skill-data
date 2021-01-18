@@ -1,6 +1,5 @@
 <script>
 import DressTable from "./DressTable.svelte";
-import BuffChooser from "./BuffChooser.svelte";
 
 import {getStore} from "./store.mjs";
 import {simulateSubDress} from "./simulate.mjs";
@@ -13,16 +12,14 @@ let focusType = "stat";
 let focusOn = "atk";
 let orbRarity = "sr";
 let customMod = "";
-let buff = [];
 
 let result;
 let resultErr;
 
-export function setCustomMod({dressName, mod, buff: newBuff}) {
+export function setCustomMod({dressName, mod}) {
   focusType = "mod";
   customMod = JSON.stringify(mod, null, 2);
   choosedDress = dressName;
-  buff = newBuff;
   result = null;
 }
 
@@ -36,7 +33,6 @@ async function simulate() {
       orbRarity,
       mod: focusType === "mod" ?
         JSON.parse(customMod) : {[focusOn]: 1},
-      buff
     });
     resultErr = false;
   } catch (err) {
@@ -60,10 +56,6 @@ async function simulate() {
       <option value="ur">UR</option>
     </select>
   </label>
-</div>
-
-<div class="input-group">
-  <BuffChooser bind:buff={buff}></BuffChooser>
 </div>
 
 <div class="check-group">

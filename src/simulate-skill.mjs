@@ -1,4 +1,5 @@
 import allSkillData from "./skill-data.yml";
+import {getBuffValue} from "./simulate-util.mjs";
 
 const SPECIALS = {
   "聖チャールズスポーツユニ りり": [
@@ -252,14 +253,18 @@ export function simulateSkillMod({
     
     return {
       index,
-      mod: rawData.mod,
+      mod: buildMod({
+        mod: rawData.mod,
+        bonus: dress.skill[index].bonus,
+        specialBonus: getSpecialBonus(context),
+        cut: useCut ? sum(rawData.special?.cutRate, context) : 0,
+        buff,
+        debuff
+      }),
       cd: dress.skill[index].cd?.[1] || 1,
-      bonus: dress.skill[index].bonus,
       sleep: 0,
       recast: sum(rawData.special?.recast),
-      specialBonus: getSpecialBonus(context),
-      prefer: [],
-      cut: useCut ? sum(rawData.special?.cutRate, context) : 0
+      prefer: []
     };
   }).reverse();
   
@@ -268,7 +273,7 @@ export function simulateSkillMod({
     if (skill.cd > 1) continue;
     
     for (const s of skills) {
-      if (s !== skill && cmpSkill(s, skill) > 0) {
+      if (s !== skill && cmpMod(s.mod, skill.mod) > 0) {
         skill.prefer.push(s.index);
       }
     }
@@ -317,7 +322,7 @@ export function simulateSkillMod({
         }
       }
       
-      const newMod = addMod(mod, skill.mod, skill.bonus, skill.specialBonus, skill.cut);
+      const newMod = addMod(mod, skill.mod);
       const newSleep = sleep.slice();
       newSleep[skill.index] = skill.cd;      
       for (let i = 0; i < newSleep.length; i++) {
@@ -335,33 +340,34 @@ export function simulateSkillMod({
   }
 }
 
-function addMod(a, b, bonus, special, cut) {
-  const result = {...a};
-  for (const key in b) {
-    if (result[key]) {
-      result[key] += b[key] * (100 + bonus) / 100 * special;
-    } else {
-      result[key] = b[key] * (100 + bonus) / 100 * special;
-    }
+function buildMod({
+  mod,
+  bonus,
+  specialBonus,
+  cut,
+  buff,
+  debuff
+}) {
+  const result = {};
+  for (const key in mod) {
+    result[key] = mod[key];
+    result[key] = mod[key] *
+      (100 + bonus) / 100 *
+      specialBonus *
+      getBuffValue(buff, debuff, key);
   }
   if (cut) {
-    result.targetHp = (result.targetHp || 0) + cut * 0.05;
+    result.targetHp = (result.targetHp || 0) + cut * 0.05 * 0.85;
   }
   return result;
 }
 
-function cmpSkill(a, b) {
-  const r = cmpMod(a.mod, b.mod);
-  if (r > 0 && a.cut >= b.cut) {
-    return 1;
+function addMod(a, b) {
+  const result = {...a};
+  for (const key in b) {
+    result[key] = (result[key] || 0) + b[key];
   }
-  if (r === 0 && a.cut > b.cut) {
-    return 1;
-  }
-  if (r === 0 && a.cut === b.cut) {
-    return 0;
-  }
-  return -1;
+  return result;
 }
 
 function cmpMod(a, b) {

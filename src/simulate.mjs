@@ -20,9 +20,7 @@ export function simulateSubDress({
   const mainDressResult = buildDress({
     dress: mainDress,
     mod,
-    orbRarity,
-    buff,
-    debuff
+    orbRarity
   });
   
   const allSubs = [...getAllSubs(mainDress, allDresses, mod, orbRarity, buff, debuff, true)]
@@ -46,9 +44,7 @@ function *getAllSubs(mainDress, allDresses, mod, orb, buff, debuff, useSubEl) {
         mod,
         subRatio: getSubRatio(mainDress, dress, subElement),
         subElement,
-        orbRarity: orb,
-        buff,
-        debuff
+        orbRarity: orb
       });
     
     yield build(false);
@@ -115,9 +111,7 @@ export function simulateDps({
       const mainDress = buildDress({
         dress,
         mod,
-        orbRarity: orb,
-        buff,
-        debuff
+        orbRarity: orb
       });
       const subs = [...getAllSubs(dress, allDresses, mod, orb, buff, debuff, ignoreElement)]
         .sort(cmpScore)
@@ -134,7 +128,7 @@ export function simulateDps({
      
       const subScore = subDresses.reduce((n, r) => n + r.score, 0);
       
-      const targetScore = calcScore(target, mod, buff, debuff);
+      const targetScore = calcScore(target, mod);
       
       result.push({
         score: mainDress.score + subScore + targetScore,
@@ -187,20 +181,16 @@ function buildDress({
   mod, 
   subRatio = 1,
   subElement = false,
-  orbRarity = "sr",
-  buff = {},
-  debuff = {}
+  orbRarity = "sr"
 }) {
   const orb = buildOrb({
     dress,
     rarity: orbRarity,
     mod,
-    buff,
-    debuff,
     subElement
   });
   return {
-    score: (calcScore(dress, mod, buff, debuff) + orb.score) * subRatio,
+    score: (calcScore(dress, mod) + orb.score) * subRatio,
     dress,
     orb
   };
