@@ -692,7 +692,7 @@
   name: クッキングエプロン 花織
   rarity: R
   element: water
-  pool: gacha
+  pool: story
   hp:
     - 3290
     - 8205
@@ -1052,7 +1052,7 @@
   name: ホリデーカジュアル 花織
   rarity: R
   element: water
-  pool: gacha
+  pool: story
   hp:
     - 3345
     - 8342
@@ -1805,7 +1805,7 @@
   name: Magica1984 花織
   rarity: SR
   element: water
-  pool: gacha
+  pool: story
   hp:
     - 4225
     - 10536
@@ -7145,6 +7145,7 @@
       cd:
         - 5
         - 3
+    - bonus: 0
 - id: 4615204
   name: ダル マリアンヌ
   rarity: UR
@@ -10177,4 +10178,201 @@
       cd:
         - 5
         - 4
+- id: 5915641
+  name: 漆原るか 花織
+  rarity: UR
+  element: dark
+  pool: gacha
+  hp:
+    - 3510
+    - 8753
+    - 10530
+  atk:
+    - 265
+    - 662
+    - 796
+  def:
+    - 214
+    - 535
+    - 643
+  spd:
+    - 61
+    - 97
+    - 109
+  fcs: 60
+  rst: 20
+  skill:
+    - bonus: 20
+    - bonus: 30
+      cd:
+        - 3
+        - 2
+    - bonus: 30
+      cd:
+        - 5
+        - 4
+    - bonus: 0
+- id: 5915674
+  name: フェイリス・ニャンニャン 依子
+  rarity: UR
+  element: water
+  pool: gacha
+  hp:
+    - 3895
+    - 9713
+    - 11685
+  atk:
+    - 213
+    - 533
+    - 641
+  def:
+    - 240
+    - 600
+    - 721
+  spd:
+    - 54
+    - 90
+    - 102
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 0
+      cd:
+        - 5
+        - 3
+    - bonus: 0
+    - bonus: 0
+- id: 5968165
+  name: スイート♡バレンタイン セイラ
+  rarity: UR
+  element: water
+  pool: gacha
+  hp:
+    - 3490
+    - 8703
+    - 10470
+  atk:
+    - 263
+    - 657
+    - 790
+  def:
+    - 217
+    - 543
+    - 653
+  spd:
+    - 71
+    - 107
+    - 119
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 0
+      cd:
+        - 4
+        - 3
+    - bonus: 20
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+- id: 5968171
+  name: スイート♡バレンタイン いろは
+  rarity: UR
+  element: light
+  pool: event
+  hp:
+    - 4065
+    - 10137
+    - 12195
+  atk:
+    - 216
+    - 539
+    - 648
+  def:
+    - 226
+    - 566
+    - 680
+  spd:
+    - 62
+    - 98
+    - 110
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 15
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+      cd:
+        - 5
+        - 4
+- id: 5990593
+  name: アヌビス 蒼
+  rarity: UR
+  element: light
+  pool: gacha
+  hp:
+    - 3845
+    - 9589
+    - 11535
+  atk:
+    - 220
+    - 550
+    - 661
+  def:
+    - 237
+    - 591
+    - 711
+  spd:
+    - 64
+    - 100
+    - 112
+  fcs: 20
+  rst: 60
+  skill:
+    - bonus: 20
+    - bonus: 0
+      cd:
+        - 5
+        - 3
+    - bonus: 0
+    - bonus: 0
+- id: 5998564
+  name: 異世界レイヤーズⅢ 陽彩
+  rarity: UR
+  element: fire
+  pool: gacha
+  hp:
+    - 4215
+    - 10511
+    - 12645
+  atk:
+    - 228
+    - 570
+    - 685
+  def:
+    - 204
+    - 510
+    - 613
+  spd:
+    - 57
+    - 93
+    - 105
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 35
+    - bonus: 30
+      cd:
+        - 3
+        - 2
+    - bonus: 30
+      cd:
+        - 5
+        - 4
+    - bonus: 0
 
