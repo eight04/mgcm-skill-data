@@ -55,7 +55,10 @@ Magica2019 Evo いろは:
   - 3.2
   - 6
   - 0
-スノークイーン いろは: null
+スノークイーン いろは:
+  - 2.8
+  - 6.1
+  - 4.4
 ライオットポリス いろは: null
 マジカルウェディング いろは: null
 Ultimate Magica いろは: null
@@ -71,3 +74,8 @@ Ultimate Magica いろは: null
 ぐだぐだFallenAngel いろは: null
 Magica2020 Evo いろは: null
 Magica2020 いろは: null
+スイート♡バレンタイン いろは: null
+スイートバレンタイン いろは:
+  - 1 +spd*15 *2
+  - 0.8 +spd*11 *2
+  - 0
