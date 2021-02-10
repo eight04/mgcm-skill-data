@@ -70,10 +70,20 @@
     - atk: 3.2
     - atk: 4
     - atk: 0
+- name: スノークイーン 丹
+  mods:
+    - atk: 2.8
+    - atk: 6.1
+    - atk: 0
 - name: フェニックス 丹
   mods:
     - atk: 4.2
     - atk: 6
+- name: 獄卒羅刹 丹
+  mods:
+    - atk: 4
+    - atk: 6.3
+    - atk: 4.5
 - name: デモンズスタイルレウコシア 丹
   mods:
     - atk: 4
@@ -175,6 +185,12 @@
       spd: 15
     - atk: 2.4000000000000004
       spd: 30
+- name: デモンズスタイルレウコシア 陽彩
+  mods:
+    - atk: 4
+    - atk: 1.2
+      hp: 0.15
+    - atk: 4.3
 - name: Ultimate Magica 陽彩
   mods:
     - atk: 4.1
@@ -392,6 +408,21 @@
   special:
     - null
     - cutRate: 3
+- name: スノークイーン エリザ
+  mods:
+    - atk: 2.8
+    - atk: 0
+      targetSpd: 50
+    - atk: 4.800000000000001
+- name: 牧瀬紅莉栖 エリザ
+  mods:
+    - atk: 3.8
+    - atk: 5.9
+    - atk: 0
+  special:
+    - null
+    - null
+    - recast: -1
 - name: デモンズスタイルレウコシア エリザ
   mods:
     - atk: 4
@@ -497,10 +528,22 @@
     - atk: 3.2
     - atk: 5.4
     - atk: 0
+- name: ロイヤルナイトアーマー はなび
+  mods:
+    - atk: 3.9000000000000004
+    - atk: 5.6
+  special:
+    - null
+    - cutRate: 2
 - name: フェニックス はなび
   mods:
     - atk: 4.2
     - atk: 6
+- name: デモンズスタイルレウコシア はなび
+  mods:
+    - atk: 4
+    - atk: 1.8
+      hp: 0.3
 - name: ラウンジウェア 依子
   mods:
     - atk: 3.3
@@ -658,11 +701,23 @@
     - atk: 3.2
     - atk: 6
     - atk: 0
+- name: スノークイーン いろは
+  mods:
+    - atk: 2.8
+    - atk: 6.1
+    - atk: 4.4
 - name: デモンズスタイルレウコシア いろは
   mods:
     - atk: 4
     - atk: 6.6
     - atk: 7
+- name: スイートバレンタイン いろは
+  mods:
+    - atk: 2
+      spd: 30
+    - atk: 1.6
+      spd: 22
+    - atk: 0
 - name: ラウンジウェア 花織
   mods:
     - atk: 3.5
@@ -974,6 +1029,20 @@
       spd: 15
     - atk: 5.699999999999999
     - atk: 0
+- name: Magica2020 Evo りり
+  mods:
+    - atk: 1.4
+      spd: 18
+    - atk: 3
+      spd: 40
+    - atk: 1.7999999999999998
+      spd: 27
+  special:
+    - cutRate: 1.5
+- name: デモンズスタイルレウコシア りり
+  mods:
+    - atk: 4
+    - atk: 0
 - name: マジカルウェディング りり
   mods:
     - atk: 3.9000000000000004
@@ -1163,4 +1232,23 @@
       spd: 15
     - atk: 5.7
     - atk: 14
+- name: 獄卒羅刹 セイラ
+  mods:
+    - atk: 4
+    - atk: 0
+    - atk: 3
+      hp: 0.3
+  special:
+    - null
+    - null
+    - cutRate: 2
+- name: デモンズスタイルレウコシア セイラ
+  mods:
+    - atk: 4
+    - atk: 0
+- name: Magica2020 Evo セイラ
+  mods:
+    - atk: 4.1
+    - atk: 0
+    - atk: 0
 
