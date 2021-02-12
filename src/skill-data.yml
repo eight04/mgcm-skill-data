@@ -1200,6 +1200,13 @@
     - atk: 4.1
     - atk: 1.8
     - atk: 0
+- name: フラッフィーラビット セイラ
+  mods:
+    - atk: 1.8
+    - atk: 1.2
+      def: 2.7
+  special:
+    - ignoreDefRate: 1
 - name: 熱血応援☆チアガール セイラ
   mods:
     - atk: 3.5
