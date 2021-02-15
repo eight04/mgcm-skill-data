@@ -2,7 +2,7 @@
 import DressTable from "./DressTable.svelte";
 
 import {getStore} from "./store.mjs";
-import {simulateSubDress} from "./simulate.mjs";
+import {simulateSubDress} from "./simulate.worker.mjs";
 import {_d} from "./i18n.mjs";
 
 const includedDresses = getStore("includedDresses", []);
