@@ -6,7 +6,7 @@ import BuffChooser from "./BuffChooser.svelte";
 import DebuffChooser from "./DebuffChooser.svelte";
 
 import {getStore} from "./store.mjs";
-import {simulateDps} from "./simulate.mjs";
+import {simulateDps} from "./simulate.worker.mjs";
 
 const dispatchEvent = createEventDispatcher();
 
@@ -127,6 +127,9 @@ function getOrbName(build) {
 
 <div class="actions">
   <button on:click={simulate} disabled={running}>Simulate</button>
+  {#if running}
+  Calculating...
+  {/if}
 </div>
 
 {#if result}
