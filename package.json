@@ -34,7 +34,7 @@
     "@eight04/read-write-lock": "^0.1.0",
     "@rollup/plugin-node-resolve": "^10.0.0",
     "@rollup/plugin-yaml": "^3.0.0",
-    "@surma/rollup-plugin-comlink": "git+https://github.com/eight04/rollup-plugin-comlink.git#dev-autowrap",
+    "@surma/rollup-plugin-comlink": "https://github.com/eight04/rollup-plugin-comlink/tarball/dev-autowrap",
     "cheerio": "^1.0.0-rc.3",
     "eslint": "^7.14.0",
     "eslint-plugin-svelte3": "^2.7.3",
