@@ -99,7 +99,7 @@ async function simulate() {
     <h3>Main</h3>
     <DressTable dresses={[result.mainDress]}></DressTable>
     <h3>Subs</h3>
-    <DressTable dresses={result.subDresses}></DressTable>
+    <DressTable dresses={result.subDresses} baseScore={result.mainDress.score}></DressTable>
   {/if}
 {/if}
 
