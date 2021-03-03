@@ -7,6 +7,7 @@ import DebuffChooser from "./DebuffChooser.svelte";
 
 import {getStore} from "./store.mjs";
 import {simulateDps} from "./simulate.worker.mjs";
+import {_d} from "./i18n.mjs";
 
 const dispatchEvent = createEventDispatcher();
 
@@ -27,6 +28,14 @@ let result;
 let resultErr;
 let maxScore;
 
+let filter = "";
+
+function matchFilter(row, filter) {
+  if (!filter) return true;
+  const rawName = row.mainDress.dress.name;
+  return rawName.includes(filter) || $_d(rawName).includes(filter);
+}
+
 async function simulate() {
   running = true;
   try {
@@ -44,6 +53,7 @@ async function simulate() {
     });
     resultErr = false;
     maxScore = result[0].score;
+    filter = "";
   } catch (err) {
     result = err;
     resultErr = true;
@@ -138,6 +148,10 @@ function getOrbName(build) {
       {String(result)}
     </div>
   {:else}
+    <label class="input-group">
+      <span class="input-title">Filter</span>
+      <input type="text" bind:value={filter}>
+    </label>
     <table>
       <thead>
         <tr>
@@ -152,39 +166,41 @@ function getOrbName(build) {
       </thead>
       <tbody>
         {#each result as row, i}
-          <tr>
-            <td rowspan="5">{i + 1}</td>
-            <td rowspan="5">{row.score.toFixed(2)}</td>
-            <td rowspan="5">{(row.score * 100 / maxScore).toFixed(2)}</td>
-            <td rowspan="5">
-              <DressLink dress={row.mainDress.dress}></DressLink>
-              <div class="rotation">
-                {row.history.map(v => v + 1).join("")}
-              </div>
-            </td>
-            <td rowspan="5">{row.mainDress.orb.name}</td>
-            <td>
-              <DressLink dress={row.subDresses[0].dress}></DressLink>
-            </td>
-            <td>
-              {getOrbName(row.subDresses[0])}
-            </td>
-          </tr>
-          {#each row.subDresses.slice(1) as sub}
+          {#if matchFilter(row, filter)}
             <tr>
-              <td>
-                <DressLink dress={sub.dress}></DressLink>
+              <td rowspan="5">{i + 1}</td>
+              <td rowspan="5">{row.score.toFixed(2)}</td>
+              <td rowspan="5">{(row.score * 100 / maxScore).toFixed(2)}</td>
+              <td rowspan="5">
+                <DressLink dress={row.mainDress.dress}></DressLink>
+                <div class="rotation">
+                  {row.history.map(v => v + 1).join("")}
+                </div>
               </td>
-              <td>{getOrbName(sub)}</td>
+              <td rowspan="5">{row.mainDress.orb.name}</td>
+              <td>
+                <DressLink dress={row.subDresses[0].dress}></DressLink>
+              </td>
+              <td>
+                {getOrbName(row.subDresses[0])}
+              </td>
             </tr>
-          {/each}
-          <tr>
-            <td colspan="2">
-              <button on:click={()=>openSubs(row.mainDress.dress.name, row.mod)}>
-                Simulate Subs
-              </button>
-            </td>
-          </tr>
+            {#each row.subDresses.slice(1) as sub}
+              <tr>
+                <td>
+                  <DressLink dress={sub.dress}></DressLink>
+                </td>
+                <td>{getOrbName(sub)}</td>
+              </tr>
+            {/each}
+            <tr>
+              <td colspan="2">
+                <button on:click={()=>openSubs(row.mainDress.dress.name, row.mod)}>
+                  Simulate Subs
+                </button>
+              </td>
+            </tr>
+          {/if}
         {/each}
       </tbody>
     </table>
@@ -218,6 +234,7 @@ th, td {
 .input-group :global(.radio-title),
 .input-title {
   margin: .3em 0;
+  display: block;
 }
 .input-group,
 .actions {
@@ -232,7 +249,7 @@ li {
   margin-top: .3em;
   margin-bottom: .3em;
 }
-input[type=number], select {
+input[type=number], input[type=text], select {
   display: block;
   width: 100%;
   box-sizing: border-box;
