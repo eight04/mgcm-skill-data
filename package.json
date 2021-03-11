@@ -6,7 +6,7 @@
   "scripts": {
     "test": "eslint **/*.mjs **/*.svelte",
     "dev": "run-p start-dev build-dev",
-    "build": "rollup -c",
+    "build": "shx rm -rf docs && rollup -c",
     "build-dev": "rollup -cw",
     "build-db": "node tools/build-db.mjs > dress-db.yml",
     "build-google-sheet": "node tools/build-google-sheet.mjs",
@@ -50,6 +50,7 @@
     "rollup-plugin-svelte": "^7.1.0",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-write-output": "^0.1.1",
+    "shx": "^0.3.3",
     "sirv-cli": "^1.0.11",
     "svelte": "^3.35.0",
     "yaml": "^1.10.0"

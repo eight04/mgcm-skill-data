@@ -368,7 +368,7 @@ function buildMod({
         specialBonus *
         getBuffValue(buff, debuff, key) *
         part.hits *
-        part.aoe ? targetNumber : 1;
+        (part.aoe ? targetNumber : 1);
     }
   }
   if (cut) {
