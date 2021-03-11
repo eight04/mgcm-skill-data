@@ -20,7 +20,7 @@ export async function getAllSkills() {
       }
       allSkills.set(dressName, {
         name: dressName,
-        mods: [...skills.map(parseSkill)]
+        skills: [...skills.map(parseSkill)]
       });
     }
     

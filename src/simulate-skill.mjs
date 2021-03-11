@@ -87,11 +87,11 @@ const SPECIALS = {
 export const skillMap = new Map(allSkillData.map(s => [s.name, compileSkill(s)]));
 
 // FIXME: should we move this to build-time?
-function compileSkill({name, mods, special, passive}) {
+function compileSkill({name, skills, special, passive}) {
   const result = [];
-  for (let i = 0; i < mods.length; i++) {
+  for (let i = 0; i < skills.length; i++) {
     result.push({
-      mod: mods[i],
+      skill: skills[i],
       special: compileSpecial(special?.[i], passive, Array.isArray(SPECIALS[name]) ? SPECIALS[name][i] : SPECIALS[name])
     });
   }
@@ -240,7 +240,8 @@ export function simulateSkillMod({
   debuff,
   targetBuff,
   targetDebuff,
-  useCut = false
+  useCut = false,
+  targetNumber = 1,
 }) {
   const skillData = skillMap.get(dress.name);
   if (!skillData) throw new Error(`missing skill data for ${dress.name}`);
@@ -254,7 +255,8 @@ export function simulateSkillMod({
       special: rawData.special,
       element: dress.element,
       targetElement,
-      targetDef
+      targetDef,
+      targetNumber
     };
     
     context.r = getBasicRate(context);
@@ -262,12 +264,13 @@ export function simulateSkillMod({
     return {
       index,
       mod: buildMod({
-        mod: rawData.mod,
+        skill: rawData.skill,
         bonus: dress.skill[index].bonus,
         specialBonus: getSpecialBonus(context),
         cut: useCut ? sum(rawData.special?.cutRate, context) : 0,
         buff,
-        debuff
+        debuff,
+        targetNumber
       }),
       cd: dress.skill[index].cd?.[1] || 1,
       sleep: 0,
@@ -349,20 +352,24 @@ export function simulateSkillMod({
 }
 
 function buildMod({
-  mod,
+  skill,
   bonus,
   specialBonus,
   cut,
   buff,
-  debuff
+  debuff,
+  targetNumber
 }) {
   const result = {};
-  for (const key in mod) {
-    result[key] = mod[key];
-    result[key] = mod[key] *
-      (100 + bonus) / 100 *
-      specialBonus *
-      getBuffValue(buff, debuff, key);
+  for (const part of skill) {
+    for (const key in part.mod) {
+      result[key] = part.mod[key] *
+        (100 + bonus) / 100 *
+        specialBonus *
+        getBuffValue(buff, debuff, key) *
+        part.hits *
+        part.aoe ? targetNumber : 1;
+    }
   }
   if (cut) {
     result.targetHp = (result.targetHp || 0) + cut * 0.05 * 0.85;
