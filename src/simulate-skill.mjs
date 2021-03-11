@@ -73,7 +73,15 @@ const SPECIALS = {
   },
   "デモンズスタイルレウコシア 丹": {
     critRate: ({targetDebuff}) => targetDebuff.length ? 0 : 1
-  }
+  },
+  "Ultimate Magica 陽彩": [
+    null,
+    null,
+    {
+      critRate: ({targetElement}) => targetElement === "light" ? 0.35 : 0.15,
+      extraDamageOnCrit: ({targetElement}) => targetElement === "light" ? 2.5 : 2
+    }
+  ]
 };
 
 export const skillMap = new Map(allSkillData.map(s => [s.name, compileSkill(s)]));
