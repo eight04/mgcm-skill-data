@@ -1,227 +1,557 @@
 - name: ラウンジウェア 丹
   mods:
-    - atk: 3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3
 - name: 武良穂スポーツユニ 丹
   mods:
-    - atk: 3.8
-    - atk: 3.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.9
 - name: クッキングエプロン 丹
   mods:
-    - atk: 4.2
-    - atk: 0
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: ホリデーカジュアル 丹
   mods:
-    - atk: 3.9
-    - atk: 6.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6.2
   special:
     - null
     - cutRate: 2
 - name: Magica2019 丹
   mods:
-    - atk: 3.2
-    - atk: 0
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: Magica1984 丹
   mods:
-    - atk: 3.6
-    - atk: 2.2
-      hp: 0.16
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.6
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 1.1
+          hp: 0.08
 - name: Magica2061 丹
   mods:
-    - atk: 4.1
-    - atk: 5.6
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: Magica2019 Evo 丹
   mods:
-    - atk: 4
-    - atk: 0
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: 艶女医白衣 丹
   mods:
-    - atk: 3.6
-    - atk: 0
-    - atk: 6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6
 - name: ギャルアーミー 丹
   mods:
-    - atk: 4
-    - atk: 0
-    - atk: 5.5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.5
 - name: エモい出ビキニ 丹
   mods:
-    - atk: 4
-    - atk: 6.1
-    - atk: 4.4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6.1
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 2.1
+          hp: 0.2
 - name: ウェスタンカウガール 丹
   mods:
-    - atk: 4.1
-    - atk: 5.2
-    - atk: 4.4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.2
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.4
 - name: 幻想秘湯天女 丹
   mods:
-    - atk: 4
-    - atk: 0
-    - atk: 3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 3
   special:
     - null
     - null
     - cutRate: 4
 - name: ホーリーサンタ 丹
   mods:
-    - atk: 3.2
-    - atk: 4
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.2
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4
 - name: スノークイーン 丹
   mods:
-    - atk: 2.8
-    - atk: 6.1
-    - atk: 0
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 2.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: フェニックス 丹
   mods:
-    - atk: 4.2
-    - atk: 6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6
 - name: 獄卒羅刹 丹
   mods:
-    - atk: 4
-    - atk: 6.3
-    - atk: 4.5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6.3
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.5
 - name: デモンズスタイルレウコシア 丹
   mods:
-    - atk: 4
-    - atk: 6.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 3.3
 - name: ラウンジウェア 陽彩
   mods:
-    - atk: 3.4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.4
 - name: 武良穂スポーツユニ 陽彩
   mods:
-    - atk: 3.8
-    - atk: 4.4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.4
 - name: クッキングエプロン 陽彩
   mods:
-    - atk: 4.2
-    - atk: 5.8
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.1
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.9
 - name: ホリデーカジュアル 陽彩
   mods:
-    - atk: 3.9
-    - atk: 6.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.9
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 3.1
 - name: Magica2019 陽彩
   mods:
-    - atk: 3.2
-    - atk: 2.3
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.2
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 2.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: Magica1984 陽彩
   mods:
-    - atk: 3.6
-    - atk: 6
-    - atk: 3.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 3.8
 - name: Magica2061 陽彩
   mods:
-    - atk: 4.1
-    - atk: 1.3
-      hp: 0.1
-    - atk: 1.8
-      hp: 0.13
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 1.3
+          hp: 0.1
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 1.8
+          hp: 0.13
   special:
     - null
     - cutRate: 2
 - name: Magica2019 Evo 陽彩
   mods:
-    - atk: 4
-    - atk: 0
-    - atk: 3.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 3.2
 - name: デモンズスタイルアラクネ 陽彩
   mods:
-    - atk: 4.3
-    - atk: 4.9
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: フラッフィーラビット 陽彩
   mods:
-    - atk: 1.8
-    - atk: 2
-      def: 4.5
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 2
+          def: 4.5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
   special:
     - ignoreDefRate: 1
 - name: 炎節わっしょい神輿 陽彩
   mods:
-    - atk: 3.8
-    - atk: 2
-      def: 3.2
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 2
+          def: 3.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
   special:
     - cutRate: 1
 - name: オーセンティックメイド 陽彩
   mods:
-    - atk: 4.1
-    - atk: 0
-    - atk: 4.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.3
 - name: †ハロウィッチ† 陽彩
   mods:
-    - atk: 1.6
-      hp: 0.16
-    - atk: 5.2
-    - atk: 0
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 0.8
+          hp: 0.08
+    - - hits: 4
+        aoe: false
+        mod:
+          atk: 1.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: シブハロ↑ナイトコス 陽彩
   mods:
-    - atk: 3.9
-    - atk: 3.2
-    - atk: 7.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.9
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 3.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 7.3
 - name: 幻想秘湯天女 陽彩
   mods:
-    - atk: 4
-    - atk: 5.6
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: ホーリーサンタ 陽彩
   mods:
-    - atk: 3.2
-    - atk: 5.4
-    - atk: 4.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.4
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.3
   special:
     - null
     - null
     - critRate: 0.3
 - name: 新春巫女2020 陽彩
   mods:
-    - atk: 1.2
-      spd: 15
-    - atk: 2.4000000000000004
-      spd: 30
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.2
+          spd: 15
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 0.8
+          spd: 10
 - name: デモンズスタイルレウコシア 陽彩
   mods:
-    - atk: 4
-    - atk: 1.2
-      hp: 0.15
-    - atk: 4.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 1.2
+          hp: 0.15
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.3
 - name: Ultimate Magica 陽彩
   mods:
-    - atk: 4.1
-    - atk: 4.6
-    - atk: 3.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.6
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 3.6
 - name: ラウンジウェア 蒼
   mods:
-    - atk: 3.4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.4
 - name: 武良穂スポーツユニ 蒼
   mods:
-    - atk: 3.8
-    - atk: 5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.5
 - name: クッキングエプロン 蒼
   mods:
-    - atk: 4.2
-    - atk: 4.9
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.9
 - name: ホリデーカジュアル 蒼
   mods:
-    - atk: 3.9
-    - atk: 5.5
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: Magica2019 蒼
   mods:
-    - atk: 3.2
-    - atk: 5.8
-    - atk: 9.899999999999999
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.8
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 3.3
 - name: Magica1984 蒼
   mods:
-    - atk: 3.6
-    - atk: 5.2
-    - atk: 6.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6.1
   special:
     - null
     - null
@@ -229,115 +559,279 @@
       critRate: 999
 - name: Magica2061 蒼
   mods:
-    - atk: 4.1
-    - atk: 0
-      def: 4.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 0
+          def: 2.3
 - name: Magica2019 Evo 蒼
   mods:
-    - atk: 4
-    - atk: 3.9000000000000004
-    - atk: 7.5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 3
+        aoe: true
+        mod:
+          atk: 1.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 7.5
+      - hits: 1
+        aoe: true
+        mod:
+          atk: 3.75
+      - hits: 1
+        aoe: false
+        mod:
+          atk: -3.75
   special:
     - null
     - cutRate: 4.5
 - name: デモンズスタイルアラクネ 蒼
   mods:
-    - atk: 4.3
-    - atk: 4.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.3
+    - - hits: 2
+        aoe: true
+        mod:
+          atk: 2.1
   special:
     - null
     - cutRate: 2
 - name: 艶女医白衣 蒼
   mods:
-    - atk: 3.6
-    - atk: 0
-    - atk: 2.5
-      hp: 0.22
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 2.5
+          hp: 0.22
 - name: バカンスビキニ2019 蒼
   mods:
-    - atk: 4.1
-    - atk: 0
-    - atk: 6.6000000000000005
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 2.2
   special:
     - cutRate: 1
 - name: 灼熱野球ユニ 蒼
   mods:
-    - atk: 4
-    - atk: 7.6
-    - atk: 6.4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 4
+        aoe: false
+        mod:
+          atk: 1.6
 - name: オーセンティックメイド 蒼
   mods:
-    - atk: 4.1
-    - atk: 6
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: シブハロ↑ナイトコス 蒼
   mods:
-    - atk: 3.9
-    - atk: 4.1
-      targetHp: 0.1
-    - atk: 6.5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+          targetHp: 0.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6.5
   special:
     - null
     - null
     - cutRate: 3
 - name: ワイン娘 蒼
   mods:
-    - atk: 4
-    - atk: 0
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: イフリート 蒼
   mods:
-    - atk: 4.2
-    - atk: 6.2
-    - atk: 14
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6.2
+    - - hits: 4
+        aoe: false
+        mod:
+          atk: 3.5
 - name: Magica2020 Evo 蒼
   mods:
-    - atk: 4
-    - atk: 9
-    - atk: 4.800000000000001
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 4.5
+    - - hits: 3
+        aoe: true
+        mod:
+          atk: 1.6
   special:
     - null
     - null
     - cutRate: 6
 - name: Magica2020 蒼
   mods:
-    - atk: 4
-    - atk: 9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 4.5
 - name: デモンズスタイルレウコシア 蒼
   mods:
-    - atk: 4
-    - atk: 6.6
-    - atk: 8.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 3.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 8.2
 - name: ラウンジウェア エリザ
   mods:
-    - atk: 3.5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.5
 - name: 武良穂スポーツユニ エリザ
   mods:
-    - atk: 3.8
-    - atk: 4.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.3
 - name: クッキングエプロン エリザ
   mods:
-    - atk: 4.2
-    - atk: 4.1
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.1
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.1
 - name: ホリデーカジュアル エリザ
   mods:
-    - atk: 3.9
-    - atk: 5.4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.9
+    - - hits: 2
+        aoe: true
+        mod:
+          atk: 2.7
 - name: Magica2019 エリザ
   mods:
-    - atk: 3.2
-    - atk: 3.4
-    - atk: 3.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.2
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 3.4
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 3.8
 - name: Magica1984 エリザ
   mods:
-    - atk: 3.6
-    - atk: 5.699999999999999
-    - atk: 5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.6
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 1.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5
 - name: Magica2061 エリザ
   mods:
-    - atk: 4.1
-    - atk: 4.6
-    - atk: 5.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.6
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 5.9
   special:
     - null
     - null
@@ -346,318 +840,762 @@
       heavyRate: 999
 - name: デモンズスタイルアラクネ エリザ
   mods:
-    - atk: 3.5
-    - atk: 0
-    - atk: 4.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.2
 - name: Magica2019 Evo エリザ
   mods:
-    - atk: 4
-    - atk: 3.8
-    - atk: 8.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 2
+        aoe: true
+        mod:
+          atk: 1.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 8.1
   special:
     - null
     - missRate: -999
     - critRate: 0.7
 - name: モテカワ美少女戦士 エリザ
   mods:
-    - atk: 3.8
-    - atk: 6.4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6.4
 - name: 艶女医白衣 エリザ
   mods:
-    - atk: 3.6
-    - atk: 0
-    - atk: 3
-      def: 5.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 1
+          def: 1.7
 - name: エモい出ビキニ エリザ
   mods:
-    - atk: 4
-    - atk: 2.6
-      hp: 0.24
-    - atk: 2.25
-      hp: 0.39
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 1.3
+          hp: 0.12
+    - - hits: 3
+        aoe: true
+        mod:
+          atk: 0.75
+          hp: 0.13
 - name: "姫会ドレス #リムパ エリザ"
   mods:
-    - atk: 4.1
-    - atk: 1.8
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 1.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: †ハロウィッチ† エリザ
   mods:
-    - atk: 1.6
-      hp: 0.16
-    - atk: 5.2
-    - atk: 7.5
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 0.8
+          hp: 0.08
+    - - hits: 4
+        aoe: false
+        mod:
+          atk: 1.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 7.5
 - name: シブハロ↑ナイトコス エリザ
   mods:
-    - atk: 3.9
-    - atk: 4.1
-      targetHp: 0.1
-    - atk: 10
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+          targetHp: 0.1
+    - - hits: 4
+        aoe: false
+        mod:
+          atk: 2.5
 - name: 幻想秘湯天女 エリザ
   mods:
-    - atk: 4
-    - atk: 6
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: セクシートナカイ エリザ
   mods:
-    - atk: 1.4
-      def: 2.6
-    - atk: 2.5
-      def: 2.8
-    - atk: 1.6
-      def: 3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.4
+          def: 2.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 2.5
+          def: 2.8
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 1.6
+          def: 3
   special:
     - null
     - cutRate: 3
 - name: スノークイーン エリザ
   mods:
-    - atk: 2.8
-    - atk: 0
-      targetSpd: 50
-    - atk: 4.800000000000001
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 2.8
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 0
+          targetSpd: 50
+    - - hits: 3
+        aoe: true
+        mod:
+          atk: 1.6
 - name: 牧瀬紅莉栖 エリザ
   mods:
-    - atk: 3.8
-    - atk: 5.9
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
   special:
     - null
     - null
     - recast: -1
 - name: デモンズスタイルレウコシア エリザ
   mods:
-    - atk: 4
-    - atk: 9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 3
 - name: Magica2020 エリザ
   mods:
-    - atk: 4.4
-    - atk: 7
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.4
+    - - hits: 5
+        aoe: false
+        mod:
+          atk: 1.4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
   special:
     - cutRate: 1.6
     - missRate: -999
       critRate: 999
 - name: ホーリーサンタ2020 エリザ
   mods:
-    - atk: 3.2
-    - atk: 6.4
-    - atk: 4.8
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 3.2
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 3.2
+    - - hits: 2
+        aoe: true
+        mod:
+          atk: 2.4
 - name: ラウンジウェア はなび
   mods:
-    - atk: 3.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.6
 - name: 聖チャールズスポーツユニ はなび
   mods:
-    - atk: 3.8
-    - atk: 5.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.8
 - name: クッキングエプロン はなび
   mods:
-    - atk: 4.2
-    - atk: 4.2
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.1
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.2
 - name: ホリデーカジュアル はなび
   mods:
-    - atk: 3.9
-    - atk: 3.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.9
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 3.8
 - name: Magica2019 はなび
   mods:
-    - atk: 3.7
-    - atk: 5.4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.7
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.4
 - name: Magica1984 はなび
   mods:
-    - atk: 3.6
-    - atk: 5.6
-    - atk: 8.4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.6
+    - - hits: 4
+        aoe: false
+        mod:
+          atk: 2.1
 - name: Magica2061 はなび
   mods:
-    - atk: 4.1
-    - atk: 3.8
-    - atk: 5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 2
+        aoe: true
+        mod:
+          atk: 1.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5
   special:
     - null
     - cutRate: 2
 - name: Magica2019 Evo はなび
   mods:
-    - atk: 4
-    - atk: 0
-    - atk: 5.4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.7
   special:
     - null
     - null
     - ignoreDefRate: 0.5
 - name: デモンズスタイルアラクネ はなび
   mods:
-    - atk: 4.3
-    - atk: 0
-    - atk: 4.4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.3
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.4
 - name: 熱血応援☆チアガール はなび
   mods:
-    - atk: 3.486882016
-    - atk: 0
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: 炎節わっしょい神輿 はなび
   mods:
-    - atk: 3.8
-    - atk: 2
-      def: 3.2
-    - atk: 8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 2
+          def: 3.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 8
   special:
     - cutRate: 1
 - name: オーセンティックメイド はなび
   mods:
-    - atk: 4.1
-    - atk: 6
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: エンシェントウィズダム はなび
   mods:
-    - atk: 4
-    - atk: 5.2
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: ウェスタンカウガール はなび
   mods:
-    - atk: 4.1
-    - atk: 5.2
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: 鬼魔愚零卍神特攻服 はなび
   mods:
-    - atk: 1.9
-      hp: 0.15
-    - atk: 0
-      hp: 0.32
-    - atk: 0
-      hp: 0.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.9
+          hp: 0.15
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 0
+          hp: 0.16
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 0
+          hp: 0.3
 - name: ホーリーサンタ はなび
   mods:
-    - atk: 3.2
-    - atk: 5.4
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: ロイヤルナイトアーマー はなび
   mods:
-    - atk: 3.9000000000000004
-    - atk: 5.6
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 1.3
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.8
   special:
     - null
     - cutRate: 2
 - name: フェニックス はなび
   mods:
-    - atk: 4.2
-    - atk: 6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.2
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 3
 - name: デモンズスタイルレウコシア はなび
   mods:
-    - atk: 4
-    - atk: 1.8
-      hp: 0.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.8
+          hp: 0.3
 - name: ラウンジウェア 依子
   mods:
-    - atk: 3.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.3
 - name: 聖チャールズスポーツユニ 依子
   mods:
-    - atk: 3.8
-    - atk: 4.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.8
 - name: クッキングエプロン 依子
   mods:
-    - atk: 4.2
-    - atk: 5.7
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.7
 - name: ホリデーカジュアル 依子
   mods:
-    - atk: 3.8
-    - atk: 4.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.8
 - name: Magica2019 依子
   mods:
-    - atk: 3.7
-    - atk: 5.1
-    - atk: 6.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.7
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.1
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 3.4
 - name: Magica1984 依子
   mods:
-    - atk: 3.6
-    - atk: 6
-    - atk: 4.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.6
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 2
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.1
 - name: Magica2061 依子
   mods:
-    - atk: 4.1
-    - atk: 1.2
-      spd: 28.5
-    - atk: 3
-      spd: 31.5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.2
+          spd: 28.5
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 1
+          spd: 10.5
 - name: デモンズスタイルアラクネ 依子
   mods:
-    - atk: 3.5
-    - atk: 0
-    - atk: 3.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 3.1
 - name: Magica2019 Evo 依子
   mods:
-    - atk: 4
-    - atk: 1.6
-      def: 2.6
-    - atk: 2.4
-      def: 4.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 2
+        aoe: true
+        mod:
+          atk: 0.8
+          def: 1.3
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 1.2
+          def: 2.4
 - name: ギャルアーミー 依子
   mods:
-    - atk: 4
-    - atk: 5.1
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 1.7
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: 灼熱野球ユニ 依子
   mods:
-    - atk: 4
-    - atk: 6
-    - atk: 4.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.8
 - name: フラッフィーラビット 依子
   mods:
-    - atk: 1.8
-    - atk: 3.7
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.8
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 1.85
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
   special:
     - ignoreDefRate: 1
 - name: 幻想秘湯天女 依子
   mods:
-    - atk: 4
-    - atk: 5.6
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: キラキラ☆アイドル 依子
   mods:
-    - atk: 1.3
-      hp: 0.22
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.3
+          hp: 0.22
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
   special:
     - missRate: -999
 - name: ラウンジウェア いろは
   mods:
-    - atk: 3.5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.5
 - name: 有羽スポーツユニ いろは
   mods:
-    - atk: 3.8
-    - atk: 5.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.3
 - name: クッキングエプロン いろは
   mods:
-    - atk: 4.2
-    - atk: 4.2
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.1
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.2
 - name: ホリデーカジュアル いろは
   mods:
-    - atk: 3.9
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: Magica2019 いろは
   mods:
-    - atk: 4
-    - atk: 3.6
-    - atk: 6.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 3.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6.3
   special:
     - cutRate: 1.2
 - name: Magica1984 いろは
   mods:
-    - atk: 3.9000000000000004
-    - atk: 4.2
-    - atk: 3.5
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 1.3
+    - - hits: 2
+        aoe: true
+        mod:
+          atk: 2.1
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 3.5
 - name: Magica2061 いろは
   mods:
-    - atk: 4.1
-    - atk: 5.699999999999999
-    - atk: 4.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 1.9
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.3
 - name: Magica2019 Evo いろは
   mods:
-    - atk: 4
-    - atk: 4
-    - atk: 4.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.6
 - name: デモンズスタイルアラクネ いろは
   mods:
-    - atk: 4.3
-    - atk: 3.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.3
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 3.3
   special:
     - null
     - critRate: 0.5
@@ -666,207 +1604,504 @@
     extraDamageOnCrit: 1.5
 - name: モテカワ美少女戦士 いろは
   mods:
-    - atk: 3.1
-    - atk: 6.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6.1
 - name: セーラースクール水着 いろは
   mods:
-    - atk: 4
-    - atk: 5.4
-    - atk: 6.7
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6.7
 - name: エモい出ビキニ いろは
   mods:
-    - atk: 4
-    - atk: 0
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: フラッフィーラビット いろは
   mods:
-    - atk: 1.8
-    - atk: 3.7
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.7
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
   special:
     - ignoreDefRate: 1
 - name: †ハロウィッチ† いろは
   mods:
-    - atk: 1.6
-      hp: 0.16
-    - atk: 5.2
-    - atk: 0
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 0.8
+          hp: 0.08
+    - - hits: 4
+        aoe: false
+        mod:
+          atk: 1.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: ワイン娘 いろは
   mods:
-    - atk: 4
-    - atk: 0
-    - atk: 8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 8
 - name: ホーリーサンタ いろは
   mods:
-    - atk: 3.2
-    - atk: 6
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: スノークイーン いろは
   mods:
-    - atk: 2.8
-    - atk: 6.1
-    - atk: 4.4
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 2.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6.1
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.4
 - name: デモンズスタイルレウコシア いろは
   mods:
-    - atk: 4
-    - atk: 6.6
-    - atk: 7
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 3.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 7
 - name: スイートバレンタイン いろは
   mods:
-    - atk: 2
-      spd: 30
-    - atk: 1.6
-      spd: 22
-    - atk: 0
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 1
+          spd: 15
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 0.8
+          spd: 11
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: ラウンジウェア 花織
   mods:
-    - atk: 3.5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.5
   special:
     - cutRate: 0.6
 - name: 有羽スポーツユニ 花織
   mods:
-    - atk: 3.8
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: クッキングエプロン 花織
   mods:
-    - atk: 4.2
-    - atk: 0
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: ホリデーカジュアル 花織
   mods:
-    - atk: 3.9
-    - atk: 2.1
-      def: 2.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 2.1
+          def: 2.9
   special:
     - null
     - cutRate: 3
 - name: Magica2019 花織
   mods:
-    - atk: 4
-    - atk: 0
-    - atk: 3.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 3.8
   special:
     - cutRate: 1.2
 - name: Magica1984 花織
   mods:
-    - atk: 3.9000000000000004
-    - atk: 2.8
-    - atk: 0
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 1.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 2.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: Magica2061 花織
   mods:
-    - atk: 4.1
-    - atk: 2.9
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 2.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: デモンズスタイルアラクネ 花織
   mods:
-    - atk: 3.5
-    - atk: 0
-    - atk: 3.4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 2
+        aoe: true
+        mod:
+          atk: 1.7
 - name: Magica2019 Evo 花織
   mods:
-    - atk: 4
-    - atk: 4.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.8
 - name: モテカワ美少女戦士 花織
   mods:
-    - atk: 3.8
-    - atk: 6.1
-    - atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6.1
+    - - hits: 4
+        aoe: true
+        mod:
+          atk: 1
 - name: セーラースクール水着 花織
   mods:
-    - atk: 4
-    - atk: 0
-    - atk: 4.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.3
 - name: エモい出ビキニ 花織
   mods:
-    - atk: 4
-    - atk: 6.1
-    - atk: 2
-      def: 2.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6.1
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 2
+          def: 2.1
 - name: フラッフィーラビット 花織
   mods:
-    - atk: 1.8
-    - atk: 7.4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.8
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 3.7
   special:
     - ignoreDefRate: 1
 - name: 熱血応援☆チアガール 花織
   mods:
-    - atk: 3.5
-    - atk: 0
-    - atk: 4.4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.4
 - name: †ハロウィッチ† 花織
   mods:
-    - atk: 1.6
-      hp: 0.16
-    - atk: 4.2
-    - atk: 0
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 0.8
+          hp: 0.08
+    - - hits: 2
+        aoe: true
+        mod:
+          atk: 2.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: エンシェントウィズダム 花織
   mods:
-    - atk: 4
-    - atk: 0
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
   special:
     - null
     - cutRate: 4
 - name: 鬼魔愚零卍神特攻服 花織
   mods:
-    - atk: 1.9
-      hp: 0.15
-    - atk: 0
-      hp: 0.32
-    - atk: 0
-      hp: 0.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.9
+          hp: 0.15
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 0
+          hp: 0.16
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 0
+          hp: 0.3
 - name: ワイン娘 花織
   mods:
-    - atk: 4
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: ラウンジウェア ここあ
   mods:
-    - atk: 3.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.3
 - name: 有羽スポーツユニ ここあ
   mods:
-    - atk: 3.8
-    - atk: 4.5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.5
 - name: クッキングエプロン ここあ
   mods:
-    - atk: 4.2
-    - atk: 0
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: ホリデーカジュアル ここあ
   mods:
-    - atk: 3.9
-    - atk: 5.7
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.7
 - name: Magica2019 ここあ
   mods:
-    - atk: 4
-    - atk: 4.6
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
   special:
     - cutRate: 1.2
 - name: Magica1984 ここあ
   mods:
-    - atk: 3.9000000000000004
-    - atk: 5.8
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 1.3
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.9
   passive:
     critRate: 0.3
     extraDamageOnCrit: 1.3
 - name: Magica2061 ここあ
   mods:
-    - atk: 4.1
-    - atk: 4.2
-    - atk: 5.5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.5
 - name: Magica2019 Evo ここあ
   mods:
-    - atk: 4
-    - atk: 8.100000000000001
-    - atk: 4.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 2.7
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.3
 - name: セーラースクール水着 ここあ
   mods:
-    - atk: 4
-    - atk: 5.4
-    - atk: 4.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.4
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.2
 - name: 灼熱野球ユニ ここあ
   mods:
-    - atk: 4
-    - atk: 6
-    - atk: 7.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 7.6
   special:
     - null
     - null
@@ -874,32 +2109,74 @@
       missRate: 999
 - name: 炎節わっしょい神輿 ここあ
   mods:
-    - atk: 3.8
-    - atk: 4.8
-      hp: 0.48
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 4
+        aoe: false
+        mod:
+          atk: 1.2
+          hp: 0.12
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
   special:
     - cutRate: 1
 - name: †ハロウィッチ† ここあ
   mods:
-    - atk: 1.6
-      hp: 0.16
-    - atk: 0
-    - atk: 0
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 0.8
+          hp: 0.08
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: 幻想秘湯天女 ここあ
   mods:
-    - atk: 4
-    - atk: 5.6
-    - atk: 11
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.8
+    - - hits: 5
+        aoe: false
+        mod:
+          atk: 2.2
 - name: ホーリーサンタ ここあ
   mods:
-    - atk: 3.2
-    - atk: 5.4
-    - atk: 7.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.4
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 3.8
 - name: 玉藻前 ここあ
   mods:
-    - atk: 4.3
-    - atk: 5.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.2
   special:
     - null
     - ignoreDefRate: 1
@@ -907,355 +2184,847 @@
     element: superior
 - name: 獄卒羅刹 ここあ
   mods:
-    - atk: 4
-    - atk: 5.9
-    - atk: 7.5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.9
+    - - hits: 2
+        aoe: true
+        mod:
+          atk: 2.5
   special:
     - null
     - null
     - cutRate: 6
 - name: デモンズスタイルレウコシア ここあ
   mods:
-    - atk: 4
-    - atk: 6.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 3.3
 - name: マジカルスイムスーツ ここあ
   mods:
-    - atk: 4
-    - atk: 5.8
-    - atk: 2
-      spd: 30
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 2
+          spd: 30
 - name: Magica2020 Evo ここあ
   mods:
-    - atk: 1.2
-      spd: 20
-    - atk: 2.4
-      spd: 44
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.2
+          spd: 20
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 1.2
+          spd: 22
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 0
 - name: ラウンジウェア りり
   mods:
-    - atk: 3.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.3
 - name: 聖チャールズスポーツユニ りり
   mods:
-    - atk: 3.8
-    - atk: 8.399999999999999
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 2.8
 - name: クッキングエプロン りり
   mods:
-    - atk: 4.2
-    - atk: 5.6
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.6
 - name: ホリデーカジュアル りり
   mods:
-    - atk: 3.9
-    - atk: 6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.9
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 3
 - name: Magica2019 りり
   mods:
-    - atk: 3.7
-    - atk: 7.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.7
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 7.2
 - name: Magica1984 りり
   mods:
-    - atk: 3.6
-    - atk: 4.9
-    - atk: 3.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.9
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 3.9
 - name: Magica2061 りり
   mods:
-    - atk: 4.1
-    - atk: 0
-    - atk: 1.1
-      hp: 0.15
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.1
+          hp: 0.15
 - name: デモンズスタイルアラクネ りり
   mods:
-    - atk: 3.5
-    - atk: 0
-    - atk: 1.3
-      spd: 10
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 1.3
+          spd: 10
 - name: Magica2019 Evo りり
   mods:
-    - atk: 4
-    - atk: 7.5
-    - atk: 4.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 5
+        aoe: false
+        mod:
+          atk: 1.5
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.2
 - name: ギャルアーミー りり
   mods:
-    - atk: 4
-    - atk: 5.1
-    - atk: 5.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 1.7
+    - - hits: 3
+        aoe: true
+        mod:
+          atk: 1.7
 - name: バカンスビキニ2019 りり
   mods:
-    - atk: 4.1
-    - atk: 3.7
-    - atk: 5.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 3.7
+    - - hits: 3
+        aoe: true
+        mod:
+          atk: 1.7
   special:
     - cutRate: 1
     - cutRate: 3
 - name: "姫会ドレス #リムパ りり"
   mods:
-    - atk: 4.1
-    - atk: 7.6
-    - atk: 4.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 4
+        aoe: false
+        mod:
+          atk: 1.9
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.2
 - name: ウェスタンカウガール りり
   mods:
-    - atk: 4.1
-    - atk: 0
-      hp: 0.4
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+          hp: 0.4
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 0
 - name: ブリュンヒルデ りり
   mods:
-    - atk: 4.2
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
   special:
     - cutRate: 1
 - name: 鬼魔愚零卍神特攻服 りり
   mods:
-    - atk: 1.9
-      hp: 0.15
-    - atk: 0
-      hp: 0.21
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.9
+          hp: 0.15
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 0
+          hp: 0.21
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 0
 - name: サディスティックサキュバス りり
   mods:
-    - atk: 3.9
-    - atk: 5.6
-    - atk: 3.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.6
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 3.9
 - name: ロイヤルナイトアーマー りり
   mods:
-    - atk: 3.9000000000000004
-    - atk: 5.6
-    - atk: 7.800000000000001
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 1.3
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.8
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 2.6
   special:
     - null
     - cutRate: 2
     - cutRate: 3
 - name: 新春巫女2020 りり
   mods:
-    - atk: 1.2
-      spd: 15
-    - atk: 5.699999999999999
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.2
+          spd: 15
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 1.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: Magica2020 Evo りり
   mods:
-    - atk: 1.4
-      spd: 18
-    - atk: 3
-      spd: 40
-    - atk: 1.7999999999999998
-      spd: 27
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.4
+          spd: 18
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3
+          spd: 40
+    - - hits: 3
+        aoe: true
+        mod:
+          atk: 0.6
+          spd: 9
   special:
     - cutRate: 1.5
 - name: デモンズスタイルレウコシア りり
   mods:
-    - atk: 4
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: マジカルウェディング りり
   mods:
-    - atk: 3.9000000000000004
-    - atk: 4
-    - atk: 8.100000000000001
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 1.3
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 2.7
 - name: ラウンジウェア マリアンヌ
   mods:
-    - atk: 3.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.6
 - name: 聖チャールズスポーツユニ マリアンヌ
   mods:
-    - atk: 3.8
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: クッキングエプロン マリアンヌ
   mods:
-    - atk: 4.2
-    - atk: 0
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: ホリデーカジュアル マリアンヌ
   mods:
-    - atk: 3.8
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: Magica2019 マリアンヌ
   mods:
-    - atk: 3.7
-    - atk: 0
-    - atk: 3.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.7
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 3.1
 - name: Magica1984 マリアンヌ
   mods:
-    - atk: 3.6
-    - atk: 0
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: Magica2061 マリアンヌ
   mods:
-    - atk: 4.1
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: デモンズスタイルアラクネ マリアンヌ
   mods:
-    - atk: 3.5
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: Magica2019 Evo マリアンヌ
   mods:
-    - atk: 4
-    - atk: 1
-      hp: 0.12
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 1
+          hp: 0.12
 - name: モテカワ美少女戦士 マリアンヌ
   mods:
-    - atk: 3.8
-    - atk: 6.4
-    - atk: 8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6.4
+    - - hits: 4
+        aoe: false
+        mod:
+          atk: 2
 - name: エモい出ビキニ マリアンヌ
   mods:
-    - atk: 4
-    - atk: 6.1
-    - atk: 7.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 7.6
 - name: エンシェントウィズダム マリアンヌ
   mods:
-    - atk: 4
-    - atk: 0
-    - atk: 6.300000000000001
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 0
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 2.1
   special:
     - null
     - cutRate: 4
 - name: ブリュンヒルデ マリアンヌ
   mods:
-    - atk: 4.2
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
   special:
     - cutRate: 1
 - name: サディスティックサキュバス マリアンヌ
   mods:
-    - atk: 3.9
-    - atk: 5.9
-    - atk: 10
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.9
+    - - hits: 5
+        aoe: false
+        mod:
+          atk: 2
 - name: セクシートナカイ マリアンヌ
   mods:
-    - atk: 1.4
-      def: 2.6
-    - atk: 2.5
-      def: 2.8
-    - atk: 4.5
-      def: 4.5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.4
+          def: 2.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 2.5
+          def: 2.8
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 1.5
+          def: 1.5
   special:
     - null
     - cutRate: 3
 - name: ぐだぐだFallenAngel マリアンヌ
   mods:
-    - atk: 3.8
-    - atk: 5.8
-    - atk: 10
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 1.9
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.9
+    - - hits: 5
+        aoe: false
+        mod:
+          atk: 2
   special:
     - null
     - null
     - cutRate: 9
 - name: ラウンジウェア セイラ
   mods:
-    - atk: 3.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.6
 - name: 有羽スポーツユニ セイラ
   mods:
-    - atk: 3.8
-    - atk: 2.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 2.8
 - name: クッキングエプロン セイラ
   mods:
-    - atk: 4.2
-    - atk: 4.6
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.6
 - name: ホリデーカジュアル セイラ
   mods:
-    - atk: 3.9
-    - atk: 5.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.9
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 1.7
 - name: Magica2019 セイラ
   mods:
-    - atk: 4
-    - atk: 6.5
-    - atk: 4.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6.5
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.3
   special:
     - cutRate: 1.2
 - name: Magica1984 セイラ
   mods:
-    - atk: 3.9000000000000004
-    - atk: 5.4
-    - atk: 4.1
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 1.3
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.7
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.1
 - name: Magica2061 セイラ
   mods:
-    - atk: 4.1
-    - atk: 4.9
-    - atk: 5.5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.5
 - name: Magica2019 Evo セイラ
   mods:
-    - atk: 4
-    - atk: 5.3
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.3
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 0
 - name: デモンズスタイルアラクネ セイラ
   mods:
-    - atk: 4.3
-    - atk: 3.8
-    - atk: 4.199999999999999
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.3
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 3.8
+    - - hits: 3
+        aoe: true
+        mod:
+          atk: 1.4
   special:
     - null
     - null
     - cutRate: 3
 - name: モテカワ美少女戦士 セイラ
   mods:
-    - atk: 3.8
-    - atk: 6.4
-    - atk: 5
-      targetHp: 0.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6.4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5
+          targetHp: 0.2
 - name: バカンスビキニ2019 セイラ
   mods:
-    - atk: 4.1
-    - atk: 3.7
-    - atk: 8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 3.7
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 8
   special:
     - cutRate: 1
     - cutRate: 3
 - name: "姫会ドレス #リムパ セイラ"
   mods:
-    - atk: 4.1
-    - atk: 1.8
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 1.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: フラッフィーラビット セイラ
   mods:
-    - atk: 1.8
-    - atk: 1.2
-      def: 2.7
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.8
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 1.2
+          def: 2.7
   special:
     - ignoreDefRate: 1
 - name: 熱血応援☆チアガール セイラ
   mods:
-    - atk: 3.5
-    - atk: 0
-    - atk: 6.5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6.5
 - name: ブリュンヒルデ セイラ
   mods:
-    - atk: 4.2
-    - atk: 8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 8
   special:
     - cutRate: 1
   passive:
     missRate: -999
 - name: サディスティックサキュバス セイラ
   mods:
-    - atk: 3.9
-    - atk: 5.6
-    - atk: 4.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.6
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.3
 - name: セクシートナカイ セイラ
   mods:
-    - atk: 1.4
-      def: 2.6
-    - atk: 2
-      def: 3.3
-    - atk: 0
-      def: 8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.4
+          def: 2.6
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 2
+          def: 3.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+          def: 8
 - name: 新春巫女2020 セイラ
   mods:
-    - atk: 1.2
-      spd: 15
-    - atk: 5.7
-    - atk: 14
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.2
+          spd: 15
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.7
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 2
+      - hits: 1
+        aoe: false
+        mod:
+          atk: 3
+      - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+      - hits: 1
+        aoe: false
+        mod:
+          atk: 5
 - name: 獄卒羅刹 セイラ
   mods:
-    - atk: 4
-    - atk: 0
-    - atk: 3
-      hp: 0.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 3
+          hp: 0.3
   special:
     - null
     - null
     - cutRate: 2
 - name: デモンズスタイルレウコシア セイラ
   mods:
-    - atk: 4
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: Magica2020 Evo セイラ
   mods:
-    - atk: 4.1
-    - atk: 0
-    - atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 

@@ -20,7 +20,7 @@ export async function getAllSkills() {
       }
       allSkills.set(dressName, {
         name: dressName,
-        mods: skills.map(parseSkill)
+        mods: [...skills.map(parseSkill)]
       });
     }
     
@@ -55,19 +55,38 @@ export async function getAllSkills() {
   return [...allSkills.values()];
 }
 
-function parseSkill(text) {
-  if (typeof text === "number") {
-    return {
-      atk: text
-    };
-  }
-  const match = text.match(/^([\d.]+)(?:\s+\+(\w+)\*([\d.]+))?(?:\s+\*\s*(\d+))?$/);
-  const hits = match[4] ? Number(match[4]) : 1;
-  const mod = {
-    atk: Number(match[1]) * hits
+function parseLine(line) {
+  const rx = /[\d-.]+|[a-zA-Z]+|\S/g;
+  let match;
+  const result = {
+    hits: 1,
+    aoe: false,
+    mod: {}
   };
-  if (match[2]) {
-    mod[match[2]] = Number(match[3]) * hits;
+  while ((match = rx.exec(line))) {
+    if (!isNaN(Number(match[0]))) {
+      result.mod.atk = Number(match[0]);
+    } else if (match[0] === "+") {
+      const [prop] = rx.exec(line);
+      rx.exec(line);
+      const [value] = rx.exec(line);
+      result.mod[prop] = Number(value);
+    } else if (match[0] === "*") {
+      const [hits] = rx.exec(line);
+      result.hits = Number(hits);
+    } else if (match[0] === "aoe") {
+      result.aoe = true;
+    } else {
+      throw new Error(`failed to parse ${line}`);
+    }
   }
-  return mod;
+  return result;
+}
+
+function* parseSkill(text) {
+  text = String(text);
+  
+  for (const line of text.split("\n")) {
+    yield parseLine(line);
+  }
 }
