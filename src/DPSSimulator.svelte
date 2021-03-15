@@ -22,6 +22,8 @@ let debuff = [];
 let target = {hp: 0, def: 1000, element: "neutral"};
 let targetDebuff = [];
 let useCut = false;
+let targetNumber = 1;
+let s3endless = false;
 
 let running = false;
 let result;
@@ -49,7 +51,9 @@ async function simulate() {
       targetDebuff,
       target,
       turn,
-      useCut
+      useCut,
+      targetNumber,
+      s3endless
     });
     resultErr = false;
     maxScore = result[0].score;
@@ -117,6 +121,11 @@ function getOrbName(build) {
 </label>
 
 <label class="input-group">
+  <input type="checkbox" bind:checked={s3endless}>
+  Season 3 endless mode. <a href="https://github.com/eight04/mgcm-skill-data/issues/31">Details</a>
+</label>
+
+<label class="input-group">
   <div class="input-title">Target DEF</div>
   <input type="number" bind:value={target.def}>
 </label>
@@ -133,6 +142,11 @@ function getOrbName(build) {
     <option value="superior">Always superior</option>
     <option value="inferior">Always inferior</option>
   </select>
+</label>
+
+<label class="input-group">
+  <div class="input-title">Number of targets</div>
+  <input type="number" bind:value={targetNumber}>
 </label>
 
 <div class="actions">
