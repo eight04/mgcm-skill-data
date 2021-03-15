@@ -22,6 +22,7 @@ let debuff = [];
 let target = {hp: 0, def: 1000, element: "neutral"};
 let targetDebuff = [];
 let useCut = false;
+let targetNumber = 1;
 
 let running = false;
 let result;
@@ -49,7 +50,8 @@ async function simulate() {
       targetDebuff,
       target,
       turn,
-      useCut
+      useCut,
+      targetNumber
     });
     resultErr = false;
     maxScore = result[0].score;
@@ -133,6 +135,11 @@ function getOrbName(build) {
     <option value="superior">Always superior</option>
     <option value="inferior">Always inferior</option>
   </select>
+</label>
+
+<label class="input-group">
+  <div class="input-title">Number of targets</div>
+  <input type="number" bind:value={targetNumber}>
 </label>
 
 <div class="actions">

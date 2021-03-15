@@ -83,7 +83,8 @@ export function simulateDps({
   target = {},
   targetDebuff,
   turn,
-  useCut
+  useCut,
+  targetNumber
 }) {
   target = normalizeTarget(target);
   buff = normalizeBuff(buff);
@@ -106,7 +107,8 @@ export function simulateDps({
       debuff,
       targetBuff: getDefaultTargetBuff(), // FIXME: make it customizable
       targetDebuff,
-      useCut
+      useCut,
+      targetNumber
     })) {
       const mainDress = buildDress({
         dress,
