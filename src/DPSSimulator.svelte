@@ -23,6 +23,7 @@ let target = {hp: 0, def: 1000, element: "neutral"};
 let targetDebuff = [];
 let useCut = false;
 let targetNumber = 1;
+let s3endless = false;
 
 let running = false;
 let result;
@@ -51,7 +52,8 @@ async function simulate() {
       target,
       turn,
       useCut,
-      targetNumber
+      targetNumber,
+      s3endless
     });
     resultErr = false;
     maxScore = result[0].score;
@@ -116,6 +118,11 @@ function getOrbName(build) {
 <label class="input-group">
   <input type="checkbox" bind:checked={useCut}>
   Calculate cut damage
+</label>
+
+<label class="input-group">
+  <input type="checkbox" bind:checked={s3endless}>
+  Season 3 endless mode. <a href="https://github.com/eight04/mgcm-skill-data/issues/31">Details</a>
 </label>
 
 <label class="input-group">

@@ -242,6 +242,7 @@ export function simulateSkillMod({
   targetDebuff,
   useCut = false,
   targetNumber = 1,
+  s3endless
 }) {
   const skillData = skillMap.get(dress.name);
   if (!skillData) throw new Error(`missing skill data for ${dress.name}`);
@@ -270,7 +271,8 @@ export function simulateSkillMod({
         cut: useCut ? sum(rawData.special?.cutRate, context) : 0,
         buff,
         debuff,
-        targetNumber
+        targetNumber,
+        s3endless
       }),
       cd: dress.skill[index].cd?.[1] || 1,
       sleep: 0,
@@ -358,23 +360,35 @@ function buildMod({
   cut,
   buff,
   debuff,
-  targetNumber
+  targetNumber,
+  s3endless = false
 }) {
   const result = {};
-  for (const part of skill) {
+  skill.forEach((part, i) => {
     for (const key in part.mod) {
       result[key] = part.mod[key] *
         (100 + bonus) / 100 *
         specialBonus *
         getBuffValue(buff, debuff, key) *
         part.hits *
-        (part.aoe ? targetNumber : 1);
+        (part.aoe ? targetNumber : 1) *
+        (s3endless ? getS3EndlessBonus(part.hits, i > 0) : 1);
     }
-  }
+  });
   if (cut) {
     result.targetHp = (result.targetHp || 0) + cut * 0.05 * 0.85;
   }
   return result;
+}
+
+function getS3EndlessBonus(hits, isSecondHit) {
+  if (isSecondHit) {
+    return 5;
+  }
+  if (hits <= 1) {
+    return 1;
+  }
+  return ((hits - 1) * 5 + 1) / hits;
 }
 
 function addMod(a, b) {
