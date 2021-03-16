@@ -2,7 +2,6 @@
   "name": "mgcm-skill-data",
   "version": "0.0.0",
   "description": "Skill data for Magicami online game",
-  "main": "index.js",
   "scripts": {
     "test": "eslint **/*.mjs **/*.svelte",
     "dev": "run-p start-dev build-dev",
@@ -15,6 +14,9 @@
     "start": "sirv docs",
     "start-dev": "sirv docs --dev"
   },
+  "eslintIgnore": [
+    "tools/rollup-plugin-livereload.mjs"
+  ],  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/eight04/mgcm-skill-data.git"
