@@ -1,6 +1,6 @@
 import svelte from 'rollup-plugin-svelte';
 import resolve from '@rollup/plugin-node-resolve';
-import livereload from 'rollup-plugin-livereload';
+import livereload from './tools/rollup-plugin-livereload.mjs';
 import { terser } from 'rollup-plugin-terser';
 import yaml from "@rollup/plugin-yaml";
 import css from "rollup-plugin-css-only";
