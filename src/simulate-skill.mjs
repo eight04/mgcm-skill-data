@@ -366,7 +366,8 @@ function buildMod({
   const result = {};
   skill.forEach((part, i) => {
     for (const key in part.mod) {
-      result[key] = part.mod[key] *
+      result[key] = (result[key] || 0) +
+        part.mod[key] *
         (100 + bonus) / 100 *
         specialBonus *
         getBuffValue(buff, debuff, key) *
