@@ -223,6 +223,32 @@
         aoe: false
         mod:
           atk: 3.3
+- name: ぱいぱいぱいれーつ 丹
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 3.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+- name: ドライアド 丹
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4
+  passive:
+    cutRate: 2
 - name: ラウンジウェア 陽彩
   skills:
     - - hits: 1
@@ -470,6 +496,20 @@
         aoe: true
         mod:
           atk: 4.3
+- name: 椎名まゆり 陽彩
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: Ultimate Magica 陽彩
   skills:
     - - hits: 1
@@ -698,6 +738,20 @@
         aoe: false
         mod:
           atk: 0
+- name: ぱいぱいぱいれーつ 蒼
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 3.8
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.6
 - name: イフリート 蒼
   skills:
     - - hits: 1
@@ -754,6 +808,29 @@
         aoe: false
         mod:
           atk: 8.2
+- name: アイズ 蒼
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.4
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.4
+      - hits: 1
+        aoe: true
+        mod:
+          atk: 2.4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.8
+  special:
+    - null
+    - null
+    - critRate: 0.2
+      ignoreDefRate: 1
 - name: ラウンジウェア エリザ
   skills:
     - - hits: 1
@@ -1004,6 +1081,20 @@
         aoe: true
         mod:
           atk: 1.6
+- name: ぱいぱいぱいれーつ エリザ
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.3
 - name: 牧瀬紅莉栖 エリザ
   skills:
     - - hits: 1
@@ -1032,6 +1123,20 @@
         aoe: false
         mod:
           atk: 3
+- name: 運命の女神 エリザ
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: Magica2020 エリザ
   skills:
     - - hits: 1
@@ -1479,6 +1584,30 @@
         aoe: false
         mod:
           atk: 0
+- name: バレンタインパティシエール 依子
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 2.5
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 0
+- name: ストレイキャット 依子
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.9
+    - - hits: 4
+        aoe: false
+        mod:
+          atk: 2
 - name: キラキラ☆アイドル 依子
   skills:
     - - hits: 1
@@ -1713,6 +1842,16 @@
         aoe: true
         mod:
           atk: 4.4
+- name: ライオットポリス いろは
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 3
+        aoe: true
+        mod:
+          atk: 1.5
 - name: デモンズスタイルレウコシア いろは
   skills:
     - - hits: 1
@@ -1981,6 +2120,16 @@
         aoe: false
         mod:
           atk: 0
+- name: ライオットポリス 花織
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: ラウンジウェア ここあ
   skills:
     - - hits: 1
@@ -2193,6 +2342,10 @@
         mod:
           atk: 5.9
     - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.5
+      - hits: 1
         aoe: true
         mod:
           atk: 2.5
@@ -2210,6 +2363,21 @@
         aoe: false
         mod:
           atk: 3.3
+- name: ストレイキャット ここあ
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3
+          def: 5
 - name: マジカルスイムスーツ ここあ
   skills:
     - - hits: 1
@@ -2499,6 +2667,20 @@
           spd: 9
   special:
     - cutRate: 1.5
+- name: Magica2020 りり
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.4
+          spd: 18
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3
+          spd: 40
+  special:
+    - cutRate: 1.5
 - name: デモンズスタイルレウコシア りり
   skills:
     - - hits: 1
@@ -2523,6 +2705,20 @@
         aoe: false
         mod:
           atk: 2.7
+- name: 異世界レイヤーズ りり
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.3
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
 - name: ラウンジウェア マリアンヌ
   skills:
     - - hits: 1
@@ -2709,6 +2905,40 @@
   special:
     - null
     - cutRate: 3
+- name: バレンタインパティシエール マリアンヌ
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 0
+- name: デモンズスタイルレウコシア マリアンヌ
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 3.3
+- name: ダル マリアンヌ
+  skills:
+    - - hits: 2.5
+        aoe: false
+        mod:
+          atk: 1.6
+    - - hits: 3.5
+        aoe: false
+        mod:
+          atk: 3
 - name: ぐだぐだFallenAngel マリアンヌ
   skills:
     - - hits: 2

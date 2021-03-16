@@ -10375,4 +10375,341 @@
         - 5
         - 4
     - bonus: 0
+- id: 6021841
+  name: ヘスティア ここあ
+  rarity: UR
+  element: light
+  pool: gacha
+  hp:
+    - 3985
+    - 9938
+    - 11955
+  atk:
+    - 222
+    - 556
+    - 668
+  def:
+    - 225
+    - 562
+    - 676
+  spd:
+    - 61
+    - 97
+    - 109
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 0
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+      cd:
+        - 5
+        - 3
+    - bonus: 0
+- id: 6021886
+  name: アイズ 蒼
+  rarity: UR
+  element: water
+  pool: gacha
+  hp:
+    - 3465
+    - 8641
+    - 10395
+  atk:
+    - 282
+    - 705
+    - 848
+  def:
+    - 200
+    - 499
+    - 600
+  spd:
+    - 60
+    - 96
+    - 108
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 30
+      cd:
+        - 4
+        - 3
+    - bonus: 30
+      cd:
+        - 5
+        - 4
+    - bonus: 0
+- id: 6021922
+  name: リュー・リオン エリザ
+  rarity: UR
+  element: lightning
+  pool: gacha
+  hp:
+    - 3620
+    - 9028
+    - 10860
+  atk:
+    - 268
+    - 670
+    - 805
+  def:
+    - 204
+    - 509
+    - 612
+  spd:
+    - 62
+    - 98
+    - 110
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 25
+      cd:
+        - 4
+        - 3
+    - bonus: 20
+      cd:
+        - 5
+        - 4
+    - bonus: 0
+- id: 6021940
+  name: リリルカ・アーデ 陽彩
+  rarity: SR
+  element: dark
+  pool: gacha
+  hp:
+    - 3515
+    - 8766
+    - 10545
+  atk:
+    - 213
+    - 532
+    - 640
+  def:
+    - 200
+    - 501
+    - 602
+  spd:
+    - 61
+    - 97
+    - 109
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 30
+    - bonus: 30
+      cd:
+        - 3
+        - 2
+    - bonus: 0
+      cd:
+        - 5
+        - 4
+- id: 6021823
+  name: ベル・クラネル りり
+  rarity: UR
+  element: fire
+  pool: event
+  hp:
+    - 4015
+    - 10013
+    - 12045
+  atk:
+    - 227
+    - 568
+    - 683
+  def:
+    - 218
+    - 545
+    - 655
+  spd:
+    - 54
+    - 90
+    - 102
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 30
+      cd:
+        - 3
+        - 2
+    - bonus: 30
+      cd:
+        - 5
+        - 4
+- id: 6069532
+  name: ジャンヌダルク ここあ
+  rarity: UR
+  element: light
+  pool: gacha
+  hp:
+    - 4290
+    - 10698
+    - 12870
+  atk:
+    - 222
+    - 556
+    - 668
+  def:
+    - 205
+    - 512
+    - 615
+  spd:
+    - 57
+    - 93
+    - 105
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 15
+      cd:
+        - 6
+        - 4
+    - bonus: 30
+      cd:
+        - 5
+        - 4
+    - bonus: 0
+- id: 6069553
+  name: 不思議の国のアリス マリアンヌ
+  rarity: UR
+  element: water
+  pool: event
+  hp:
+    - 4045
+    - 10087
+    - 12135
+  atk:
+    - 223
+    - 558
+    - 671
+  def:
+    - 220
+    - 550
+    - 661
+  spd:
+    - 57
+    - 93
+    - 105
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 20
+      cd:
+        - 3
+        - 2
+    - bonus: 30
+      cd:
+        - 5
+        - 4
+- id: 6069541
+  name: 不思議の国のアリス 花織
+  rarity: UR
+  element: fire
+  pool: gacha
+  hp:
+    - 3475
+    - 8666
+    - 10425
+  atk:
+    - 268
+    - 670
+    - 806
+  def:
+    - 213
+    - 532
+    - 640
+  spd:
+    - 60
+    - 96
+    - 108
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 30
+      cd:
+        - 4
+        - 3
+    - bonus: 30
+      cd:
+        - 5
+        - 4
+    - bonus: 0
+- id: 6096481
+  name: Xenos Magica はなび
+  rarity: UR
+  element: dark
+  pool: gacha
+  hp:
+    - 3325
+    - 8292
+    - 9975
+  atk:
+    - 332
+    - 828
+    - 996
+  def:
+    - 160
+    - 399
+    - 480
+  spd:
+    - 58
+    - 94
+    - 106
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 40
+    - bonus: 30
+      cd:
+        - 4
+        - 2
+    - bonus: 0
+      cd:
+        - 7
+        - 5
+    - bonus: 0
+- id: 6130915
+  name: Xenos Magica 依子
+  rarity: UR
+  element: lightning
+  pool: gacha
+  hp:
+    - 4050
+    - 10100
+    - 12150
+  atk:
+    - 224
+    - 560
+    - 673
+  def:
+    - 219
+    - 547
+    - 658
+  spd:
+    - 61
+    - 97
+    - 109
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 30
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+      cd:
+        - 6
+        - 4
+    - bonus: 0
 

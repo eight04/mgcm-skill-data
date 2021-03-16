@@ -21,3 +21,9 @@ Magica2020 Evo 蒼:
   - null
   - null
   - cutRate: 6
+アイズ 蒼:
+  - null
+  - null
+  - critRate: 0.2
+    ignoreDefRate: 1
+    

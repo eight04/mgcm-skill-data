@@ -2,7 +2,6 @@
   "name": "mgcm-skill-data",
   "version": "0.0.0",
   "description": "Skill data for Magicami online game",
-  "main": "index.js",
   "scripts": {
     "test": "eslint **/*.mjs **/*.svelte",
     "dev": "run-p start-dev build-dev",
@@ -15,6 +14,9 @@
     "start": "sirv docs",
     "start-dev": "sirv docs --dev"
   },
+  "eslintIgnore": [
+    "tools/rollup-plugin-livereload.mjs"
+  ],  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/eight04/mgcm-skill-data.git"
@@ -39,13 +41,13 @@
     "eslint": "^7.21.0",
     "eslint-plugin-svelte3": "^3.1.2",
     "google-spreadsheet": "^3.1.15",
+    "livereload": "^0.9.2",
     "make-fetch-happen": "^8.0.14",
     "npm-run-all": "^4.1.5",
     "rollup": "^2.41.1",
     "rollup-plugin-copy-glob": "^0.3.1",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-iife": "^0.5.0",
-    "rollup-plugin-livereload": "https://github.com/eight04/rollup-plugin-livereload/archive/dev-self.tar.gz",
     "rollup-plugin-re": "^1.0.7",
     "rollup-plugin-svelte": "^7.1.0",
     "rollup-plugin-terser": "^7.0.2",
