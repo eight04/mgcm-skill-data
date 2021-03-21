@@ -28,6 +28,14 @@ const SPECIALS = {
       cutRate: cutByCrit(4 * 2)
     }
   ],
+  "灼熱野球ユニ ここあ": [
+    null,
+    null,
+    {
+      missRate: ({targetDebuff}) => targetDebuff.def ? -999 : 0,
+      critRate: ({targetDebuff}) => targetDebuff.def ? 999 : 0
+    }
+  ],
   "ワイン娘 いろは": [
     null,
     null,

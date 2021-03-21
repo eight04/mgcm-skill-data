@@ -2251,11 +2251,6 @@
         aoe: false
         mod:
           atk: 7.6
-  special:
-    - null
-    - null
-    - critRate: 999
-      missRate: 999
 - name: 炎節わっしょい神輿 ここあ
   skills:
     - - hits: 1
