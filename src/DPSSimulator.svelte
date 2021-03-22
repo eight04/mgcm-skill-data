@@ -24,6 +24,7 @@ let targetDebuff = [];
 let useCut = false;
 let targetNumber = 1;
 let s3endless = false;
+let recastReduction = "";
 
 let running = false;
 let result;
@@ -53,11 +54,11 @@ async function simulate() {
       turn,
       useCut,
       targetNumber,
-      s3endless
+      s3endless,
+      recastReduction: parseNumberList(recastReduction)
     });
     resultErr = false;
     maxScore = result[0].score;
-    filter = "";
   } catch (err) {
     result = err;
     resultErr = true;
@@ -72,6 +73,10 @@ function openSubs(dressName, mod) {
 
 function getOrbName(build) {
   return build.orb.name;
+}
+
+function parseNumberList(s) {
+  return s.split(",").map(n => Number(n.trim()));
 }
 </script>
 
@@ -122,7 +127,15 @@ function getOrbName(build) {
 
 <label class="input-group">
   <input type="checkbox" bind:checked={s3endless}>
-  Season 3 endless mode. <a href="https://github.com/eight04/mgcm-skill-data/issues/31">Details</a>
+  Season 3 endless mode. <a href="https://github.com/eight04/mgcm-skill-data/issues/31">Learn more</a>
+</label>
+
+<label class="input-group">
+  <div class="input-title">Recast reduction</div>
+  <input type="text" bind:value={recastReduction}>
+  <p class="help">
+    A list of number separated by comma. Each number represents the reduction of each turn e.g. `1,0,0,1` for Shrine Akisa.
+  </p>
 </label>
 
 <label class="input-group">

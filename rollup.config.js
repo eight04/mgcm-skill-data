@@ -60,7 +60,7 @@ export default {
       {
         test: /index\.js$/,
         target: "docs/index.html",
-        handle: (content, {htmlScripts}) => content.replace("</body>", `${htmlScripts}</body>`)
+        handle: (content, {htmlScripts}) => content.replace(/.*<\/body>/, `${htmlScripts}</body>`)
       },
       {
         test: /(.*\.worker.*\.js$)/,

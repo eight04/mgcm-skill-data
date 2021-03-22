@@ -250,7 +250,8 @@ export function simulateSkillMod({
   targetDebuff,
   useCut = false,
   targetNumber = 1,
-  s3endless
+  s3endless,
+  recastReduction = []
 }) {
   const skillData = skillMap.get(dress.name);
   if (!skillData) throw new Error(`missing skill data for ${dress.name}`);
@@ -347,7 +348,7 @@ export function simulateSkillMod({
       const newSleep = sleep.slice();
       newSleep[skill.index] = skill.cd;      
       for (let i = 0; i < newSleep.length; i++) {
-        newSleep[i] += skill.recast - 1;
+        newSleep[i] += skill.recast - 1 - (recastReduction.length > turn ? recastReduction[turn] : 0);
       }
       history.push(skill.index);
       
@@ -369,7 +370,7 @@ function buildMod({
   buff,
   debuff,
   targetNumber,
-  s3endless = false
+  s3endless = false,
 }) {
   const result = {};
   skill.forEach((part, i) => {

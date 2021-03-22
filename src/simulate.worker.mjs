@@ -85,7 +85,8 @@ export function simulateDps({
   turn,
   useCut,
   targetNumber,
-  s3endless
+  s3endless,
+  recastReduction
 }) {
   target = normalizeTarget(target);
   buff = normalizeBuff(buff);
@@ -110,7 +111,8 @@ export function simulateDps({
       targetDebuff,
       useCut,
       targetNumber,
-      s3endless
+      s3endless,
+      recastReduction
     })) {
       const mainDress = buildDress({
         dress,
