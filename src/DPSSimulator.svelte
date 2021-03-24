@@ -14,17 +14,17 @@ const dispatchEvent = createEventDispatcher();
 const includedDresses = getStore("includedDresses", []);
 const maxLvDresses = getStore("maxLVDresses", []);
 
-let turn = 5;
-let ignoreElement = false;
-let orbRarity = "sr";
-let buff = [];
-let debuff = [];
-let target = {hp: 0, def: 1000, element: "neutral"};
-let targetDebuff = [];
-let useCut = false;
-let targetNumber = 1;
-let s3endless = false;
-let recastReduction = "";
+let turn = getStore("dps/turn", 5);
+let ignoreElement = getStore("dps/ignoreElement", false);
+let orbRarity = getStore("dps/orbRarity", "sr");
+let buff = getStore("dps/buff", []);
+let debuff = getStore("dps/debuff", []);
+let target = getStore("dps/target", {hp: 0, def: 1000, element: "neutral"});
+let targetDebuff = getStore("dps/targetDebuff", []);
+let useCut = getStore("dps/useCut", false);
+let targetNumber = getStore("dps/targetNumber", 1);
+let s3endless = getStore("dps/s3endless", false);
+let recastReduction = getStore("dps/recastReduction", "");
 
 let running = false;
 let result;
@@ -45,17 +45,17 @@ async function simulate() {
     result = await simulateDps({
       includedDresses: $includedDresses,
       maxLvDresses: $maxLvDresses,
-      ignoreElement,
-      orb: orbRarity,
-      buff,
-      debuff,
-      targetDebuff,
-      target,
-      turn,
-      useCut,
-      targetNumber,
-      s3endless,
-      recastReduction: parseNumberList(recastReduction)
+      ignoreElement: $ignoreElement,
+      orb: $orbRarity,
+      buff: $buff,
+      debuff: $debuff,
+      targetDebuff: $targetDebuff,
+      target: $target,
+      turn: $turn,
+      useCut: $useCut,
+      targetNumber: $targetNumber,
+      s3endless: $s3endless,
+      recastReduction: parseNumberList($recastReduction)
     });
     resultErr = false;
     maxScore = result[0].score;
@@ -68,7 +68,7 @@ async function simulate() {
 }
 
 function openSubs(dressName, mod) {
-  dispatchEvent("openSub", {dressName, mod, buff});
+  dispatchEvent("openSub", {dressName, mod});
 }
 
 function getOrbName(build) {
@@ -82,57 +82,57 @@ function parseNumberList(s) {
 
 <label class="input-group">
   <div class="input-title">Turns</div>
-  <input type="number" bind:value={turn}>
+  <input type="number" bind:value={$turn}>
 </label>
 
 <label class="input-group">
-  <input type="checkbox" bind:checked={ignoreElement}>
+  <input type="checkbox" bind:checked={$ignoreElement}>
   Use sub element orbs
 </label>
 
 <div class="input-group">
   <div class="radio-title">Orb rarity</div>
   <label>
-    <input type="radio" bind:group={orbRarity} value="sr">
+    <input type="radio" bind:group={$orbRarity} value="sr">
     SR
   </label>
   <label>
-    <input type="radio" bind:group={orbRarity} value="ur">
+    <input type="radio" bind:group={$orbRarity} value="ur">
     UR
   </label>
 </div>
 
 <div class="input-group">
-  <BuffChooser bind:value={buff} />
+  <BuffChooser bind:value={$buff} />
 </div>
 <div class="input-group">
-  <DebuffChooser bind:value={debuff} />
+  <DebuffChooser bind:value={$debuff} />
 </div>
 <div class="input-group">
-  <DebuffChooser bind:value={targetDebuff} title="Target debuff" />
+  <DebuffChooser bind:value={$targetDebuff} title="Target debuff" />
 </div>
 
 <label class="input-group">
   <div class="input-title">Target HP</div>
-  <input type="number" bind:value={target.hp}>
+  <input type="number" bind:value={$target.hp}>
   <p class="help">
     When targeting sinister bosses, this value should be the actual HP * 1/20.
   </p>
 </label>
 
 <label class="input-group">
-  <input type="checkbox" bind:checked={useCut}>
+  <input type="checkbox" bind:checked={$useCut}>
   Calculate cut damage
 </label>
 
 <label class="input-group">
-  <input type="checkbox" bind:checked={s3endless}>
+  <input type="checkbox" bind:checked={$s3endless}>
   Season 3 endless mode. <a href="https://github.com/eight04/mgcm-skill-data/issues/31">Learn more</a>
 </label>
 
 <label class="input-group">
   <div class="input-title">Recast reduction</div>
-  <input type="text" bind:value={recastReduction}>
+  <input type="text" bind:value={$recastReduction}>
   <p class="help">
     A list of number separated by comma. Each number represents the reduction of each turn e.g. `1,0,0,1` for Shrine Akisa.
   </p>
@@ -140,12 +140,12 @@ function parseNumberList(s) {
 
 <label class="input-group">
   <div class="input-title">Target DEF</div>
-  <input type="number" bind:value={target.def}>
+  <input type="number" bind:value={$target.def}>
 </label>
 
 <label>
   <div class="input-title">Target element</div>
-  <select bind:value={target.element}>
+  <select bind:value={$target.element}>
     <option value="fire">Fire</option>
     <option value="lightning">Lightning</option>
     <option value="water">Water</option>
@@ -159,7 +159,7 @@ function parseNumberList(s) {
 
 <label class="input-group">
   <div class="input-title">Number of targets</div>
-  <input type="number" bind:value={targetNumber}>
+  <input type="number" bind:value={$targetNumber}>
 </label>
 
 <div class="actions">
