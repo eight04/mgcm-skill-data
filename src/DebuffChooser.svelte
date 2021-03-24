@@ -2,8 +2,8 @@
 export let title = "Debuff";
 export let value = [];
 
-let checks = [];
-let cuts = 0;
+let checks = value.filter(i => i !== "cut");
+let cuts = value.filter(i => i == "cut").length;
 
 $: value = [...checks, ...Array(cuts).fill("cut")];
 </script>
