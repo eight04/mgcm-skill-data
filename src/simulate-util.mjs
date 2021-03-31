@@ -10,10 +10,18 @@ export function getBuffValue(buff, debuff, key) {
   return 1 - BUFF_VALUE[key];
 }
 
-export function calcScore(stat, mod) {
+export function calcScore(stat, mod, leaderBuff) {
   let score = 0;
   for (const key in mod) {
-    score += (stat[key] || 0) * mod[key];
+    let statValue = stat[key] || 0;
+    if (leaderBuff && leaderBuff.type.startsWith(key)) {
+      if (leaderBuff.type.endsWith("%")) {
+        statValue *= (leaderBuff.value + 100) / 100;
+      } else {
+        statValue += leaderBuff.value;
+      }
+    }
+    score += statValue * mod[key];
   }
   return score;
 }

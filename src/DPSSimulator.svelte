@@ -25,6 +25,7 @@ let useCut = getStore("dps/useCut", false);
 let targetNumber = getStore("dps/targetNumber", 1);
 let s3endless = getStore("dps/s3endless", false);
 let recastReduction = getStore("dps/recastReduction", "");
+let leaderBuff = getStore("dps/leaderBuff", {type: "atk%", value: 0, element: "water"});
 
 let running = false;
 let result;
@@ -55,7 +56,8 @@ async function simulate() {
       useCut: $useCut,
       targetNumber: $targetNumber,
       s3endless: $s3endless,
-      recastReduction: parseNumberList($recastReduction)
+      recastReduction: parseNumberList($recastReduction),
+      leaderBuff: $leaderBuff
     });
     resultErr = false;
     maxScore = result[0].score;
@@ -80,87 +82,111 @@ function parseNumberList(s) {
 }
 </script>
 
-<label class="input-group">
-  <div class="input-title">Turns</div>
-  <input type="number" bind:value={$turn}>
-</label>
+<fieldset class="group-block">
+  <legend>Ours</legend>
+  <div class="input-group">
+    <BuffChooser bind:value={$buff} />
+  </div>
+  <div class="input-group">
+    <DebuffChooser bind:value={$debuff} />
+  </div>
+  <label class="input-group">
+    <div class="input-title">Recast reduction</div>
+    <input type="text" bind:value={$recastReduction}>
+    <p class="help">
+      A list of number separated by comma. Each number represents the reduction of each turn e.g. `1,0,0,1` for Shrine Akisa.
+    </p>
+  </label>
+  <label class="input-group">
+    <span class="input-title">Leader buff element</span>
+    <select bind:value={$leaderBuff.element}>
+      <option value="fire">Fire</option>
+      <option value="lightning">Lightning</option>
+      <option value="water">Water</option>
+      <option value="dark">Dark</option>
+      <option value="light">Light</option>
+    </select>
+  </label>
+  <div class="input-group">
+    <div class="input-title">Leader buff type</div>
+    <select bind:value={$leaderBuff.type}>
+      <option value="atk%">ATK%</option>
+      <option value="atk">ATK+</option>
+      <option value="def%">DEF%</option>
+      <option value="def">DEF+</option>
+    </select>
+  </div>
+  <div class="input-group">
+    <div class="input-title">Leader buff value</div>
+    <input type="number" bind:value={$leaderBuff.value}>
+  </div>
+</fieldset>
 
-<label class="input-group">
-  <input type="checkbox" bind:checked={$ignoreElement}>
-  Use sub element orbs
-</label>
-
-<div class="input-group">
-  <div class="radio-title">Orb rarity</div>
-  <label>
-    <input type="radio" bind:group={$orbRarity} value="sr">
-    SR
+<fieldset class="group-block">
+  <legend>Enemies</legend>
+  <div class="input-group">
+    <DebuffChooser bind:value={$targetDebuff} title="Target debuff" />
+  </div>
+  <label class="input-group">
+    <div class="input-title">Target HP</div>
+    <input type="number" bind:value={$target.hp}>
+    <p class="help">
+      When targeting sinister bosses, this value should be the actual HP * 1/20.
+    </p>
+  </label>
+  <label class="input-group">
+    <div class="input-title">Target DEF</div>
+    <input type="number" bind:value={$target.def}>
   </label>
   <label>
-    <input type="radio" bind:group={$orbRarity} value="ur">
-    UR
+    <div class="input-title">Target element</div>
+    <select bind:value={$target.element}>
+      <option value="fire">Fire</option>
+      <option value="lightning">Lightning</option>
+      <option value="water">Water</option>
+      <option value="dark">Dark</option>
+      <option value="light">Light</option>
+      <option value="neutral">Neutral</option>
+      <option value="superior">Always superior</option>
+      <option value="inferior">Always inferior</option>
+    </select>
   </label>
-</div>
+  <label class="input-group">
+    <div class="input-title">Number of targets</div>
+    <input type="number" bind:value={$targetNumber}>
+  </label>
+</fieldset>
 
-<div class="input-group">
-  <BuffChooser bind:value={$buff} />
-</div>
-<div class="input-group">
-  <DebuffChooser bind:value={$debuff} />
-</div>
-<div class="input-group">
-  <DebuffChooser bind:value={$targetDebuff} title="Target debuff" />
-</div>
-
-<label class="input-group">
-  <div class="input-title">Target HP</div>
-  <input type="number" bind:value={$target.hp}>
-  <p class="help">
-    When targeting sinister bosses, this value should be the actual HP * 1/20.
-  </p>
-</label>
-
-<label class="input-group">
-  <input type="checkbox" bind:checked={$useCut}>
-  Calculate cut damage
-</label>
-
-<label class="input-group">
-  <input type="checkbox" bind:checked={$s3endless}>
-  Season 3 endless mode. <a href="https://github.com/eight04/mgcm-skill-data/issues/31">Learn more</a>
-</label>
-
-<label class="input-group">
-  <div class="input-title">Recast reduction</div>
-  <input type="text" bind:value={$recastReduction}>
-  <p class="help">
-    A list of number separated by comma. Each number represents the reduction of each turn e.g. `1,0,0,1` for Shrine Akisa.
-  </p>
-</label>
-
-<label class="input-group">
-  <div class="input-title">Target DEF</div>
-  <input type="number" bind:value={$target.def}>
-</label>
-
-<label>
-  <div class="input-title">Target element</div>
-  <select bind:value={$target.element}>
-    <option value="fire">Fire</option>
-    <option value="lightning">Lightning</option>
-    <option value="water">Water</option>
-    <option value="dark">Dark</option>
-    <option value="light">Light</option>
-    <option value="neutral">Neutral</option>
-    <option value="superior">Always superior</option>
-    <option value="inferior">Always inferior</option>
-  </select>
-</label>
-
-<label class="input-group">
-  <div class="input-title">Number of targets</div>
-  <input type="number" bind:value={$targetNumber}>
-</label>
+<fieldset class="group-block">
+  <legend>System</legend>
+  <label class="input-group">
+    <div class="input-title">Turns</div>
+    <input type="number" bind:value={$turn}>
+  </label>
+  <label class="input-group">
+    <input type="checkbox" bind:checked={$ignoreElement}>
+    Use sub element orbs
+  </label>
+  <div class="input-group">
+    <div class="radio-title">Orb rarity</div>
+    <label>
+      <input type="radio" bind:group={$orbRarity} value="sr">
+      SR
+    </label>
+    <label>
+      <input type="radio" bind:group={$orbRarity} value="ur">
+      UR
+    </label>
+  </div>
+  <label class="input-group">
+    <input type="checkbox" bind:checked={$useCut}>
+    Calculate cut damage
+  </label>  
+  <label class="input-group">
+    <input type="checkbox" bind:checked={$s3endless}>
+    Season 3 endless mode. <a href="https://github.com/eight04/mgcm-skill-data/issues/31">Learn more</a>
+  </label>
+</fieldset>
 
 <div class="actions">
   <button on:click={simulate} disabled={running}>Simulate</button>
@@ -263,6 +289,7 @@ th, td {
   margin: .3em 0;
   display: block;
 }
+.group-block,
 .input-group,
 .actions {
   margin: .6em 0;

@@ -34,7 +34,7 @@ export function simulateSubDress({
   };
 }
 
-function *getAllSubs(mainDress, allDresses, mod, orb, buff, debuff, useSubEl) {
+function *getAllSubs(mainDress, allDresses, mod, orb, buff, debuff, useSubEl, leaderBuff) {
   for (const dress of allDresses) {
     if (dress === mainDress) continue;
     
@@ -44,7 +44,8 @@ function *getAllSubs(mainDress, allDresses, mod, orb, buff, debuff, useSubEl) {
         mod,
         subRatio: getSubRatio(mainDress, dress, subElement),
         subElement,
-        orbRarity: orb
+        orbRarity: orb,
+        leaderBuff
       });
     
     yield build(false);
@@ -86,7 +87,8 @@ export function simulateDps({
   useCut,
   targetNumber,
   s3endless,
-  recastReduction
+  recastReduction,
+  leaderBuff
 }) {
   target = normalizeTarget(target);
   buff = normalizeBuff(buff);
@@ -99,6 +101,8 @@ export function simulateDps({
   
   for (const dress of allDresses) {
     if (!skillMap.has(dress.name)) continue;
+    
+    const useLeaderBuff = leaderBuff && leaderBuff.element === dress.element ? leaderBuff : undefined;
     
     for (const {history, mod} of simulateSkillMod({
       turn,
@@ -117,9 +121,19 @@ export function simulateDps({
       const mainDress = buildDress({
         dress,
         mod,
-        orbRarity: orb
+        orbRarity: orb,
+        leaderBuff: useLeaderBuff
       });
-      const subs = [...getAllSubs(dress, allDresses, mod, orb, buff, debuff, ignoreElement)]
+      const subs = [...getAllSubs(
+        dress,
+        allDresses,
+        mod,
+        orb,
+        buff,
+        debuff,
+        ignoreElement,
+        useLeaderBuff && leaderBuff.type.endsWith("%") ? leaderBuff : undefined
+      )]
         .sort(cmpScore)
         .reverse();
         
@@ -187,16 +201,18 @@ function buildDress({
   mod, 
   subRatio = 1,
   subElement = false,
-  orbRarity = "sr"
+  orbRarity = "sr",
+  leaderBuff
 }) {
   const orb = buildOrb({
     dress,
     rarity: orbRarity,
     mod,
-    subElement
+    subElement,
+    leaderBuff: leaderBuff && leaderBuff.type.endsWith("%") ? leaderBuff : undefined
   });
   return {
-    score: (calcScore(dress, mod) + orb.score) * subRatio,
+    score: (calcScore(dress, mod, leaderBuff) + orb.score) * subRatio,
     dress,
     orb
   };
