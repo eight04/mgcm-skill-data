@@ -25,6 +25,7 @@ let useCut = getStore("dps/useCut", false);
 let targetNumber = getStore("dps/targetNumber", 1);
 let s3endless = getStore("dps/s3endless", false);
 let recastReduction = getStore("dps/recastReduction", "");
+let leaderBuff = getStore("dps/leaderBuff", {type: "atk%", value: 0, element: "water"});
 
 let running = false;
 let result;
@@ -55,7 +56,8 @@ async function simulate() {
       useCut: $useCut,
       targetNumber: $targetNumber,
       s3endless: $s3endless,
-      recastReduction: parseNumberList($recastReduction)
+      recastReduction: parseNumberList($recastReduction),
+      leaderBuff: $leaderBuff
     });
     resultErr = false;
     maxScore = result[0].score;
@@ -95,6 +97,29 @@ function parseNumberList(s) {
       A list of number separated by comma. Each number represents the reduction of each turn e.g. `1,0,0,1` for Shrine Akisa.
     </p>
   </label>
+  <label class="input-group">
+    <span class="input-title">Leader buff element</span>
+    <select bind:value={$leaderBuff.element}>
+      <option value="fire">Fire</option>
+      <option value="lightning">Lightning</option>
+      <option value="water">Water</option>
+      <option value="dark">Dark</option>
+      <option value="light">Light</option>
+    </select>
+  </label>
+  <div class="input-group">
+    <div class="input-title">Leader buff type</div>
+    <select bind:value={$leaderBuff.type}>
+      <option value="atk%">ATK%</option>
+      <option value="atk">ATK+</option>
+      <option value="def%">DEF%</option>
+      <option value="def">DEF+</option>
+    </select>
+  </div>
+  <div class="input-group">
+    <div class="input-title">Leader buff value</div>
+    <input type="number" bind:value={$leaderBuff.value}>
+  </div>
 </fieldset>
 
 <fieldset class="group-block">

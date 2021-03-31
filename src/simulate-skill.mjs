@@ -251,7 +251,7 @@ export function simulateSkillMod({
   useCut = false,
   targetNumber = 1,
   s3endless,
-  recastReduction = []
+  recastReduction = [],
 }) {
   const skillData = skillMap.get(dress.name);
   if (!skillData) throw new Error(`missing skill data for ${dress.name}`);
@@ -281,7 +281,7 @@ export function simulateSkillMod({
         buff,
         debuff,
         targetNumber,
-        s3endless
+        s3endless,
       }),
       cd: dress.skill[index].cd?.[1] || 1,
       sleep: 0,
