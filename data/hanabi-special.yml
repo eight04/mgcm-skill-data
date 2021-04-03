@@ -16,5 +16,6 @@ Magica2020 Evo はなび:
   - ignoreDefRate: 0.25
 ブリュンヒルデ はなび:
   - cutRate: 1
+  - ignoreBuffRate: 1
 カラス天狗 はなび:
   - cutRate: 1
