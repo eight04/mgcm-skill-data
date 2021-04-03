@@ -10712,4 +10712,306 @@
         - 6
         - 4
     - bonus: 0
+- id: 6160264
+  name: アクーマ軍団女幹部 蒼
+  rarity: UR
+  element: dark
+  pool: gacha
+  hp:
+    - 3505
+    - 8741
+    - 10515
+  atk:
+    - 265
+    - 662
+    - 796
+  def:
+    - 214
+    - 536
+    - 644
+  spd:
+    - 51
+    - 87
+    - 99
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 0
+      cd:
+        - 5
+        - 3
+    - bonus: 30
+      cd:
+        - 5
+        - 4
+    - bonus: 0
+- id: 6170992
+  name: デモンズスタイルドレイク 依子
+  rarity: UR
+  element: fire
+  pool: gacha
+  hp:
+    - 3715
+    - 9264
+    - 11145
+  atk:
+    - 274
+    - 685
+    - 823
+  def:
+    - 191
+    - 478
+    - 575
+  spd:
+    - 57
+    - 93
+    - 105
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 25
+      cd:
+        - 3
+        - 2
+    - bonus: 30
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+- id: 6170932
+  name: デモンズスタイルドレイク 丹
+  rarity: UR
+  element: lightning
+  pool: gacha
+  hp:
+    - 3620
+    - 9028
+    - 10860
+  atk:
+    - 283
+    - 706
+    - 849
+  def:
+    - 189
+    - 473
+    - 568
+  spd:
+    - 58
+    - 94
+    - 106
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 25
+      cd:
+        - 4
+        - 3
+    - bonus: 30
+      cd:
+        - 6
+        - 4
+    - bonus: 0
+- id: 6170983
+  name: デモンズスタイルドレイク マリアンヌ
+  rarity: UR
+  element: water
+  pool: gacha
+  hp:
+    - 3685
+    - 9190
+    - 11055
+  atk:
+    - 279
+    - 697
+    - 838
+  def:
+    - 188
+    - 471
+    - 566
+  spd:
+    - 59
+    - 95
+    - 107
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 20
+      cd:
+        - 4
+        - 2
+    - bonus: 0
+    - bonus: 0
+- id: 6171019
+  name: デモンズスタイルドレイク 陽彩
+  rarity: SR
+  element: fire
+  pool: gacha
+  hp:
+    - 4025
+    - 10038
+    - 12075
+  atk:
+    - 210
+    - 526
+    - 632
+  def:
+    - 179
+    - 448
+    - 538
+  spd:
+    - 56
+    - 92
+    - 104
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 25
+      cd:
+        - 4
+        - 3
+    - bonus: 30
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+- id: 6171046
+  name: デモンズスタイルドレイク 蒼
+  rarity: SR
+  element: lightning
+  pool: gacha
+  hp:
+    - 4060
+    - 10125
+    - 12180
+  atk:
+    - 207
+    - 517
+    - 621
+  def:
+    - 180
+    - 451
+    - 542
+  spd:
+    - 56
+    - 92
+    - 104
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 25
+      cd:
+        - 4
+        - 3
+    - bonus: 30
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+- id: 6171058
+  name: デモンズスタイルドレイク エリザ
+  rarity: SR
+  element: water
+  pool: gacha
+  hp:
+    - 4080
+    - 10175
+    - 12240
+  atk:
+    - 203
+    - 507
+    - 609
+  def:
+    - 183
+    - 458
+    - 550
+  spd:
+    - 56
+    - 92
+    - 104
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 25
+      cd:
+        - 4
+        - 3
+    - bonus: 30
+      cd:
+        - 5
+        - 4
+    - bonus: 0
+- id: 6202915
+  name: 第六天魔王 エリザ
+  rarity: UR
+  element: fire
+  pool: gacha
+  hp:
+    - 3345
+    - 8342
+    - 10035
+  atk:
+    - 313
+    - 782
+    - 940
+  def:
+    - 177
+    - 443
+    - 532
+  spd:
+    - 58
+    - 94
+    - 106
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 0
+      cd:
+        - 5
+        - 3
+    - bonus: 30
+      cd:
+        - 5
+        - 3
+    - bonus: 0
+- id: 6202945
+  name: 第六天魔王 セイラ
+  rarity: UR
+  element: light
+  pool: event
+  hp:
+    - 4010
+    - 10000
+    - 12030
+  atk:
+    - 225
+    - 562
+    - 675
+  def:
+    - 221
+    - 552
+    - 664
+  spd:
+    - 57
+    - 93
+    - 105
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 20
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+      cd:
+        - 6
+        - 3
 

@@ -23,7 +23,7 @@ for (const [name, list] of chars) {
 const doc = new gs.GoogleSpreadsheet("1N80A2Uz0lQe8COz3e_xWOePh0_RIMq0hYxkgsMv0CWI");
 doc.useApiKey("AIzaSyBmF9PBdznx-Dpxa2YOWWK6gcThwPFpLDM");
 await doc.loadInfo();
-const sheet = doc.sheetsByIndex[0];
+const sheet = doc.sheetsByTitle["Clean Data"];
 await sheet.loadCells("O2:Z");
 await sheet.loadCells("AG2:AL");
 

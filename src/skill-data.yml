@@ -1113,6 +1113,24 @@
     - null
     - null
     - recast: -1
+- name: 格闘女神ISHTAR エリザ
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.8
+          hp: 0.16
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.41
+          hp: 0.4
+  special:
+    - cutRate: 1
 - name: デモンズスタイルレウコシア エリザ
   skills:
     - - hits: 1
@@ -1405,6 +1423,47 @@
         aoe: false
         mod:
           atk: 3
+- name: アヌビス はなび
+  skills:
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 0
+- name: ブリュンヒルデ はなび
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 8
+  special:
+    - cutRate: 1
+    - ignoreBuffRate: 1
+- name: カラス天狗 はなび
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.3
+          spd: 17.02
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 1.2
+          spd: 18.03
+  special:
+    - cutRate: 1
 - name: デモンズスタイルレウコシア はなび
   skills:
     - - hits: 1
@@ -2130,6 +2189,22 @@
         aoe: false
         mod:
           atk: 0
+- name: 局中法度☆新選組 花織
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 1.2
+          spd: 16.085
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 2.2
+          spd: 35.154
 - name: ラウンジウェア ここあ
   skills:
     - - hits: 1
@@ -2934,6 +3009,21 @@
         aoe: false
         mod:
           atk: 3
+- name: アヌビス マリアンヌ
+  skills:
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 3
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 2.7
+          hp: 0.2
 - name: ぐだぐだFallenAngel マリアンヌ
   skills:
     - - hits: 2
@@ -3236,6 +3326,20 @@
           atk: 4
     - - hits: 1
         aoe: false
+        mod:
+          atk: 0
+- name: アヌビス セイラ
+  skills:
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 2.2
+    - - hits: 1
+        aoe: true
         mod:
           atk: 0
 - name: Magica2020 Evo セイラ
