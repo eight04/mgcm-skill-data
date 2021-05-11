@@ -242,21 +242,37 @@ function getBasicRate(context) {
   return r;
 }
 
-function getSpecialBonus(context) {
-  const {r, special, targetDef, targetDebuff} = context;
-  
-  const elementBonus = r.missRate * 0.7
+function getElementBonus(context) {
+  const {r, special} = context;
+  return r.missRate * 0.7
     // FIXME: do they add up?
     + (1-r.missRate) * r.critRate * 1.5 * product(special.extraDamageOnCrit, context)
     + (1-r.missRate) * (1-r.critRate) * r.heavyRate * 1.3
     + (1-r.missRate) * (1-r.critRate) * (1-r.heavyRate) * 1;
-    
-  const condBonus = product(special.condBonus, context);
-    
-  const defBonus = r.ignoreDefRate * 1 +
+}
+
+function getDefBonus(context) {
+  const {r, targetDef, targetDebuff} = context;
+  return r.ignoreDefRate * 1 +
     (1-r.ignoreDefRate) * (750 / (750 + targetDef * (targetDebuff.def ? 0.3 : 1)));
-    
-  return elementBonus * condBonus * defBonus;
+}
+
+function getCondBonus(context) {
+  const {special} = context;
+  return product(special.condBonus, context);
+}
+
+function getHpPctBonus(context) {
+  const {scaleByHp, scaleByTargetHp} = context.special;
+  return scale(scaleByHp, context.hpPct) * scale(scaleByTargetHp, context.targetHpPct);
+  
+  function scale(type, pct) {
+    if (!type) return 1;
+    if (type > 0) {
+      return 1 + 0.8 * pct;
+    }
+    return 1 + 0.8 * (1 - pct);
+  }
 }
 
 export function simulateSkillMod({
@@ -268,6 +284,8 @@ export function simulateSkillMod({
   debuff,
   targetBuff,
   targetDebuff,
+  targetHpPct,
+  hpPct,
   useCut = false,
   targetNumber = 1,
   s3endless,
@@ -286,7 +304,9 @@ export function simulateSkillMod({
       element: dress.element,
       targetElement,
       targetDef,
-      targetNumber
+      targetNumber,
+      hpPct,
+      targetHpPct
     };
     
     context.r = getBasicRate(context);
@@ -296,7 +316,10 @@ export function simulateSkillMod({
       mod: buildMod({
         skill: rawData.skill,
         bonus: dress.skill[index].bonus,
-        specialBonus: getSpecialBonus(context),
+        elementBonus: getElementBonus(context),
+        defBonus: getDefBonus(context),
+        condBonus: getCondBonus(context),
+        hpPctBonus: getHpPctBonus(context),
         cut: useCut ? sum(rawData.special?.cutRate, context) : 0,
         buff,
         debuff,
@@ -385,7 +408,10 @@ export function simulateSkillMod({
 function buildMod({
   skill,
   bonus,
-  specialBonus,
+  elementBonus,
+  defBonus,
+  condBonus,
+  hpPctBonus,
   cut,
   buff,
   debuff,
@@ -394,12 +420,20 @@ function buildMod({
 }) {
   const result = {};
   skill.forEach((part, i) => {
-    for (const key in part.mod) {
+    for (let key in part.mod) {
+      let fixed = false;
+      if (key.startsWith("fixed")) {
+        fixed = true;
+        key = key[5].toLowerCase() + key.slice(6);
+      }
       result[key] = (result[key] || 0) +
         part.mod[key] *
         (100 + bonus) / 100 *
-        specialBonus *
-        getBuffValue(buff, debuff, key) *
+        (fixed ? 1 : elementBonus) *
+        (fixed ? 1 : defBonus) *
+        getBuffValue(buff, debuff, key) * // FIXME: does buff affect fixed damage?
+        hpPctBonus *
+        condBonus *
         part.hits *
         (part.aoe ? targetNumber : 1) *
         (s3endless ? getS3EndlessBonus(part.hits, i > 0) : 1);
