@@ -11014,4 +11014,263 @@
       cd:
         - 6
         - 3
+- id: 6247204
+  name: Xenos Magica りり
+  rarity: UR
+  element: fire
+  pool: gacha
+  hp:
+    - 3885
+    - 9688
+    - 11655
+  atk:
+    - 227
+    - 568
+    - 683
+  def:
+    - 227
+    - 567
+    - 681
+  spd:
+    - 72
+    - 108
+    - 120
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 30
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+      cd:
+        - 5
+        - 3
+    - bonus: 0
+- id: 6281176
+  name: Xenos Magica マリアンヌ
+  rarity: UR
+  element: light
+  pool: gacha
+  hp:
+    - 3420
+    - 8529
+    - 10260
+  atk:
+    - 320
+    - 799
+    - 961
+  def:
+    - 165
+    - 413
+    - 496
+  spd:
+    - 57
+    - 93
+    - 105
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 20
+      cd:
+        - 3
+        - 2
+    - bonus: 0
+      cd:
+        - 7
+        - 4
+    - bonus: 0
+- id: 6317740
+  name: アルラウネ 花織
+  rarity: UR
+  element: light
+  pool: gacha
+  hp:
+    - 3960
+    - 9875
+    - 11880
+  atk:
+    - 225
+    - 562
+    - 675
+  def:
+    - 224
+    - 561
+    - 674
+  spd:
+    - 57
+    - 93
+    - 105
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 0
+      cd:
+        - 4
+        - 3
+    - bonus: 30
+      cd:
+        - 5
+        - 4
+    - bonus: 0
+- id: 6348514
+  name: 対魔忍 蒼
+  rarity: UR
+  element: dark
+  pool: gacha
+  hp:
+    - 3475
+    - 8666
+    - 10425
+  atk:
+    - 307
+    - 766
+    - 921
+  def:
+    - 175
+    - 437
+    - 525
+  spd:
+    - 59
+    - 95
+    - 107
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 30
+      cd:
+        - 4
+        - 3
+    - bonus: 30
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+- id: 6348616
+  name: 対魔忍 りり
+  rarity: UR
+  element: lightning
+  pool: gacha
+  hp:
+    - 3645
+    - 9090
+    - 10935
+  atk:
+    - 170
+    - 425
+    - 511
+  def:
+    - 300
+    - 749
+    - 901
+  spd:
+    - 60
+    - 96
+    - 108
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 25
+      cd:
+        - 3
+        - 2
+    - bonus: 0
+    - bonus: 0
+- id: 6348652
+  name: 対魔忍 エリザ
+  rarity: UR
+  element: light
+  pool: gacha
+  hp:
+    - 3670
+    - 9152
+    - 11010
+  atk:
+    - 298
+    - 744
+    - 895
+  def:
+    - 170
+    - 426
+    - 512
+  spd:
+    - 59
+    - 95
+    - 107
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 30
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+    - bonus: 0
+- id: 6348706
+  name: 対魔忍 いろは
+  rarity: UR
+  element: water
+  pool: event
+  hp:
+    - 3975
+    - 9913
+    - 11925
+  atk:
+    - 230
+    - 574
+    - 690
+  def:
+    - 218
+    - 546
+    - 656
+  spd:
+    - 57
+    - 93
+    - 105
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 25
+      cd:
+        - 5
+        - 3
+    - bonus: 0
+- id: 6372055
+  name: 雪おんな セイラ
+  rarity: UR
+  element: water
+  pool: gacha
+  hp:
+    - 3420
+    - 8529
+    - 10260
+  atk:
+    - 256
+    - 640
+    - 770
+  def:
+    - 229
+    - 572
+    - 687
+  spd:
+    - 60
+    - 96
+    - 108
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 30
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+    - bonus: 0
 
