@@ -39,7 +39,7 @@ export function buildOrb({dress, rarity, mod, subElement, leaderBuff}) {
       };
     })
     .sort(cmpScore)
-    .pop();
+    .pop() || {score: 0, name: "empty"}; // this happens when the orb contributes 0 damage to the mod
 }
 
 function *combination(list, len) {

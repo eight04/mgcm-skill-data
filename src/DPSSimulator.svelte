@@ -26,6 +26,8 @@ let targetNumber = getStore("dps/targetNumber", 1);
 let s3endless = getStore("dps/s3endless", false);
 let recastReduction = getStore("dps/recastReduction", "");
 let leaderBuff = getStore("dps/leaderBuff", {type: "atk%", value: 0, element: "water"});
+let hpPct = getStore("dps/hpPct", 100);
+let targetHpPct = getStore("dps/targetHpPct", 100);
 
 let running = false;
 let result;
@@ -57,7 +59,9 @@ async function simulate() {
       targetNumber: $targetNumber,
       s3endless: $s3endless,
       recastReduction: parseNumberList($recastReduction),
-      leaderBuff: $leaderBuff
+      leaderBuff: $leaderBuff,
+      hpPct: $hpPct / 100,
+      targetHpPct: $targetHpPct / 100
     });
     resultErr = false;
     maxScore = result[0].score;
@@ -84,6 +88,10 @@ function parseNumberList(s) {
 
 <fieldset class="group-block">
   <legend>Ours</legend>
+  <label class="input-group">
+    <span class="input-title">Current HP percentage</span>
+    <input type="text" bind:value={$hpPct} min="0" max="100">
+  </label>
   <div class="input-group">
     <BuffChooser bind:value={$buff} />
   </div>
@@ -133,6 +141,10 @@ function parseNumberList(s) {
     <p class="help">
       When targeting sinister bosses, this value should be the actual HP * 1/20.
     </p>
+  </label>
+  <label class="input-group">
+    <span class="input-title">Target HP percentage</span>
+    <input type="text" bind:value={$targetHpPct} min="0" max="100">
   </label>
   <label class="input-group">
     <div class="input-title">Target DEF</div>
