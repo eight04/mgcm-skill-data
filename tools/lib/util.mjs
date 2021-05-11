@@ -65,7 +65,9 @@ function parseLine(line) {
   };
   while ((match = rx.exec(line))) {
     if (!isNaN(Number(match[0]))) {
-      result.mod.atk = Number(match[0]);
+      if (Number(match[0])) {
+        result.mod.atk = Number(match[0]);
+      }
     } else if (match[0] === "+") {
       const [prop] = rx.exec(line);
       rx.exec(line);
