@@ -74,9 +74,13 @@ Ultimate Magica いろは: null
 ストレイキャット いろは: null
 デモンズスーツエンビ いろは: null
 ぐだぐだFallenAngel いろは: null
-Magica2020 Evo いろは: null
+Magica2020 Evo いろは:
+  - 4.3
+  - 1.46 *3
+  - 10
 Magica2020 いろは: null
 スイート♡バレンタイン いろは: null
+対魔忍 いろは: null
 スイートバレンタイン いろは:
   - 1 +spd*15 *2
   - 0.8 +spd*11 *2

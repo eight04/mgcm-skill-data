@@ -5,7 +5,8 @@
 †ハロウィッチ2020† 依子:
   - null
   - critRate: 0.3
-イフリート 依子:
+Magica2020 Evo 依子:
   - null
   - null
-  - cutRate: 4 # FIXME: this should be calculated
+  - scaleByTargetHp: -1
+  

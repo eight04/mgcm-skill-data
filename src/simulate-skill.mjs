@@ -89,6 +89,26 @@ const SPECIALS = {
       critRate: ({targetElement}) => targetElement === "light" ? 0.35 : 0.15,
       extraDamageOnCrit: ({targetElement}) => targetElement === "light" ? 2.5 : 2
     }
+  ],
+  "バハムート 陽彩": [
+    null,
+    {
+      condBonus: bonusByTargetDebuff(0.05/0.4)
+    }
+  ],
+  "デモンズスタイルドレイク エリザ": [
+    null,
+    null,
+    {
+      condBonus: ({targetBuff}) => targetBuff.immune.stun ? 1.5 : 1
+    }
+  ],
+  "イフリート 依子": [
+    null,
+    null,
+    {
+      cutRate: ({targetBuff}) => targetBuff.length * 2
+    }
   ]
 };
 

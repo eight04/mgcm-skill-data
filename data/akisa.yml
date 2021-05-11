@@ -69,7 +69,9 @@ Magica2019 Evo 陽彩:
   - 4
   - 0
   - 0
-バハムート 陽彩: null
+バハムート 陽彩:
+  - 4.3
+  - 0 +fixedHp*0.4 aoe
 カラス天狗 陽彩: null
 Magica2020 Evo 陽彩: null
 Magica2020 陽彩: null
@@ -81,4 +83,7 @@ Ultimate Magica 陽彩:
   - 3.6 aoe
 異世界レイヤーズⅢ 陽彩: null
 リリルカ・アーデ 陽彩: null
-デモンズスタイルドレイク 陽彩: null
+デモンズスタイルドレイク 陽彩:
+  - 1.4 *3
+  - 6
+  - 3.5 *2
