@@ -465,7 +465,6 @@ function addMod(a, b) {
 }
 
 function cmpMod(a, b) {
-  let greater = false;
   for (const key in b) {
     if (!(key in a) || a[key] < b[key]) return -1;
   }
