@@ -88,7 +88,9 @@ export function simulateDps({
   targetNumber,
   s3endless,
   recastReduction,
-  leaderBuff
+  leaderBuff,
+  hpPct,
+  targetHpPct
 }) {
   target = normalizeTarget(target);
   buff = normalizeBuff(buff);
@@ -116,7 +118,9 @@ export function simulateDps({
       useCut,
       targetNumber,
       s3endless,
-      recastReduction
+      recastReduction,
+      hpPct,
+      targetHpPct
     })) {
       const mainDress = buildDress({
         dress,

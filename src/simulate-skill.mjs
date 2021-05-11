@@ -264,7 +264,7 @@ function getCondBonus(context) {
 
 function getHpPctBonus(context) {
   const {scaleByHp, scaleByTargetHp} = context.special;
-  return scale(scaleByHp, context.hpPct) * scale(scaleByTargetHp, context.targetHpPct);
+  return scale(sum(scaleByHp), context.hpPct) * scale(sum(scaleByTargetHp), context.targetHpPct);
   
   function scale(type, pct) {
     if (!type) return 1;
@@ -284,8 +284,8 @@ export function simulateSkillMod({
   debuff,
   targetBuff,
   targetDebuff,
-  targetHpPct,
-  hpPct,
+  targetHpPct = 1,
+  hpPct = 1,
   useCut = false,
   targetNumber = 1,
   s3endless,
@@ -293,7 +293,7 @@ export function simulateSkillMod({
 }) {
   const skillData = skillMap.get(dress.name);
   if (!skillData) throw new Error(`missing skill data for ${dress.name}`);
-
+  
   const skills = skillData.map((rawData, index) => {
     const context = {
       buff,
@@ -421,13 +421,14 @@ function buildMod({
   const result = {};
   skill.forEach((part, i) => {
     for (let key in part.mod) {
+      const value = part.mod[key];
       let fixed = false;
       if (key.startsWith("fixed")) {
         fixed = true;
         key = key[5].toLowerCase() + key.slice(6);
       }
       result[key] = (result[key] || 0) +
-        part.mod[key] *
+        value *
         (100 + bonus) / 100 *
         (fixed ? 1 : elementBonus) *
         (fixed ? 1 : defBonus) *
