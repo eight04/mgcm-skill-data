@@ -11273,4 +11273,139 @@
         - 3
     - bonus: 0
     - bonus: 0
+- id: 6405562
+  name: Machina2271:MA-46/U いろは
+  rarity: UR
+  element: water
+  pool: gacha
+  hp:
+    - 3575
+    - 8915
+    - 10725
+  atk:
+    - 308
+    - 770
+    - 926
+  def:
+    - 166
+    - 416
+    - 500
+  spd:
+    - 59
+    - 95
+    - 107
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 25
+      cd:
+        - 4
+        - 3
+    - bonus: 30
+      cd:
+        - 5
+        - 4
+    - bonus: 0
+- id: 6435742
+  name: ラクシュミ りり
+  rarity: UR
+  element: light
+  pool: gacha
+  hp:
+    - 3675
+    - 9165
+    - 11025
+  atk:
+    - 298
+    - 745
+    - 896
+  def:
+    - 170
+    - 424
+    - 510
+  spd:
+    - 60
+    - 96
+    - 108
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 30
+      cd:
+        - 4
+        - 2
+    - bonus: 35
+      cd:
+        - 5
+        - 4
+    - bonus: 0
+- id: 6471184
+  name: マジカルウェディング2021 蒼
+  rarity: UR
+  element: lightning
+  pool: gacha
+  hp:
+    - 3850
+    - 9601
+    - 11550
+  atk:
+    - 226
+    - 566
+    - 680
+  def:
+    - 230
+    - 575
+    - 691
+  spd:
+    - 53
+    - 89
+    - 101
+  fcs: 20
+  rst: 60
+  skill:
+    - bonus: 25
+    - bonus: 0
+      cd:
+        - 4
+        - 2
+    - bonus: 0
+      cd:
+        - 5
+        - 4
+    - bonus: 0
+- id: 6471079
+  name: マジカルウェディング2021 陽彩
+  rarity: UR
+  element: water
+  pool: event
+  hp:
+    - 3975
+    - 9913
+    - 11925
+  atk:
+    - 223
+    - 557
+    - 670
+  def:
+    - 225
+    - 562
+    - 676
+  spd:
+    - 56
+    - 92
+    - 104
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 30
+      cd:
+        - 4
+        - 2
+    - bonus: 0
+      cd:
+        - 6
+        - 4
 
