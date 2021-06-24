@@ -1,6 +1,6 @@
 import dressDB from "../dress-db.yml";
 
-import {calcScore, cmpScore} from "./simulate-util.mjs";
+import {calcScore, cmpScore, charGroup} from "./simulate-util.mjs";
 import {buildOrb} from "./simulate-orb.mjs";
 import {simulateSkillMod, skillMap} from "./simulate-skill.mjs";
 
@@ -13,7 +13,8 @@ export function simulateSubDress({
   orbRarity,
   buff,
   debuff,
-  mod
+  mod,
+  useSubGroup
 }) {
   buff = normalizeBuff(buff);
   
@@ -23,7 +24,16 @@ export function simulateSubDress({
     orbRarity
   });
   
-  const allSubs = [...getAllSubs(mainDress, allDresses, mod, orbRarity, buff, debuff, true)]
+  const allSubs = [...getAllSubs({
+    mainDress,
+    allDresses,
+    mod,
+    orbRarity,
+    buff,
+    debuff, 
+    useSubEl: true,
+    useSubGroup
+  })]
     .sort(cmpScore)
     .reverse();
   
@@ -34,7 +44,17 @@ export function simulateSubDress({
   };
 }
 
-function *getAllSubs(mainDress, allDresses, mod, orb, buff, debuff, useSubEl, leaderBuff) {
+function *getAllSubs({
+  mainDress,
+  allDresses,
+  mod,
+  orbRarity,
+  buff,
+  debuff,
+  useSubEl,
+  useSubGroup,
+  leaderBuff, 
+}) {
   for (const dress of allDresses) {
     if (dress === mainDress) continue;
     
@@ -42,9 +62,9 @@ function *getAllSubs(mainDress, allDresses, mod, orb, buff, debuff, useSubEl, le
       buildDress({
         dress,
         mod,
-        subRatio: getSubRatio(mainDress, dress, subElement),
+        subRatio: getSubRatio(mainDress, dress, subElement, useSubGroup),
         subElement,
-        orbRarity: orb,
+        orbRarity,
         leaderBuff
       });
     
@@ -128,16 +148,16 @@ export function simulateDps({
         orbRarity: orb,
         leaderBuff: useLeaderBuff
       });
-      const subs = [...getAllSubs(
-        dress,
+      const subs = [...getAllSubs({
+        mainDress: dress,
         allDresses,
         mod,
         orb,
         buff,
         debuff,
-        ignoreElement,
-        useLeaderBuff && leaderBuff.type.endsWith("%") ? leaderBuff : undefined
-      )]
+        useSubEl: ignoreElement,
+        leaderBuff: useLeaderBuff && leaderBuff.type.endsWith("%") ? leaderBuff : undefined
+      })]
         .sort(cmpScore)
         .reverse();
         
@@ -186,10 +206,16 @@ function normalizeTarget(target) {
   return result;
 }
 
-function getSubRatio(main, sub, subElement) {
+function getSubRatio(main, sub, subElement, useSubGroup) {
   return (20 +
-    (getChar(main) === getChar(sub) ? 5 : 0) +
+    (isSameChar() ? 5 : 0) +
     (main.element === sub.element || isJoker(sub) || subElement ? 5 : 0)) / 100;
+    
+  function isSameChar() {
+    const charA = getChar(main);
+    const charB = getChar(sub);
+    return charA === charB || useSubGroup && charGroup[charA] === charGroup[charB];
+  }
 }
 
 function isJoker(dress) {

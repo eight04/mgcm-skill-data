@@ -12,6 +12,7 @@ let focusType = "stat";
 let focusOn = "atk";
 let orbRarity = "sr";
 let customMod = "";
+let useSubGroup = false;
 
 let result;
 let resultErr;
@@ -33,6 +34,7 @@ async function simulate() {
       orbRarity,
       mod: focusType === "mod" ?
         JSON.parse(customMod) : {[focusOn]: 1},
+      useSubGroup
     });
     resultErr = false;
   } catch (err) {
@@ -55,6 +57,10 @@ async function simulate() {
       <option value="sr">SR</option>
       <option value="ur">UR</option>
     </select>
+  </label>
+  <label>
+    <input type="checkbox" bind:checked={useSubGroup}>
+    Use subdress group  <a href="https://github.com/eight04/mgcm-skill-data/issues/50">Learn more</a>
   </label>
 </div>
 
