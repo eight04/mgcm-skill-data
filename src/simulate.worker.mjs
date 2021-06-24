@@ -86,7 +86,7 @@ export function simulateDps({
   turn,
   useCut,
   targetNumber,
-  s3endless,
+  endlessMode,
   recastReduction,
   leaderBuff,
   hpPct,
@@ -117,7 +117,7 @@ export function simulateDps({
       targetDebuff,
       useCut,
       targetNumber,
-      s3endless,
+      endlessMode,
       recastReduction,
       hpPct,
       targetHpPct

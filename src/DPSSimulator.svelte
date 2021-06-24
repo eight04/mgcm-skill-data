@@ -23,7 +23,7 @@ let target = getStore("dps/target", {hp: 0, def: 1000, element: "neutral"});
 let targetDebuff = getStore("dps/targetDebuff", []);
 let useCut = getStore("dps/useCut", false);
 let targetNumber = getStore("dps/targetNumber", 1);
-let s3endless = getStore("dps/s3endless", false);
+let endlessMode = getStore("dps/endlessMode", "none");
 let recastReduction = getStore("dps/recastReduction", "");
 let leaderBuff = getStore("dps/leaderBuff", {type: "atk%", value: 0, element: "water"});
 let hpPct = getStore("dps/hpPct", 100);
@@ -57,7 +57,7 @@ async function simulate() {
       turn: $turn,
       useCut: $useCut,
       targetNumber: $targetNumber,
-      s3endless: $s3endless,
+      endlessMode: $endlessMode,
       recastReduction: parseNumberList($recastReduction),
       leaderBuff: $leaderBuff,
       hpPct: $hpPct / 100,
@@ -195,8 +195,12 @@ function parseNumberList(s) {
     Calculate cut damage
   </label>  
   <label class="input-group">
-    <input type="checkbox" bind:checked={$s3endless}>
-    Season 3 endless mode. <a href="https://github.com/eight04/mgcm-skill-data/issues/31">Learn more</a>
+    <span class="input-title">Endless mode. <a href="https://github.com/eight04/mgcm-skill-data/issues/31">Learn more</a></span>
+    <select bind:value={$endlessMode}>
+      <option value="none">None</option>
+      <option value="s3">Season 3</option>
+      <option value="s4">Season 4</option>
+    </select>
   </label>
 </fieldset>
 

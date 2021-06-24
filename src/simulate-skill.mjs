@@ -288,7 +288,7 @@ export function simulateSkillMod({
   hpPct = 1,
   useCut = false,
   targetNumber = 1,
-  s3endless,
+  endlessMode,
   recastReduction = [],
 }) {
   const skillData = skillMap.get(dress.name);
@@ -324,7 +324,7 @@ export function simulateSkillMod({
         buff,
         debuff,
         targetNumber,
-        s3endless,
+        endlessMode,
       }),
       cd: dress.skill[index].cd?.[1] || 1,
       sleep: 0,
@@ -416,7 +416,7 @@ function buildMod({
   buff,
   debuff,
   targetNumber,
-  s3endless = false,
+  endlessMode,
 }) {
   const result = {};
   skill.forEach((part, i) => {
@@ -437,7 +437,7 @@ function buildMod({
         condBonus *
         part.hits *
         (part.aoe ? targetNumber : 1) *
-        (s3endless ? getS3EndlessBonus(part.hits, i > 0) : 1);
+        getEndlessBonus(endlessMode, part.hits, i > 0);
     }
   });
   if (cut) {
@@ -446,14 +446,20 @@ function buildMod({
   return result;
 }
 
-function getS3EndlessBonus(hits, isSecondHit) {
-  if (isSecondHit) {
-    return 5;
+function getEndlessBonus(mode, hits, isSecondPart) {
+  if (mode === "s3") {
+    if (isSecondPart) return 5;
+    if (hits <= 1) return 1;
+    return ((hits - 1) * 5 + 1) / hits;
   }
-  if (hits <= 1) {
-    return 1;
+  
+  if (mode === "s4") {
+    if (isSecondPart) return 1;
+    if (hits <= 1) return 6;
+    return (6 + (hits - 1)) / hits;
   }
-  return ((hits - 1) * 5 + 1) / hits;
+  
+  return 1;
 }
 
 function addMod(a, b) {
