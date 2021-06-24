@@ -11,13 +11,9 @@ export function simulateSubDress({
   mainDressName,
   mainDress = allDresses.find(d => d.name === mainDressName),
   orbRarity,
-  buff,
-  debuff,
   mod,
   useSubGroup
 }) {
-  buff = normalizeBuff(buff);
-  
   const mainDressResult = buildDress({
     dress: mainDress,
     mod,
@@ -29,8 +25,6 @@ export function simulateSubDress({
     allDresses,
     mod,
     orbRarity,
-    buff,
-    debuff, 
     useSubEl: true,
     useSubGroup
   })]
@@ -49,8 +43,6 @@ function *getAllSubs({
   allDresses,
   mod,
   orbRarity,
-  buff,
-  debuff,
   useSubEl,
   useSubGroup,
   leaderBuff, 
@@ -110,7 +102,8 @@ export function simulateDps({
   recastReduction,
   leaderBuff,
   hpPct,
-  targetHpPct
+  targetHpPct,
+  useSubGroup,
 }) {
   target = normalizeTarget(target);
   buff = normalizeBuff(buff);
@@ -153,9 +146,8 @@ export function simulateDps({
         allDresses,
         mod,
         orb,
-        buff,
-        debuff,
         useSubEl: ignoreElement,
+        useSubGroup,
         leaderBuff: useLeaderBuff && leaderBuff.type.endsWith("%") ? leaderBuff : undefined
       })]
         .sort(cmpScore)

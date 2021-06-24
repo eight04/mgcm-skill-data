@@ -17,10 +17,11 @@ let useSubGroup = false;
 let result;
 let resultErr;
 
-export function setCustomMod({dressName, mod}) {
+export function setCustomMod({dressName, mod, useSubGroup: _useSubGroup}) {
   focusType = "mod";
   customMod = JSON.stringify(mod, null, 2);
   choosedDress = dressName;
+  useSubGroup = _useSubGroup;
   result = null;
 }
 
