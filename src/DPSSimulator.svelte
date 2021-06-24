@@ -28,6 +28,7 @@ let recastReduction = getStore("dps/recastReduction", "");
 let leaderBuff = getStore("dps/leaderBuff", {type: "atk%", value: 0, element: "water"});
 let hpPct = getStore("dps/hpPct", 100);
 let targetHpPct = getStore("dps/targetHpPct", 100);
+let useSubGroup = getStore("dps/useSubGroup", false);
 
 let running = false;
 let result;
@@ -61,7 +62,8 @@ async function simulate() {
       recastReduction: parseNumberList($recastReduction),
       leaderBuff: $leaderBuff,
       hpPct: $hpPct / 100,
-      targetHpPct: $targetHpPct / 100
+      targetHpPct: $targetHpPct / 100,
+      useSubGroup: $useSubGroup
     });
     resultErr = false;
     maxScore = result[0].score;
@@ -74,7 +76,7 @@ async function simulate() {
 }
 
 function openSubs(dressName, mod) {
-  dispatchEvent("openSub", {dressName, mod});
+  dispatchEvent("openSub", {dressName, mod, useSubGroup: $useSubGroup});
 }
 
 function getOrbName(build) {
@@ -179,6 +181,10 @@ function parseNumberList(s) {
     <input type="checkbox" bind:checked={$ignoreElement}>
     Use sub element orbs
   </label>
+  <label class="input-group">
+    <input type="checkbox" bind:checked={$useSubGroup}>
+    Use subdress group
+  </label>
   <div class="input-group">
     <div class="radio-title">Orb rarity</div>
     <label>
@@ -193,7 +199,7 @@ function parseNumberList(s) {
   <label class="input-group">
     <input type="checkbox" bind:checked={$useCut}>
     Calculate cut damage
-  </label>  
+  </label>
   <label class="input-group">
     <span class="input-title">Endless mode. <a href="https://github.com/eight04/mgcm-skill-data/issues/31">Learn more</a></span>
     <select bind:value={$endlessMode}>

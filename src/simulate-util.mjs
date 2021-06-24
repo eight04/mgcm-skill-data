@@ -29,3 +29,18 @@ export function calcScore(stat, mod, leaderBuff) {
 export function cmpScore(a, b) {
   return a.score - b.score;
 }
+
+export const charGroup = {
+  "いろは": 1,
+  "花織": 1,
+  "マリアンヌ": 1,
+  "セイラ": 2,
+  "ここあ": 2,
+  "丹": 2,
+  "陽彩": 3,
+  "蒼": 3,
+  "依子": 3,
+  "エリザ": 4,
+  "りり": 4,
+  "はなび": 4
+};

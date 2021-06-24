@@ -12,14 +12,16 @@ let focusType = "stat";
 let focusOn = "atk";
 let orbRarity = "sr";
 let customMod = "";
+let useSubGroup = false;
 
 let result;
 let resultErr;
 
-export function setCustomMod({dressName, mod}) {
+export function setCustomMod({dressName, mod, useSubGroup: _useSubGroup}) {
   focusType = "mod";
   customMod = JSON.stringify(mod, null, 2);
   choosedDress = dressName;
+  useSubGroup = _useSubGroup;
   result = null;
 }
 
@@ -33,6 +35,7 @@ async function simulate() {
       orbRarity,
       mod: focusType === "mod" ?
         JSON.parse(customMod) : {[focusOn]: 1},
+      useSubGroup
     });
     resultErr = false;
   } catch (err) {
@@ -55,6 +58,10 @@ async function simulate() {
       <option value="sr">SR</option>
       <option value="ur">UR</option>
     </select>
+  </label>
+  <label>
+    <input type="checkbox" bind:checked={useSubGroup}>
+    Use subdress group  <a href="https://github.com/eight04/mgcm-skill-data/issues/50">Learn more</a>
   </label>
 </div>
 
