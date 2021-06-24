@@ -193,7 +193,7 @@ function getSubRatio(main, sub, subElement) {
 }
 
 function isJoker(dress) {
-  return dress.rarity === "R" || /^Magica 2020 \S+$/.test(dress.name);
+  return dress.rarity === "R" || /^Magica2020 \S+$/.test(dress.name);
 }
 
 function getChar(dress) {

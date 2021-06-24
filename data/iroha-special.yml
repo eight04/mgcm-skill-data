@@ -21,4 +21,7 @@ Magica2020 Evo いろは:
   - missRate: -999
   - critRate: 999
   - missRate: -999
+Ultimate Magica いろは:
+  - null
+  - ignoreBuffRate: 1
   

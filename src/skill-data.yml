@@ -513,6 +513,41 @@
         aoe: true
         mod:
           fixedHp: 0.4
+- name: カラス天狗 陽彩
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1
+          spd: 17
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 2.6
+          spd: 36
+  special:
+    - cutRate: 1
+- name: Magica2020 Evo 陽彩
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod: {}
+    - - hits: 1
+        aoe: false
+        mod: {}
+- name: Magica2020 陽彩
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod: {}
 - name: Ultimate Magica 陽彩
   skills:
     - - hits: 1
@@ -2091,6 +2126,23 @@
   special:
     - null
     - cutRate: 4
+- name: Ultimate Magica いろは
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 7
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 3.1
+  special:
+    - null
+    - ignoreBuffRate: 1
 - name: リヴァイアサン いろは
   skills:
     - - hits: 1
@@ -2427,6 +2479,16 @@
         mod:
           atk: 2.2
           spd: 35.154
+- name: Magica2020 Evo 花織
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 3.8
 - name: ラウンジウェア ここあ
   skills:
     - - hits: 1
@@ -3610,6 +3672,21 @@
     - - hits: 1
         aoe: false
         mod: {}
+    - - hits: 1
+        aoe: false
+        mod: {}
+- name: Xenos Magica セイラ
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.8
+          def: 2.7
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.9
+          def: 3.9
     - - hits: 1
         aoe: false
         mod: {}
