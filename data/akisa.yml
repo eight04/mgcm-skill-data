@@ -72,9 +72,16 @@ Magica2019 Evo 陽彩:
 バハムート 陽彩:
   - 4.3
   - 0 +fixedHp*0.4 aoe
-カラス天狗 陽彩: null
-Magica2020 Evo 陽彩: null
-Magica2020 陽彩: null
+カラス天狗 陽彩:
+  - 1 +spd*17
+  - 2.6 +spd*36
+Magica2020 Evo 陽彩:
+  - 4
+  - 0
+  - 0
+Magica2020 陽彩:
+  - 4
+  - 0
 アンニュイビキニ 陽彩: null
 パジャマパーティー 陽彩: null
 Ultimate Magica 陽彩:
