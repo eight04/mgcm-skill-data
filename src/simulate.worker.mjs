@@ -104,6 +104,7 @@ export function simulateDps({
   hpPct,
   targetHpPct,
   useSubGroup,
+  extraDamageElement
 }) {
   target = normalizeTarget(target);
   buff = normalizeBuff(buff);
@@ -133,7 +134,8 @@ export function simulateDps({
       endlessMode,
       recastReduction,
       hpPct,
-      targetHpPct
+      targetHpPct,
+      extraDamageElement
     })) {
       const mainDress = buildDress({
         dress,
