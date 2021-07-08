@@ -238,6 +238,33 @@
           atk: 4
   passive:
     cutRate: 2
+- name: マジカルスイムスーツ 丹
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.1
+    - - hits: 1
+        aoe: true
+        mod: {}
+- name: 新春巫女2021 丹
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 1.6
+          hp: 0.16
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.9
+    - - hits: 1
+        aoe: true
+        mod: {}
 - name: デモンズスタイルドレイク 丹
   skills:
     - - hits: 3
@@ -880,6 +907,20 @@
         aoe: false
         mod:
           atk: 8.2
+- name: ホーリーサンタ2020 蒼
+  skills:
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 3.2
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.3
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 5
 - name: アイズ 蒼
   skills:
     - - hits: 1
@@ -903,6 +944,22 @@
     - null
     - critRate: 0.2
       ignoreDefRate: 1
+- name: アクーマ軍団女幹部 蒼
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: true
+        mod: {}
+    - - hits: 2
+        aoe: true
+        mod:
+          atk: 4
+  special:
+    - cutRate: 1
+    - cutRate: 6
 - name: デモンズスタイルドレイク 蒼
   skills:
     - - hits: 3
@@ -1210,6 +1267,19 @@
           hp: 0.4
   special:
     - cutRate: 1
+- name: マジカルスイムスーツ エリザ
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: true
+        mod: {}
+    - - hits: 6
+        aoe: false
+        mod:
+          atk: 2.2
 - name: デモンズスタイルレウコシア エリザ
   skills:
     - - hits: 1
@@ -2188,6 +2258,22 @@
     - missRate: -999
     - critRate: 999
     - missRate: -999
+- name: 対魔忍 いろは
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2.5
+    - - hits: 1
+        aoe: false
+        mod: {}
+  special:
+    - scaleByHp: -1
+    - scaleByHp: -1
 - name: スイートバレンタイン いろは
   skills:
     - - hits: 2
@@ -2755,6 +2841,23 @@
         mod:
           atk: 2
           spd: 30
+- name: 局中法度☆新選組 ここあ
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 3.2
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 3.7
+  special:
+    - null
+    - cutRate: 4.5
 - name: Magica2020 Evo ここあ
   skills:
     - - hits: 1
@@ -3111,6 +3214,24 @@
         aoe: false
         mod:
           atk: 1.5
+- name: Ultimate Magica りり
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 2.2
+    - - hits: 3
+        aoe: true
+        mod:
+          atk: 1.5
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 7.5
+  special:
+    - ignoreDefRate: 1
+      cutRate: 4
+    - missRate: -999
 - name: ラウンジウェア マリアンヌ
   skills:
     - - hits: 1
