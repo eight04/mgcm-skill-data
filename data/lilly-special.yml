@@ -18,3 +18,7 @@ Magica2020 りり:
   - null
   - null
   - cutRate: 3
+Ultimate Magica りり:
+  - ignoreDefRate: 1
+    cutRate: 4
+  - missRate: -999

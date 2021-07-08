@@ -29,6 +29,7 @@ let leaderBuff = getStore("dps/leaderBuff", {type: "atk%", value: 0, element: "w
 let hpPct = getStore("dps/hpPct", 100);
 let targetHpPct = getStore("dps/targetHpPct", 100);
 let useSubGroup = getStore("dps/useSubGroup", false);
+let extraDamageElement = getStore("dps/extraDamageElement", "none");
 
 let running = false;
 let result;
@@ -63,7 +64,8 @@ async function simulate() {
       leaderBuff: $leaderBuff,
       hpPct: $hpPct / 100,
       targetHpPct: $targetHpPct / 100,
-      useSubGroup: $useSubGroup
+      useSubGroup: $useSubGroup,
+      extraDamageElement: $extraDamageElement
     });
     resultErr = false;
     maxScore = result[0].score;
@@ -168,6 +170,17 @@ function parseNumberList(s) {
   <label class="input-group">
     <div class="input-title">Number of targets</div>
     <input type="number" bind:value={$targetNumber}>
+  </label>
+  <label class="input-group">
+    <div class="input-title">Element of BF extra damage</div>
+    <select bind:value={$extraDamageElement}>
+      <option value="none">None</option>
+      <option value="fire">Fire</option>
+      <option value="lightning">Lightning</option>
+      <option value="water">Water</option>
+      <option value="dark">Dark</option>
+      <option value="light">Light</option>
+    </select>
   </label>
 </fieldset>
 

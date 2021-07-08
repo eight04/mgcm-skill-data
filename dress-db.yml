@@ -11077,9 +11077,9 @@
       cd:
         - 3
         - 2
-    - bonus: 0
+    - bonus: 20
       cd:
-        - 7
+        - 5
         - 4
     - bonus: 0
 - id: 6317740
@@ -11475,5 +11475,134 @@
       cd:
         - 5
         - 3
+    - bonus: 0
+- id: 6582160
+  name: Ultimate Magica りり
+  rarity: UR
+  element: fire
+  pool: gacha
+  hp:
+    - 3150
+    - 7856
+    - 9450
+  atk:
+    - 335
+    - 836
+    - 1005
+  def:
+    - 168
+    - 421
+    - 506
+  spd:
+    - 70
+    - 106
+    - 118
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 20
+      cd:
+        - 4
+        - 3
+    - bonus: 30
+      cd:
+        - 5
+        - 4
+    - bonus: 0
+- id: 6598783
+  name: アバンチュールビキニ 丹
+  rarity: UR
+  element: dark
+  pool: gacha
+  hp:
+    - 3875
+    - 9663
+    - 11625
+  atk:
+    - 241
+    - 603
+    - 725
+  def:
+    - 213
+    - 533
+    - 641
+  spd:
+    - 56
+    - 92
+    - 104
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 20
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+    - bonus: 0
+- id: 6599404
+  name: アバンチュールビキニ マリアンヌ
+  rarity: UR
+  element: fire
+  pool: event
+  hp:
+    - 3975
+    - 9913
+    - 11925
+  atk:
+    - 218
+    - 546
+    - 656
+  def:
+    - 230
+    - 574
+    - 690
+  spd:
+    - 50
+    - 86
+    - 98
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 30
+    - bonus: 20
+      cd:
+        - 4
+        - 3
+    - bonus: 20
+      cd:
+        - 5
+        - 4
+- id: 6626458
+  name: Xenos Magica 花織
+  rarity: UR
+  element: water
+  pool: gacha
+  hp:
+    - 3565
+    - 8890
+    - 10695
+  atk:
+    - 177
+    - 442
+    - 531
+  def:
+    - 299
+    - 746
+    - 897
+  spd:
+    - 60
+    - 96
+    - 108
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 20
+      cd:
+        - 4
+        - 3
+    - bonus: 0
     - bonus: 0
 

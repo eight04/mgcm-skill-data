@@ -290,6 +290,7 @@ export function simulateSkillMod({
   targetNumber = 1,
   endlessMode,
   recastReduction = [],
+  extraDamageElement
 }) {
   const skillData = skillMap.get(dress.name);
   if (!skillData) throw new Error(`missing skill data for ${dress.name}`);
@@ -306,7 +307,8 @@ export function simulateSkillMod({
       targetDef,
       targetNumber,
       hpPct,
-      targetHpPct
+      targetHpPct,
+      extraDamageElement
     };
     
     context.r = getBasicRate(context);
@@ -320,6 +322,7 @@ export function simulateSkillMod({
         defBonus: getDefBonus(context),
         condBonus: getCondBonus(context),
         hpPctBonus: getHpPctBonus(context),
+        extraDamage: extraDamageElement !== "none" && extraDamageElement === dress.element,
         cut: useCut ? sum(rawData.special?.cutRate, context) : 0,
         buff,
         debuff,
@@ -417,6 +420,7 @@ function buildMod({
   debuff,
   targetNumber,
   endlessMode,
+  extraDamage
 }) {
   const result = {};
   skill.forEach((part, i) => {
@@ -437,7 +441,8 @@ function buildMod({
         condBonus *
         part.hits *
         (part.aoe ? targetNumber : 1) *
-        getEndlessBonus(endlessMode, part.hits, i > 0);
+        getEndlessBonus(endlessMode, part.hits, i > 0) *
+        (extraDamage ? 1.5 : 1);
     }
   });
   if (cut) {
