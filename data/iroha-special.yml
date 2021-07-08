@@ -24,4 +24,7 @@ Magica2020 Evo いろは:
 Ultimate Magica いろは:
   - null
   - ignoreBuffRate: 1
+対魔忍 いろは:
+  - scaleByHp: -1
+  - scaleByHp: -1
   
