@@ -27,4 +27,7 @@ Ultimate Magica いろは:
 対魔忍 いろは:
   - scaleByHp: -1
   - scaleByHp: -1
-  
+Xenos Magica いろは:
+  - extraDamageOnCrit: 2
+  - critRate: 0.3
+    extraDamageOnCrit: 1.667

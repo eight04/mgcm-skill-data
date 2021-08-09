@@ -11580,13 +11580,13 @@
   element: water
   pool: gacha
   hp:
-    - 3565
-    - 8890
-    - 10695
+    - 3670
+    - 9152
+    - 11010
   atk:
-    - 177
-    - 442
-    - 531
+    - 170
+    - 424
+    - 510
   def:
     - 299
     - 746
@@ -11605,4 +11605,207 @@
         - 3
     - bonus: 0
     - bonus: 0
+- id: 6634975
+  name: クラーケン マリアンヌ
+  rarity: UR
+  element: dark
+  pool: gacha
+  hp:
+    - 3650
+    - 9102
+    - 10950
+  atk:
+    - 271
+    - 676
+    - 813
+  def:
+    - 199
+    - 497
+    - 598
+  spd:
+    - 62
+    - 98
+    - 110
+  fcs: 60
+  rst: 20
+  skill:
+    - bonus: 25
+    - bonus: 20
+      cd:
+        - 3
+        - 2
+    - bonus: 30
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+- id: 6658960
+  name: Xenos Magica いろは
+  rarity: UR
+  element: fire
+  pool: gacha
+  hp:
+    - 3495
+    - 8716
+    - 10485
+  atk:
+    - 311
+    - 778
+    - 935
+  def:
+    - 169
+    - 422
+    - 507
+  spd:
+    - 58
+    - 94
+    - 106
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 30
+      cd:
+        - 3
+        - 2
+    - bonus: 0
+      cd:
+        - 12
+        - 8
+    - bonus: 0
+- id: 6692308
+  name: 織姫 依子
+  rarity: UR
+  element: light
+  pool: gacha
+  hp:
+    - 3660
+    - 9127
+    - 10980
+  atk:
+    - 275
+    - 686
+    - 825
+  def:
+    - 194
+    - 486
+    - 584
+  spd:
+    - 58
+    - 94
+    - 106
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 30
+      cd:
+        - 3
+        - 2
+    - bonus: 20
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+- id: 6696097
+  name: Rebirth Magica マリアンヌ
+  rarity: UR
+  element: light
+  pool: gacha
+  hp:
+    - 3475
+    - 8666
+    - 10425
+  atk:
+    - 134
+    - 335
+    - 402
+  def:
+    - 348
+    - 868
+    - 1044
+  spd:
+    - 52
+    - 88
+    - 100
+  fcs: 60
+  rst: 20
+  skill:
+    - bonus: 25
+    - bonus: 20
+      cd:
+        - 4
+        - 3
+    - bonus: 30
+      cd:
+        - 5
+        - 4
+    - bonus: 0
+- id: 26689993
+  name: オーシャンドレス りり
+  rarity: UR
+  element: lightning
+  pool: gacha
+  hp:
+    - 3670
+    - 9152
+    - 11010
+  atk:
+    - 272
+    - 680
+    - 817
+  def:
+    - 196
+    - 491
+    - 590
+  spd:
+    - 56
+    - 92
+    - 104
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 30
+      cd:
+        - 3
+        - 2
+    - bonus: 30
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+- id: 26690011
+  name: オーシャンドレス セイラ
+  rarity: UR
+  element: water
+  pool: event
+  hp:
+    - 4015
+    - 10013
+    - 12045
+  atk:
+    - 227
+    - 568
+    - 683
+  def:
+    - 218
+    - 545
+    - 655
+  spd:
+    - 54
+    - 90
+    - 102
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 35
+    - bonus: 25
+      cd:
+        - 4
+        - 3
+    - bonus: 25
+      cd:
+        - 5
+        - 4
 
