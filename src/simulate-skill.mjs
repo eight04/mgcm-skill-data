@@ -110,7 +110,7 @@ const SPECIALS = {
       cutRate: ({targetBuff}) => targetBuff.length * 2
     }
   ],
-  [
+  "オーシャンドレス りり": [
     null,
     null,
     {
