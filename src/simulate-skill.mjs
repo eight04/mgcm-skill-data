@@ -109,6 +109,13 @@ const SPECIALS = {
     {
       cutRate: ({targetBuff}) => targetBuff.length * 2
     }
+  ],
+  [
+    null,
+    null,
+    {
+      condBonus: bonusByTargetDebuff(0.3)
+    }
   ]
 };
 
