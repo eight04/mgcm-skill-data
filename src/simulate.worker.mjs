@@ -104,7 +104,8 @@ export function simulateDps({
   hpPct,
   targetHpPct,
   useSubGroup,
-  extraDamageElement
+  extraDamageElement,
+  customSkillOrder,
 }) {
   target = normalizeTarget(target);
   buff = normalizeBuff(buff);
@@ -120,7 +121,7 @@ export function simulateDps({
     
     const useLeaderBuff = leaderBuff && leaderBuff.element === dress.element ? leaderBuff : undefined;
     
-    for (const {history, mod} of simulateSkillMod({
+    for (const {historyHash, mod, required} of simulateSkillMod({
       turn,
       dress, 
       targetDef: target.targetDef,
@@ -135,7 +136,8 @@ export function simulateDps({
       recastReduction,
       hpPct,
       targetHpPct,
-      extraDamageElement
+      extraDamageElement,
+      orders: customSkillOrder[dress.name]
     })) {
       const mainDress = buildDress({
         dress,
@@ -173,7 +175,8 @@ export function simulateDps({
         mainDress,
         subDresses,
         mod,
-        history
+        historyHash,
+        required
       });
     }
   }
@@ -184,7 +187,7 @@ export function simulateDps({
     .sort(cmpScore)
     .reverse()
     .filter(r => {
-      if (set.has(r.mainDress.dress.name)) {
+      if (set.has(r.mainDress.dress.name) && !r.required) {
         return false;
       }
       set.add(r.mainDress.dress.name);
