@@ -362,8 +362,12 @@ export function simulateSkillMod({
   
   search(0, Array(skills.length).fill(0), {}, []);
   
-  if (dress.name === "灼熱野球ユニ ここあ") {
-    console.log(results);
+  for (const order of orders) {
+    let mod = {};
+    for (const i of order.split("").map(n => Number(n) - 1)) {
+      mod = addMod(mod, skills.find(s => s.index === i).mod);
+    }
+    results.push({mod, historyHash: order, required: true});
   }
   
   return results;
@@ -371,25 +375,21 @@ export function simulateSkillMod({
   function search(turn, sleep, mod, history) {
     if (turn >= maxTurn) {
       const historyHash = history.map(v => v + 1).join("");
-      const required = orders.includes(historyHash);
       for (let i = 0; i < results.length; i++) {
         const r1 = cmpMod(mod, results[i].mod);
         if (r1 > 0) {
-          results[i] = {historyHash, mod, required};
+          results[i] = {historyHash, mod};
           return;
         }
         const r2 = cmpMod(results[i].mod, mod);
-        if (r2 > 0 && !required) {
+        if (r2 > 0) {
           return;
         }
         if (r1 === r2 && r1 === 0) {
-          if (required) {
-            results[i] = {historyHash, mod, required};
-          }
           return;
         }
       }
-      results.push({historyHash, mod, required});
+      results.push({historyHash, mod});
       return;
     }
     
