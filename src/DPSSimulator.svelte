@@ -1,4 +1,5 @@
 <script>
+/* eslint-env browser */
 import { createEventDispatcher } from "svelte";
 
 import DressLink from "./DressLink.svelte";
@@ -30,6 +31,7 @@ let hpPct = getStore("dps/hpPct", 100);
 let targetHpPct = getStore("dps/targetHpPct", 100);
 let useSubGroup = getStore("dps/useSubGroup", false);
 let extraDamageElement = getStore("dps/extraDamageElement", "none");
+let customSkillOrder = getStore("dps/customSkillOrder", "");
 
 let running = false;
 let result;
@@ -65,7 +67,8 @@ async function simulate() {
       hpPct: $hpPct / 100,
       targetHpPct: $targetHpPct / 100,
       useSubGroup: $useSubGroup,
-      extraDamageElement: $extraDamageElement
+      extraDamageElement: $extraDamageElement,
+      customSkillOrder: parseSkillOrder($customSkillOrder)
     });
     resultErr = false;
     maxScore = result[0].score;
@@ -87,6 +90,48 @@ function getOrbName(build) {
 
 function parseNumberList(s) {
   return s.split(",").map(n => Number(n.trim()));
+}
+
+function addCustomSkillOrder(dressName, defaultOrder) {
+  const value = prompt("Skill Order:", defaultOrder);
+  const obj = parseSkillOrder($customSkillOrder);
+  if (!obj[dressName]) {
+    obj[dressName] = [];
+  }
+  obj[dressName].push(value);
+  $customSkillOrder = stringifySkillOrder(obj);
+}
+
+function parseSkillOrder(s) {
+  const obj = {};
+  let dressName;
+  for (let line of s.trim().split(/\r?\n/)) {
+    line = line.trim();
+    if (!line) continue;
+    if (/^\d+$/.test(line)) {
+      if (!dressName) {
+        throw new Error("Dress name is missing");
+      }
+      if (!obj[dressName]) {
+        obj[dressName] = [];
+      }
+      obj[dressName].push(line);
+    } else {
+      dressName = line;
+    }
+  }
+  return obj;
+}
+
+function stringifySkillOrder(obj) {
+  const lines = [];
+  for (const dressName in obj) {
+    lines.push(dressName);
+    for (const order of obj[dressName]) {
+      lines.push(order);
+    }
+  }
+  return lines.join("\n");
 }
 </script>
 
@@ -221,6 +266,10 @@ function parseNumberList(s) {
       <option value="s4">Season 4</option>
     </select>
   </label>
+  <label class="input-group">
+    <span class="input-title">Custom skill order. <a href="https://github.com/eight04/mgcm-skill-data/issues/55">Learn more</a></span>
+    <textarea bind:value={$customSkillOrder}></textarea>
+  </label>
 </fieldset>
 
 <div class="actions">
@@ -262,7 +311,7 @@ function parseNumberList(s) {
               <td rowspan="5">
                 <DressLink dress={row.mainDress.dress}></DressLink>
                 <div class="rotation">
-                  {row.history.map(v => v + 1).join("")}
+                  {row.historyHash}
                 </div>
               </td>
               <td rowspan="5">{row.mainDress.orb.name}</td>
@@ -285,6 +334,9 @@ function parseNumberList(s) {
               <td colspan="2">
                 <button on:click={()=>openSubs(row.mainDress.dress.name, row.mod)}>
                   Simulate Subs
+                </button>
+                <button on:click={()=>addCustomSkillOrder(row.mainDress.dress.name, row.historyHash)}>
+                  Specify Skill Order
                 </button>
               </td>
             </tr>
@@ -347,5 +399,12 @@ input[type=number], input[type=text], select {
   color: grey;
   margin: 0.3em 0;
   font-size: 0.9em;
+}
+textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 6em;
+  margin: .3em 0;
 }
 </style>

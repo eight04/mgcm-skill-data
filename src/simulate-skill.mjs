@@ -297,7 +297,8 @@ export function simulateSkillMod({
   targetNumber = 1,
   endlessMode,
   recastReduction = [],
-  extraDamageElement
+  extraDamageElement,
+  orders = []
 }) {
   const skillData = skillMap.get(dress.name);
   if (!skillData) throw new Error(`missing skill data for ${dress.name}`);
@@ -361,23 +362,34 @@ export function simulateSkillMod({
   
   search(0, Array(skills.length).fill(0), {}, []);
   
+  if (dress.name === "灼熱野球ユニ ここあ") {
+    console.log(results);
+  }
+  
   return results;
   
   function search(turn, sleep, mod, history) {
     if (turn >= maxTurn) {
+      const historyHash = history.map(v => v + 1).join("");
+      const required = orders.includes(historyHash);
       for (let i = 0; i < results.length; i++) {
         const r1 = cmpMod(mod, results[i].mod);
         if (r1 > 0) {
-          results[i] = {history: history.slice(), mod};
+          results[i] = {historyHash, mod, required};
           return;
         }
         const r2 = cmpMod(results[i].mod, mod);
-        if (r2 > 0) {
+        if (r2 > 0 && !required) {
           return;
         }
-        if (r1 === r2 && r1 === 0) return;
+        if (r1 === r2 && r1 === 0) {
+          if (required) {
+            results[i] = {historyHash, mod, required};
+          }
+          return;
+        }
       }
-      results.push({history: history.slice(), mod});
+      results.push({historyHash, mod, required});
       return;
     }
     
