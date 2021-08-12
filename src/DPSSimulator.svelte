@@ -94,6 +94,8 @@ function parseNumberList(s) {
 
 function addCustomSkillOrder(dressName, defaultOrder) {
   const value = prompt("Skill Order:", defaultOrder);
+  if (value == null) return;
+  
   const obj = parseSkillOrder($customSkillOrder);
   if (!obj[dressName]) {
     obj[dressName] = [];
