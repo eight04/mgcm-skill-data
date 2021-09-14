@@ -86,3 +86,11 @@ Magica2020 ここあ: null
 ヘスティア ここあ: null
 ジャンヌダルク ここあ: null
 Xenos Magica ここあ: null
+ヴァンパイア ここあ:
+  - 2 *2
+  - 0 aoe
+  - |-
+    2
+    3
+    4
+    5

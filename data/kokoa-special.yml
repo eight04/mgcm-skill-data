@@ -19,3 +19,6 @@ Magica1984 ここあ:
 局中法度☆新選組 ここあ:
   - null
   - cutRate: 4.5
+ヴァンパイア ここあ:
+  - extraDamageOnCrit: 1.15
+  

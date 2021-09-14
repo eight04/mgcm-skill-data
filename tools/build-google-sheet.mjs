@@ -2,7 +2,7 @@ import {readFile, writeFile} from "fs/promises";
 import YAML from "yaml";
 import gs from "google-spreadsheet";
 
-import {NAME_JP2EN} from "./lib/chars.mjs";
+import {NAME_JP2EN, NAME_FULL2EN, NAME_EN2JP} from "./lib/chars.mjs";
 
 const allDresses = YAML.parse(await readFile("dress-db.yml", "utf8"));
 const chars = new Map;
@@ -34,14 +34,23 @@ for (let i = 1; i < sheet.rowCount; i++) {
   
   console.log(name.value, sheet.getCell(i, aToIndex("O")).value);
   
-  const charName = NAME_JP2EN[name.value.split(" ").pop()];
+  const charName = getCharName(name.value);
   const list = chars.get(charName);
   
-  if (!list && sheet.getCell(i, aToIndex("O")).value === false) {
-    continue;
+  if (!list) {
+    if (sheet.getCell(i, aToIndex("O")).value === false) {
+      continue;
+    }
+    throw new Error(`Invalid charName: ${charName}`);
   }
   
-  if (list.get(name.value)) continue;
+  // fix missing name e.g. 中野一花
+  let fullName = name.value;
+  if (!fullName.endsWith(NAME_EN2JP[charName])) {
+    fullName += ` ${NAME_EN2JP[charName]}`;
+  }
+  
+  if (list.get(fullName)) continue;
   
   const skill = [];
   let invalid = false;
@@ -77,7 +86,7 @@ for (let i = 1; i < sheet.rowCount; i++) {
     skill.some(s => s === null)
   ) continue;
   
-  list.set(name.value, skill);
+  list.set(fullName, skill);
 }
 
 for (const [name, list] of chars.entries()) {
@@ -101,4 +110,9 @@ function aToIndex(s) {
     index = index * 26 + s.charCodeAt(i) - 96;
   }
   return index - 1;
+}
+
+function getCharName(fullName) {
+  const lastName = fullName.split(" ").pop();
+  return NAME_FULL2EN[fullName] || NAME_JP2EN[lastName];
 }

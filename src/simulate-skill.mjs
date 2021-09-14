@@ -116,7 +116,17 @@ const SPECIALS = {
     {
       condBonus: bonusByTargetDebuff(0.3)
     }
-  ]
+  ],
+  "不思議の国のアリス 花織": [
+    null,
+    null,
+    {
+      recast: ({targetBuff}) => -targetBuff.length
+    }
+  ],
+  "デモンズスタイルドレイク マリアンヌ": {
+    condBonus: bonusByTargetDebuff(0.25)
+  }
 };
 
 export const skillMap = new Map(allSkillData.map(s => [s.name, compileSkill(s)]));
@@ -339,7 +349,8 @@ export function simulateSkillMod({
       }),
       cd: dress.skill[index].cd?.[1] || 1,
       sleep: 0,
-      recast: sum(rawData.special?.recast),
+      recast: sum(rawData.special?.recast, context),
+      recastSelf: rawData.special?.recastSelf?.some(Boolean),
       prefer: []
     };
   }).reverse();
@@ -413,7 +424,9 @@ export function simulateSkillMod({
       const newSleep = sleep.slice();
       newSleep[skill.index] = skill.cd;      
       for (let i = 0; i < newSleep.length; i++) {
-        newSleep[i] += skill.recast - 1 - (recastReduction.length > turn ? recastReduction[turn] : 0);
+        newSleep[i] += (!skill.recastSelf || skill.index === i ? skill.recast : 0)
+          - 1
+          - (recastReduction.length > turn ? recastReduction[turn] : 0);
       }
       history.push(skill.index);
       
