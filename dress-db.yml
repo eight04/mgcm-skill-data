@@ -11808,4 +11808,204 @@
       cd:
         - 5
         - 4
+- id: 26745151
+  name: ヴァンパイア ここあ
+  rarity: UR
+  element: fire
+  pool: gacha
+  hp:
+    - 3640
+    - 9077
+    - 10920
+  atk:
+    - 270
+    - 674
+    - 810
+  def:
+    - 201
+    - 502
+    - 603
+  spd:
+    - 62
+    - 98
+    - 110
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 35
+    - bonus: 0
+      cd:
+        - 5
+        - 3
+    - bonus: 30
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+- id: 26775919
+  name: マーメイド 丹
+  rarity: UR
+  element: water
+  pool: gacha
+  hp:
+    - 3650
+    - 9102
+    - 10950
+  atk:
+    - 270
+    - 675
+    - 811
+  def:
+    - 200
+    - 499
+    - 600
+  spd:
+    - 57
+    - 93
+    - 105
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 30
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+    - bonus: 0
+- id: 26792374
+  name: Magica Maiden 花織
+  rarity: UR
+  element: water
+  pool: gacha
+  hp:
+    - 3985
+    - 9938
+    - 11955
+  atk:
+    - 251
+    - 626
+    - 753
+  def:
+    - 197
+    - 492
+    - 591
+  spd:
+    - 71
+    - 107
+    - 119
+  fcs: 60
+  rst: 20
+  skill:
+    - bonus: 30
+    - bonus: 0
+      cd:
+        - 5
+        - 3
+    - bonus: 30
+      cd:
+        - 5
+        - 4
+    - bonus: 0
+- id: 26812468
+  name: かぐや姫 はなび
+  rarity: UR
+  element: water
+  pool: gacha
+  hp:
+    - 3465
+    - 8641
+    - 10395
+  atk:
+    - 310
+    - 774
+    - 930
+  def:
+    - 172
+    - 431
+    - 518
+  spd:
+    - 57
+    - 93
+    - 105
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 20
+    - bonus: 30
+      cd:
+        - 3
+        - 2
+    - bonus: 30
+      cd:
+        - 5
+        - 4
+    - bonus: 0
+- id: 26812546
+  name: かぐや姫 依子
+  rarity: UR
+  element: light
+  pool: event
+  hp:
+    - 3950
+    - 9850
+    - 11850
+  atk:
+    - 226
+    - 566
+    - 680
+  def:
+    - 223
+    - 558
+    - 671
+  spd:
+    - 53
+    - 89
+    - 101
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 20
+    - bonus: 25
+      cd:
+        - 3
+        - 2
+    - bonus: 0
+      cd:
+        - 5
+        - 3
+- id: 26850298
+  name: Xenos Magica 陽彩
+  rarity: UR
+  element: dark
+  pool: gacha
+  hp:
+    - 3695
+    - 9215
+    - 11085
+  atk:
+    - 220
+    - 551
+    - 662
+  def:
+    - 246
+    - 615
+    - 740
+  spd:
+    - 74
+    - 110
+    - 122
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 0
+      cd:
+        - 5
+        - 3
+    - bonus: 30
+      cd:
+        - 5
+        - 3
+    - bonus: 0
 

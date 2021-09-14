@@ -26,7 +26,7 @@ const base = "https://appmedia.jp/magicami/3788680";
 const r = await fetch(base);
 const text = await r.text();
 const table = text.match(/<table id='dress_list[\s\S]+?<\/table/)[0];
-const urls = [...findIter(table, /<a [^>]*href='(\d+)/g)]
+const urls = [...findIter(table, /<a [^>]*href='(?:https:\/\/appmedia\.jp\/magicami\/)?(\d+)/g)]
   .map(id => new URL(id, base).toString());
 
 const data = await Promise.all(urls.map(getDressInfo));
