@@ -272,6 +272,21 @@
     - - hits: 1
         aoe: false
         mod: {}
+- name: 中野一花 丹
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.6
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 1.6
+          hp: 0.12
+    - - hits: 1
+        aoe: false
+        mod:
+          fixedHp: 0.5
 - name: 新春巫女2021 丹
   skills:
     - - hits: 1
@@ -634,6 +649,19 @@
         aoe: false
         mod:
           atk: 3.5
+- name: Xenos Magica 陽彩
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: true
+        mod: {}
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 6
 - name: ラウンジウェア 蒼
   skills:
     - - hits: 1
@@ -938,6 +966,21 @@
         aoe: false
         mod:
           atk: 8.2
+- name: 局中法度☆新選組 蒼
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.1
+    - - hits: 3
+        aoe: true
+        mod:
+          atk: 1.1
+          hp: 0.08
+    - - hits: 1
+        aoe: false
+        mod:
+          fixedHp: 1
 - name: ホーリーサンタ2020 蒼
   skills:
     - - hits: 1
@@ -1334,6 +1377,24 @@
     - - hits: 1
         aoe: false
         mod: {}
+- name: Magica2020 Evo エリザ
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.4
+    - - hits: 5
+        aoe: false
+        mod:
+          atk: 1.4
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 7.9
+  special:
+    - cutRate: 1.6
+    - missRate: -999
+      critRate: 999
 - name: Magica2020 エリザ
   skills:
     - - hits: 1
@@ -1687,6 +1748,20 @@
         aoe: true
         mod:
           atk: 3.9
+- name: 中野三玖 はなび
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.6
+    - - hits: 2
+        aoe: true
+        mod:
+          atk: 2.2
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.5
 - name: Magica2020 Evo はなび
   skills:
     - - hits: 1
@@ -1989,6 +2064,18 @@
         aoe: false
         mod:
           atk: 7.8
+- name: 中野二乃 依子
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.6
+    - - hits: 1
+        aoe: true
+        mod: {}
+    - - hits: 1
+        aoe: true
+        mod: {}
 - name: みるきぃ☆ふぁーむ 依子
   skills:
     - - hits: 1
@@ -2304,6 +2391,20 @@
         aoe: false
         mod:
           atk: 7
+- name: 中野四葉 いろは
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.6
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 2.1
+          targetHp: 0.17
+    - - hits: 1
+        aoe: false
+        mod: {}
 - name: Magica2020 Evo いろは
   skills:
     - - hits: 1
@@ -2627,6 +2728,22 @@
   special:
     - null
     - ignoreBuffRate: 1
+- name: 上杉らいは 花織
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.5
+    - - hits: 1
+        aoe: true
+        mod: {}
+  special:
+    - null
+    - critRate: 0.4
 - name: 局中法度☆新選組 花織
   skills:
     - - hits: 1
@@ -2653,6 +2770,24 @@
         aoe: false
         mod:
           atk: 3.8
+- name: 不思議の国のアリス 花織
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 4
+        aoe: false
+        mod:
+          atk: 2
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5
+  special:
+    - null
+    - null
+    - recastSelf: true
 - name: ラウンジウェア ここあ
   skills:
     - - hits: 1
@@ -2951,6 +3086,33 @@
     - - hits: 1
         aoe: true
         mod: {}
+- name: ヴァンパイア ここあ
+  skills:
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 2
+    - - hits: 1
+        aoe: true
+        mod: {}
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 2
+      - hits: 1
+        aoe: false
+        mod:
+          atk: 3
+      - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+      - hits: 1
+        aoe: false
+        mod:
+          atk: 5
+  special:
+    - extraDamageOnCrit: 1.15
 - name: ラウンジウェア りり
   skills:
     - - hits: 1
@@ -3587,6 +3749,16 @@
     - null
     - null
     - cutRate: 9
+- name: デモンズスタイルドレイク マリアンヌ
+  skills:
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 1.4
+    - - hits: 4
+        aoe: false
+        mod:
+          atk: 2
 - name: ラウンジウェア セイラ
   skills:
     - - hits: 1
@@ -3880,6 +4052,20 @@
     - - hits: 1
         aoe: true
         mod: {}
+- name: 中野五月 セイラ
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.6
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.2
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.9
 - name: Magica2020 Evo セイラ
   skills:
     - - hits: 1
@@ -3910,6 +4096,10 @@
 - name: オーシャンドレス セイラ
   skills:
     - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.5
+      - hits: 1
         aoe: false
         mod:
           atk: 1.625

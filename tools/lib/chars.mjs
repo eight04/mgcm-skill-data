@@ -13,4 +13,10 @@ export const NAME_JP2EN = {
   "セイラ": "seira"
 };
 
+export const NAME_EN2JP = Object.fromEntries(Object.entries(NAME_JP2EN).map(([a, b]) => [b, a]));
+
 export const NAMES = Object.values(NAME_JP2EN);
+
+export const NAME_FULL2EN = {
+  "中野一花": "aka"
+};

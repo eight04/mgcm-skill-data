@@ -13,4 +13,11 @@ Magica2019 花織:
 異世界レイヤーズ 花織:
   - null
   - ignoreBuffRate: 1
+上杉らいは 花織:
+  - null
+  - critRate: 0.4
+不思議の国のアリス 花織:
+  - null
+  - null
+  - recastSelf: true
   
