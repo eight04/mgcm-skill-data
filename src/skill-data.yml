@@ -2103,6 +2103,23 @@
     - - hits: 1
         aoe: true
         mod: {}
+- name: †ハロウィッチ2020† 依子
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.1
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.3
+  special:
+    - null
+    - critRate: 0.3
 - name: みるきぃ☆ふぁーむ 依子
   skills:
     - - hits: 1
@@ -3798,6 +3815,18 @@
           atk: 4
     - - hits: 1
         aoe: false
+        mod: {}
+- name: †ハロウィッチ2020† マリアンヌ
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: true
+        mod: {}
+    - - hits: 1
+        aoe: true
         mod: {}
 - name: ぐだぐだFallenAngel マリアンヌ
   skills:
