@@ -287,6 +287,33 @@
         aoe: false
         mod:
           fixedHp: 0.5
+- name: オーセンティックバニー 丹
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.3
+    - - hits: 1
+        aoe: true
+        mod: {}
+- name: ルナティックサキュバス 丹
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.2
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 5.5
 - name: 新春巫女2021 丹
   skills:
     - - hits: 1
@@ -2076,6 +2103,23 @@
     - - hits: 1
         aoe: true
         mod: {}
+- name: †ハロウィッチ2020† 依子
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 5.1
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4.3
+  special:
+    - null
+    - critRate: 0.3
 - name: みるきぃ☆ふぁーむ 依子
   skills:
     - - hits: 1
@@ -2405,6 +2449,33 @@
     - - hits: 1
         aoe: false
         mod: {}
+- name: オーセンティックバニー いろは
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.8
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6.2
+    - - hits: 1
+        aoe: true
+        mod: {}
+- name: ぐだぐだFallenAngel いろは
+  skills:
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 1.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.9
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 1.4
 - name: Magica2020 Evo いろは
   skills:
     - - hits: 1
@@ -2423,6 +2494,20 @@
     - missRate: -999
     - critRate: 999
     - missRate: -999
+- name: Magica2020 いろは
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.3
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 1.46
+  special:
+    - missRate: -999
+    - critRate: 999
+      missRate: -999
 - name: 対魔忍 いろは
   skills:
     - - hits: 1
@@ -3731,6 +3816,18 @@
     - - hits: 1
         aoe: false
         mod: {}
+- name: †ハロウィッチ2020† マリアンヌ
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: true
+        mod: {}
+    - - hits: 1
+        aoe: true
+        mod: {}
 - name: ぐだぐだFallenAngel マリアンヌ
   skills:
     - - hits: 2
@@ -3759,6 +3856,20 @@
         aoe: false
         mod:
           atk: 2
+- name: 不思議の国のアリス　マリアンヌ
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 3
+        aoe: false
+        mod:
+          atk: 2
+    - - hits: 4
+        aoe: false
+        mod:
+          atk: 1.5
 - name: ラウンジウェア セイラ
   skills:
     - - hits: 1
@@ -4078,6 +4189,16 @@
     - - hits: 1
         aoe: false
         mod: {}
+- name: 雪おんな セイラ
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.5
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 5.5
 - name: Xenos Magica セイラ
   skills:
     - - hits: 1
