@@ -1,4 +1,5 @@
 export const NAME_JP2EN = {
+  // "cocoa": "kokoa",
   "丹": "aka",
   "陽彩": "akisa",
   "蒼": "ao",
@@ -10,7 +11,7 @@ export const NAME_JP2EN = {
   "ここあ": "kokoa",
   "りり": "lilly",
   "マリアンヌ": "marianne",
-  "セイラ": "seira"
+  "セイラ": "seira",
 };
 
 export const NAME_EN2JP = Object.fromEntries(Object.entries(NAME_JP2EN).map(([a, b]) => [b, a]));

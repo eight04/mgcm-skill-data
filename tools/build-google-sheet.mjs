@@ -2,7 +2,7 @@ import {readFile, writeFile} from "fs/promises";
 import YAML from "yaml";
 import gs from "google-spreadsheet";
 
-import {NAME_JP2EN, NAME_FULL2EN, NAME_EN2JP} from "./lib/chars.mjs";
+import {NAME_JP2EN, NAME_EN2JP} from "./lib/chars.mjs";
 
 const allDresses = YAML.parse(await readFile("dress-db.yml", "utf8"));
 const chars = new Map;
@@ -26,6 +26,7 @@ await doc.loadInfo();
 const sheet = doc.sheetsByTitle["Clean Data"];
 await sheet.loadCells("O2:Z");
 await sheet.loadCells("AG2:AL");
+await sheet.loadCells("B:B");
 
 for (let i = 1; i < sheet.rowCount; i++) {
   const name = sheet.getCell(i, aToIndex("Q"));
@@ -34,7 +35,7 @@ for (let i = 1; i < sheet.rowCount; i++) {
   
   console.log(name.value, sheet.getCell(i, aToIndex("O")).value);
   
-  const charName = getCharName(name.value);
+  const charName = getCharName(sheet.getCell(i, aToIndex("B")).value);
   const list = chars.get(charName);
   
   if (!list) {
@@ -112,7 +113,10 @@ function aToIndex(s) {
   return index - 1;
 }
 
-function getCharName(fullName) {
-  const lastName = fullName.split(" ").pop();
-  return NAME_FULL2EN[fullName] || NAME_JP2EN[lastName];
+function getCharName(name) {
+  name = name.toLowerCase();
+  if (name === "cocoa") return "kokoa";
+  return name;
+  // const lastName = fullName.split(" ").pop();
+  // return NAME_FULL2EN[fullName] || NAME_JP2EN[lastName];
 }
