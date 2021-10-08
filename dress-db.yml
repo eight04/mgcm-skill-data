@@ -12008,4 +12008,167 @@
         - 5
         - 3
     - bonus: 0
+- id: 26889631
+  name: Xenos Magica エリザ
+  rarity: UR
+  element: lightning
+  pool: gacha
+  hp:
+    - 3670
+    - 9152
+    - 11010
+  atk:
+    - 313
+    - 783
+    - 941
+  def:
+    - 168
+    - 421
+    - 506
+  spd:
+    - 61
+    - 97
+    - 109
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 30
+      cd:
+        - 5
+        - 3
+    - bonus: 0
+    - bonus: 0
+- id: 26915557
+  name: イノセントラビット マリアンヌ
+  rarity: UR
+  element: water
+  pool: gacha
+  hp:
+    - 3610
+    - 9003
+    - 10830
+  atk:
+    - 287
+    - 716
+    - 861
+  def:
+    - 186
+    - 464
+    - 558
+  spd:
+    - 57
+    - 93
+    - 105
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 0
+      cd:
+        - 5
+        - 3
+    - bonus: 30
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+- id: 26943496
+  name: †ハロウィッチ2021† セイラ
+  rarity: UR
+  element: fire
+  pool: gacha
+  hp:
+    - 4000
+    - 9975
+    - 12000
+  atk:
+    - 220
+    - 549
+    - 660
+  def:
+    - 227
+    - 567
+    - 681
+  spd:
+    - 57
+    - 93
+    - 105
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 30
+    - bonus: 30
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+    - bonus: 0
+- id: 26943553
+  name: †ハロウィッチ2021† はなび
+  rarity: UR
+  element: water
+  pool: event
+  hp:
+    - 3980
+    - 9925
+    - 11940
+  atk:
+    - 224
+    - 560
+    - 673
+  def:
+    - 224
+    - 559
+    - 672
+  spd:
+    - 54
+    - 90
+    - 102
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 30
+    - bonus: 20
+      cd:
+        - 4
+        - 3
+    - bonus: 30
+      cd:
+        - 6
+        - 4
+- id: 26972593
+  name: Xenos Magica 丹
+  rarity: UR
+  element: fire
+  pool: gacha
+  hp:
+    - 3670
+    - 9152
+    - 11010
+  atk:
+    - 224
+    - 559
+    - 672
+  def:
+    - 245
+    - 611
+    - 735
+  spd:
+    - 71
+    - 107
+    - 119
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 30
+    - bonus: 20
+      cd:
+        - 3
+        - 2
+    - bonus: 0
+      cd:
+        - 5
+        - 3
+    - bonus: 0
 
