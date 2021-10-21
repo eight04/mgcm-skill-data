@@ -12171,4 +12171,38 @@
         - 5
         - 3
     - bonus: 0
+- id: 26994601
+  name: Xenos Magica 蒼
+  rarity: UR
+  element: water
+  pool: gacha
+  hp:
+    - 3430
+    - 8554
+    - 10290
+  atk:
+    - 318
+    - 794
+    - 955
+  def:
+    - 166
+    - 416
+    - 500
+  spd:
+    - 57
+    - 93
+    - 105
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 30
+    - bonus: 30
+      cd:
+        - 3
+        - 2
+    - bonus: 30
+      cd:
+        - 4
+        - 3
+    - bonus: 0
 
