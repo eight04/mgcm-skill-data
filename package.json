@@ -16,7 +16,7 @@
   },
   "eslintIgnore": [
     "tools/rollup-plugin-livereload.mjs"
-  ],  
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/eight04/mgcm-skill-data.git"
@@ -31,30 +31,31 @@
   },
   "homepage": "https://github.com/eight04/mgcm-skill-data#readme",
   "devDependencies": {
-    "@babel/core": "^7.15.5",
-    "@babel/eslint-parser": "^7.15.4",
+    "@babel/core": "^7.16.0",
+    "@babel/eslint-parser": "^7.16.0",
     "@eight04/read-write-lock": "^0.1.0",
-    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@rollup/plugin-node-resolve": "^13.0.6",
     "@rollup/plugin-yaml": "^3.1.0",
     "@surma/rollup-plugin-comlink": "https://github.com/eight04/rollup-plugin-comlink/tarball/dev-autowrap",
     "cheerio": "^1.0.0-rc.10",
-    "eslint": "^7.32.0",
+    "eslint": "^8.2.0",
     "eslint-plugin-svelte3": "^3.2.1",
-    "google-spreadsheet": "^3.1.15",
+    "google-spreadsheet": "^3.2.0",
     "livereload": "^0.9.3",
     "make-fetch-happen": "^9.1.0",
     "npm-run-all": "^4.1.5",
-    "rollup": "^2.56.3",
+    "rollup": "^2.59.0",
     "rollup-plugin-copy-glob": "^0.3.2",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-iife": "^0.5.0",
+    "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-re": "^1.0.7",
     "rollup-plugin-svelte": "^7.1.0",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-write-output": "^0.1.1",
     "shx": "^0.3.3",
     "sirv-cli": "^1.0.14",
-    "svelte": "^3.42.5",
+    "svelte": "^3.44.1",
     "yaml": "^1.10.2"
   }
 }
