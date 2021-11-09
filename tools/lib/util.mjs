@@ -12,6 +12,7 @@ export async function getAllSkills() {
   for (const name of NAMES) {
     const map = YAML.parse(await readFile(`data/${name}.yml`, "utf8"));
     for (const [dressName, skills] of Object.entries(map)) {
+      console.log(dressName);
       if (
         !Array.isArray(skills) ||
         skills.some(s => typeof s !== "string" && typeof s !== "number")
@@ -20,7 +21,7 @@ export async function getAllSkills() {
       }
       allSkills.set(dressName, {
         name: dressName,
-        skills: [...skills.map(parseSkill)]
+        skills: skills.map(t => [...parseSkill(t)])
       });
     }
     
@@ -52,6 +53,7 @@ export async function getAllSkills() {
       }
     }
   }
+  // debugger;
   return [...allSkills.values()];
 }
 
@@ -66,12 +68,18 @@ function parseLine(line) {
   while ((match = rx.exec(line))) {
     if (!isNaN(Number(match[0]))) {
       if (Number(match[0])) {
+        if (result.mod.atk) {
+          throw new Error(`duplicate atk: ${line}`);
+        }
         result.mod.atk = Number(match[0]);
       }
     } else if (match[0] === "+") {
       const [prop] = rx.exec(line);
       rx.exec(line);
       const [value] = rx.exec(line);
+      if (result.mod[prop]) {
+        throw new Error(`duplicate ${prop}: ${line}`);
+      }
       result.mod[prop] = Number(value);
     } else if (match[0] === "*") {
       const [hits] = rx.exec(line);

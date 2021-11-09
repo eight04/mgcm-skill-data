@@ -126,7 +126,49 @@ const SPECIALS = {
   ],
   "デモンズスタイルドレイク マリアンヌ": {
     condBonus: bonusByTargetDebuff(0.25)
-  }
+  },
+  "Xenos Magica 丹": [
+    null,
+    {
+      condBonus: ({targetBuff}) => targetBuff.immune.stune ? 1.3 : 1
+    }
+  ],
+  "Xenos Magica 蒼": [
+    null,
+    {
+      condBonus: bonusByBuffNumber(0.4)
+    },
+    {
+      condBonus: ({targetBuff}) => targetBuff.immune.stune ? 1.3 : 1
+    }
+  ],
+  "なのは いろは": [
+    null,
+    {
+      condBonus: ({targetBuff}) => targetBuff.immune.stune ? 1.5 : 1
+    },
+    {
+      condBonus: ({targetBuff, targetDebuff}) =>
+        (targetBuff.length * 0.5 + 1) * (targetDebuff.length ? 1 : 1.5)
+    }
+  ],
+  "フェイト 花織": [
+    null,
+    null,
+    {
+      // FIXME: https://github.com/eight04/mgcm-skill-data/issues/63
+      condBonus: bonusByBuffNumber(0.1 * 4)
+    }
+  ],
+  "ヴィータ ここあ": [
+    null,
+    {
+      condBonus: bonusByBuffNumber(0.2)
+    },
+    {
+      condBonus: bonusByTargetDebuff(0.2)
+    }
+  ]
 };
 
 export const skillMap = new Map(allSkillData.map(s => [s.name, compileSkill(s)]));

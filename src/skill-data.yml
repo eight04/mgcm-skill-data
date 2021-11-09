@@ -338,10 +338,41 @@
         aoe: false
         mod:
           atk: 3.5
-    - - hits: 5
+    - - hits: 1
         aoe: false
         mod:
           atk: 1.7
+      - hits: 1
+        aoe: false
+        mod:
+          atk: 2.72
+      - hits: 1
+        aoe: false
+        mod:
+          atk: 3.74
+      - hits: 1
+        aoe: false
+        mod:
+          atk: 4.76
+      - hits: 1
+        aoe: false
+        mod:
+          atk: 5.78
+- name: Xenos Magica 丹
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 4
+        aoe: false
+        mod:
+          atk: 2.3
+    - - hits: 1
+        aoe: false
+        mod: {}
+  special:
+    - extraDamageOnCrit: 1.25
 - name: ラウンジウェア 陽彩
   skills:
     - - hits: 1
@@ -1008,6 +1039,20 @@
         aoe: false
         mod:
           fixedHp: 1
+- name: †ハロウィッチ2020† 蒼
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 3.1
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 8
 - name: ホーリーサンタ2020 蒼
   skills:
     - - hits: 1
@@ -1075,6 +1120,23 @@
         aoe: false
         mod:
           atk: 7
+- name: Xenos Magica 蒼
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6
+    - - hits: 6
+        aoe: false
+        mod:
+          atk: 3.6
+  special:
+    - extraDamageOnCrit: 1.25
+    - ignoreBuffRate: 1
 - name: ラウンジウェア エリザ
   skills:
     - - hits: 1
@@ -1811,6 +1873,36 @@
     - null
     - null
     - ignoreDefRate: 0.25
+- name: Magica2020 はなび
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+      - hits: 2
+        aoe: false
+        mod:
+          atk: 0.9
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 3
+- name: 運命の女神 はなび
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: true
+        mod: {}
+    - - hits: 1
+        aoe: true
+        mod: {}
+  special:
+    - null
+    - null
+    - recast: -2
 - name: ラウンジウェア 依子
   skills:
     - - hits: 1
@@ -2147,10 +2239,10 @@
         aoe: false
         mod:
           atk: 7
-    - - hits: 1
+    - - hits: 4
         aoe: false
         mod:
-          atk: 8
+          atk: 2.2
 - name: ラウンジウェア いろは
   skills:
     - - hits: 1
@@ -2462,6 +2554,21 @@
     - - hits: 1
         aoe: true
         mod: {}
+- name: ストレイキャット いろは
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.9
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.4
+    - - hits: 3
+        aoe: true
+        mod:
+          atk: 0.5
+          spd: 10
 - name: ぐだぐだFallenAngel いろは
   skills:
     - - hits: 2
@@ -2538,6 +2645,20 @@
     - extraDamageOnCrit: 2
     - critRate: 0.3
       extraDamageOnCrit: 1.667
+- name: なのは いろは
+  skills:
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: true
+        mod:
+          atk: 6
 - name: スイートバレンタイン いろは
   skills:
     - - hits: 2
@@ -2873,6 +2994,16 @@
     - null
     - null
     - recastSelf: true
+- name: フェイト 花織
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 6
+        aoe: false
+        mod:
+          atk: 1.2
 - name: ラウンジウェア ここあ
   skills:
     - - hits: 1
@@ -3171,6 +3302,23 @@
     - - hits: 1
         aoe: true
         mod: {}
+- name: Xenos Magica ここあ
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 3.7
+      - hits: 1
+        aoe: false
+        mod:
+          atk: 2.25
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 7.5
+    - - hits: 1
+        aoe: true
+        mod: {}
 - name: ヴァンパイア ここあ
   skills:
     - - hits: 2
@@ -3198,6 +3346,20 @@
           atk: 5
   special:
     - extraDamageOnCrit: 1.15
+- name: ヴィータ ここあ
+  skills:
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 4.5
+    - - hits: 1
+        aoe: false
+        mod:
+          atk: 6
 - name: ラウンジウェア りり
   skills:
     - - hits: 1
@@ -3525,6 +3687,25 @@
     - - hits: 1
         aoe: false
         mod: {}
+- name: ぐだぐだFallenAngel りり
+  skills:
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 1.9
+    - - hits: 2
+        aoe: false
+        mod:
+          atk: 1.2
+          def: 2.2
+    - - hits: 1
+        aoe: false
+        mod:
+          def: 5.4
+  special:
+    - null
+    - null
+    - ignoreDefRate: 1
 - name: ラクシュミ りり
   skills:
     - - hits: 3
@@ -4232,4 +4413,3 @@
         aoe: false
         mod:
           atk: 7.5
-
