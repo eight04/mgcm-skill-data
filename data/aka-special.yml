@@ -8,3 +8,6 @@
 ドライアド 丹:
   passive:
     cutRate: 2
+Xenos Magica 丹:
+  - extraDamageOnCrit: 1.25
+  

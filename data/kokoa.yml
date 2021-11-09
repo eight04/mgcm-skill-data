@@ -85,7 +85,12 @@ Magica2020 ここあ: null
 新春巫女2021 ここあ: null
 ヘスティア ここあ: null
 ジャンヌダルク ここあ: null
-Xenos Magica ここあ: null
+Xenos Magica ここあ:
+  - |-
+    3.7
+    2.25
+  - 7.5
+  - 0 aoe
 ヴァンパイア ここあ:
   - 2 *2
   - 0 aoe
@@ -94,3 +99,7 @@ Xenos Magica ここあ: null
     3
     4
     5
+ヴィータ ここあ:
+  - 4
+  - 4.5
+  - 6
