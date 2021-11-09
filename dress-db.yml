@@ -12205,4 +12205,201 @@
         - 4
         - 3
     - bonus: 0
+- id: 27032455
+  name: ハロウィンポリス 丹
+  rarity: UR
+  element: lightning
+  pool: gacha
+  hp:
+    - 3730
+    - 9302
+    - 11190
+  atk:
+    - 218
+    - 545
+    - 655
+  def:
+    - 246
+    - 615
+    - 740
+  spd:
+    - 57
+    - 93
+    - 105
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 30
+    - bonus: 20
+      cd:
+        - 4
+        - 3
+    - bonus: 30
+      cd:
+        - 4
+        - 3
+    - bonus: 0
+- id: 27047821
+  name: Rebirth Magica 依子
+  rarity: UR
+  element: lightning
+  pool: gacha
+  hp:
+    - 4335
+    - 10811
+    - 13005
+  atk:
+    - 211
+    - 528
+    - 635
+  def:
+    - 213
+    - 532
+    - 639
+  spd:
+    - 51
+    - 87
+    - 99
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 30
+    - bonus: 0
+      cd:
+        - 5
+        - 3
+    - bonus: 0
+    - bonus: 0
+- id: 27067876
+  name: なのは いろは
+  rarity: UR
+  element: light
+  pool: gacha
+  hp:
+    - 3475
+    - 8666
+    - 10425
+  atk:
+    - 309
+    - 771
+    - 927
+  def:
+    - 173
+    - 432
+    - 519
+  spd:
+    - 52
+    - 88
+    - 100
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 25
+      cd:
+        - 4
+        - 3
+    - bonus: 30
+      cd:
+        - 5
+        - 4
+    - bonus: 0
+- id: 27067984
+  name: フェイト 花織
+  rarity: UR
+  element: lightning
+  pool: gacha
+  hp:
+    - 3505
+    - 8741
+    - 10515
+  atk:
+    - 302
+    - 754
+    - 907
+  def:
+    - 177
+    - 443
+    - 533
+  spd:
+    - 57
+    - 93
+    - 105
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 25
+    - bonus: 30
+      cd:
+        - 4
+        - 2
+    - bonus: 0
+    - bonus: 0
+- id: 27068005
+  name: はやて セイラ
+  rarity: UR
+  element: dark
+  pool: gacha
+  hp:
+    - 3540
+    - 8828
+    - 10620
+  atk:
+    - 302
+    - 754
+    - 907
+  def:
+    - 175
+    - 438
+    - 526
+  spd:
+    - 60
+    - 96
+    - 108
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 30
+    - bonus: 30
+      cd:
+        - 3
+        - 2
+    - bonus: 30
+      cd:
+        - 5
+        - 4
+    - bonus: 0
+- id: 27068029
+  name: ヴィータ ここあ
+  rarity: UR
+  element: fire
+  pool: event
+  hp:
+    - 3840
+    - 9576
+    - 11520
+  atk:
+    - 269
+    - 672
+    - 808
+  def:
+    - 188
+    - 470
+    - 565
+  spd:
+    - 53
+    - 89
+    - 101
+  fcs: 40
+  rst: 40
+  skill:
+    - bonus: 30
+    - bonus: 30
+      cd:
+        - 4
+        - 2
+    - bonus: 30
+      cd:
+        - 5
+        - 3
 
