@@ -88,7 +88,7 @@ async function simulate() {
   </label>
   <label>
     <input type="radio" value="mod" name="" bind:group={focusType}>
-    <span class="input-title">Custom mod</span>
+    Custom mod
     <fieldset disabled={focusType !== "mod"}>
       <textarea bind:value={customMod}></textarea>
     </fieldset>

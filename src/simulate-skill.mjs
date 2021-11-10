@@ -298,14 +298,25 @@ function getBasicRate(context) {
     r[key] = Math.min(Math.max(value, 0), 1);
   }
   
+  r.critRate += sum(getBonuses(context.bonusList, 'critRate')) / 100;
+  
   return r;
 }
 
+function *getBonuses(list, type) {
+  for (const bonus of list) {
+    if (list.type === type) {
+      yield bonus.value;
+    }
+  }
+}
+
 function getElementBonus(context) {
-  const {r, special} = context;
+  const {r, special, bonusList} = context;
+  const critDamage = 1.5 + sum(getBonuses(bonusList, 'critDamage')) / 100;
   return r.missRate * 0.7
     // FIXME: do they add up?
-    + (1-r.missRate) * r.critRate * 1.5 * product(special.extraDamageOnCrit, context)
+    + (1-r.missRate) * r.critRate * critDamage * product(special.extraDamageOnCrit, context)
     + (1-r.missRate) * (1-r.critRate) * r.heavyRate * 1.3
     + (1-r.missRate) * (1-r.critRate) * (1-r.heavyRate) * 1;
 }
@@ -350,7 +361,8 @@ export function simulateSkillMod({
   endlessMode,
   recastReduction = [],
   extraDamageElement,
-  orders = []
+  orders = [],
+  bonusList = []
 }) {
   const skillData = skillMap.get(dress.name);
   if (!skillData) throw new Error(`missing skill data for ${dress.name}`);
@@ -368,7 +380,8 @@ export function simulateSkillMod({
       targetNumber,
       hpPct,
       targetHpPct,
-      extraDamageElement
+      extraDamageElement,
+      bonusList
     };
     
     context.r = getBasicRate(context);

@@ -26,7 +26,7 @@ const SUB_EFFECTS = {
 
 const SUB_EFFECT_ALL = [0.05, 0.07];
 
-export function buildOrb({dress, rarity, mod, subElement, leaderBuff}) {
+export function buildOrb({dress, rarity, mod, subElement, bonusList}) {
   const suggestedEffects = Object.keys(mod).filter(t => !t.startsWith("target"));
   return [...generateOrbs(dress, rarity, suggestedEffects, subElement)]
     .map(orb => {
@@ -34,7 +34,7 @@ export function buildOrb({dress, rarity, mod, subElement, leaderBuff}) {
         orb.subEffects.push("elm");
       }
       return {
-        score: calcScore(orb.stats, mod, leaderBuff),
+        score: calcScore(orb.stats, mod, bonusList),
         name: `${orb.mainEffect} (${orb.subEffects.join(",")})`
       };
     })
