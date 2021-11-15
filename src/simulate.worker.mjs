@@ -45,7 +45,7 @@ function *getAllSubs({
   orbRarity,
   useSubEl,
   useSubGroup,
-  leaderBuff, 
+  bonusList, 
 }) {
   for (const dress of allDresses) {
     if (dress === mainDress) continue;
@@ -57,7 +57,7 @@ function *getAllSubs({
         subRatio: getSubRatio(mainDress, dress, subElement, useSubGroup),
         subElement,
         orbRarity,
-        leaderBuff
+        bonusList
       });
     
     yield build(false);
@@ -100,12 +100,13 @@ export function simulateDps({
   targetNumber,
   endlessMode,
   recastReduction,
-  leaderBuff,
+  // leaderBuff,
   hpPct,
   targetHpPct,
   useSubGroup,
   extraDamageElement,
   customSkillOrder,
+  bonusList,
 }) {
   target = normalizeTarget(target);
   buff = normalizeBuff(buff);
@@ -119,7 +120,7 @@ export function simulateDps({
   for (const dress of allDresses) {
     if (!skillMap.has(dress.name)) continue;
     
-    const useLeaderBuff = leaderBuff && leaderBuff.element === dress.element ? leaderBuff : undefined;
+    const currentBonuses = bonusList.filter(b => !b.element || b.element === dress.element);
     
     for (const {historyHash, mod, required} of simulateSkillMod({
       turn,
@@ -137,13 +138,14 @@ export function simulateDps({
       hpPct,
       targetHpPct,
       extraDamageElement,
-      orders: customSkillOrder[dress.name]
+      orders: customSkillOrder[dress.name],
+      bonusList: currentBonuses
     })) {
       const mainDress = buildDress({
         dress,
         mod,
         orbRarity: orb,
-        leaderBuff: useLeaderBuff
+        bonusList: currentBonuses
       });
       const subs = [...getAllSubs({
         mainDress: dress,
@@ -152,7 +154,7 @@ export function simulateDps({
         orb,
         useSubEl: ignoreElement,
         useSubGroup,
-        leaderBuff: useLeaderBuff && leaderBuff.type.endsWith("%") ? leaderBuff : undefined
+        bonusList: currentBonuses.filter(b => b.type.endsWith("%"))
       })]
         .sort(cmpScore)
         .reverse();
@@ -168,7 +170,7 @@ export function simulateDps({
      
       const subScore = subDresses.reduce((n, r) => n + r.score, 0);
       
-      const targetScore = calcScore(target, mod);
+      const targetScore = calcScore(target, mod, []); // no bonus for target?
       
       result.push({
         score: mainDress.score + subScore + targetScore,
@@ -229,17 +231,17 @@ function buildDress({
   subRatio = 1,
   subElement = false,
   orbRarity = "sr",
-  leaderBuff
+  bonusList = []
 }) {
   const orb = buildOrb({
     dress,
     rarity: orbRarity,
     mod,
     subElement,
-    leaderBuff: leaderBuff && leaderBuff.type.endsWith("%") ? leaderBuff : undefined
+    bonusList: bonusList.filter(b => b.type.endsWith('%'))
   });
   return {
-    score: (calcScore(dress, mod, leaderBuff) + orb.score) * subRatio,
+    score: (calcScore(dress, mod, bonusList) + orb.score) * subRatio,
     dress,
     orb
   };

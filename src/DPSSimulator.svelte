@@ -5,6 +5,7 @@ import { createEventDispatcher } from "svelte";
 import DressLink from "./DressLink.svelte";
 import BuffChooser from "./BuffChooser.svelte";
 import DebuffChooser from "./DebuffChooser.svelte";
+import BonusList from "./BonusList.svelte";
 
 import {getStore} from "./store.mjs";
 import {simulateDps} from "./simulate.worker.mjs";
@@ -26,12 +27,13 @@ let useCut = getStore("dps/useCut", false);
 let targetNumber = getStore("dps/targetNumber", 1);
 let endlessMode = getStore("dps/endlessMode", "none");
 let recastReduction = getStore("dps/recastReduction", "");
-let leaderBuff = getStore("dps/leaderBuff", {type: "atk%", value: 0, element: "water"});
+// let leaderBuff = getStore("dps/leaderBuff", {type: "atk%", value: 0, element: "water"});
 let hpPct = getStore("dps/hpPct", 100);
 let targetHpPct = getStore("dps/targetHpPct", 100);
 let useSubGroup = getStore("dps/useSubGroup", false);
 let extraDamageElement = getStore("dps/extraDamageElement", "none");
 let customSkillOrder = getStore("dps/customSkillOrder", "");
+let bonusList = getStore("dps/bonusList", []);
 
 let running = false;
 let result;
@@ -63,12 +65,13 @@ async function simulate() {
       targetNumber: $targetNumber,
       endlessMode: $endlessMode,
       recastReduction: parseNumberList($recastReduction),
-      leaderBuff: $leaderBuff,
+      // leaderBuff: $leaderBuff,
       hpPct: $hpPct / 100,
       targetHpPct: $targetHpPct / 100,
       useSubGroup: $useSubGroup,
       extraDamageElement: $extraDamageElement,
-      customSkillOrder: parseSkillOrder($customSkillOrder)
+      customSkillOrder: parseSkillOrder($customSkillOrder),
+      bonusList: $bonusList
     });
     resultErr = false;
     maxScore = result[0].score;
@@ -156,29 +159,7 @@ function stringifySkillOrder(obj) {
       A list of number separated by comma. Each number represents the reduction of each turn e.g. `1,0,0,1` for Shrine Akisa.
     </p>
   </label>
-  <label class="input-group">
-    <span class="input-title">Leader buff element</span>
-    <select bind:value={$leaderBuff.element}>
-      <option value="fire">Fire</option>
-      <option value="lightning">Lightning</option>
-      <option value="water">Water</option>
-      <option value="dark">Dark</option>
-      <option value="light">Light</option>
-    </select>
-  </label>
-  <div class="input-group">
-    <div class="input-title">Leader buff type</div>
-    <select bind:value={$leaderBuff.type}>
-      <option value="atk%">ATK%</option>
-      <option value="atk">ATK+</option>
-      <option value="def%">DEF%</option>
-      <option value="def">DEF+</option>
-    </select>
-  </div>
-  <div class="input-group">
-    <div class="input-title">Leader buff value</div>
-    <input type="number" bind:value={$leaderBuff.value}>
-  </div>
+  <BonusList bind:value={$bonusList} />
 </fieldset>
 
 <fieldset class="group-block">
@@ -374,12 +355,14 @@ th, td {
   padding: .2em .6em;
 }
 .input-group :global(.radio-title),
-.input-title {
+:global(.input-title),
+:global(.input-sub),
+:global(.input-main) {
   margin: .3em 0;
   display: block;
 }
 .group-block,
-.input-group,
+:global(.input-group),
 .actions {
   margin: .6em 0;
   display: block;
